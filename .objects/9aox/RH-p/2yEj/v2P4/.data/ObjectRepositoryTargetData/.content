@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="zAFkut5Ckki4g_t-matpsw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="94, 551, 26, 26" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:at2:_ATp:create' tag='DIV' /&gt;&lt;webctrl tag='A' /&gt;" Guid="d2d36c10-377f-41ec-9bd0-250bb7e4f70f" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="41442fad7081ccdd2fb5ba8f35dc5f51.jpg" xmlns="">0R3ZdslYAL0CEl5udi3W83g</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

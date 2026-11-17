@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="pfX4qoP7kUaznsr5SYmXkQ" Reference="8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="2264, 791, 945, 1060" ContentHash="MvJa2Ot4u0GF5d1jAkI3JA" FilePath="C:\Program Files\Google\Chrome\Application\chrome.exe" Reference="8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" Version="V3">
+      <TargetApp.SapInfo>
+        <SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="None" />
+      </TargetApp.SapInfo>
+      <imageRef attrName="InformativeScreenshot" originalValue="d6c8c0cdb5900b192d40f2fb00843f04.jpg" xmlns="">0uv4sXJENhUOOeHGOflpmtg</imageRef>
+    </TargetApp>
+    <NInteractionMode x:Key="InteractionMode">HardwareEvents</NInteractionMode>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

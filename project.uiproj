@@ -1,0 +1,6 @@
+{
+  "Name": "Testing_OracleERP",
+  "ProjectType": "Tests",
+  "Description": "New Test Automation Framework",
+  "MainFile": "Main.xaml"
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "LOV Dialog Title",
+  "Description": "Title of the Oracle Search and Select dialog for a lookup field",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "xkeiOTmQZ0Wq1cobr7EcqA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/xkeiOTmQZ0Wq1cobr7EcqA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:22:36.0988649Z",
+  "Updated": "2026-11-16T22:22:36.0988649Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

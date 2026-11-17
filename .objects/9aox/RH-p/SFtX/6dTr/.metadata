@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Manage Invoices Task",
+  "Description": "Manage Invoices link in the Tasks panel of the Invoice Workbench",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "6dTrL9KOMk-6NRSesLg9PA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/6dTrL9KOMk-6NRSesLg9PA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/SFtXQ1fuskOnV3Sk6fMd5A",
+  "Created": "2026-11-16T21:13:24.5940951Z",
+  "Updated": "2026-11-16T21:13:24.5940951Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

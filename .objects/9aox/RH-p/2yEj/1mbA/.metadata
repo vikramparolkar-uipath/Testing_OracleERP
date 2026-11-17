@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Line Row Number Cell",
+  "Description": "Line number cell of an invoice line row; clicking it makes the row editable",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "1mbA00Ly2UaeYHttnv45Vg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/1mbA00Ly2UaeYHttnv45Vg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T02:11:20.32799Z",
+  "Updated": "2026-11-17T02:11:20.32799Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

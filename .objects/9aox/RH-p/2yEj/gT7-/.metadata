@@ -1,0 +1,15 @@
+﻿{
+  "Name": "View Approval History Menu Item",
+  "Description": "View Approval and Notification History item in the Invoice Actions menu",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "gT7-nsELFkG3lPVmlN-zVA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/gT7-nsELFkG3lPVmlN-zVA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:29:57.7011742Z",
+  "Updated": "2026-11-16T22:29:57.7011742Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

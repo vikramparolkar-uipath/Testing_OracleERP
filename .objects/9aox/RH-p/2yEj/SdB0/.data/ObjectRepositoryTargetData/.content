@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="u3mCqAqAmE2g_DK9BCA5cQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="345, 280, 180, 28" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic1::content' tag='INPUT' aaname='Identifying PO' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' role='element' tag='TABLE' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' /&gt;&lt;webctrl parentname='f1' rowName='Identifying PO' tag='TD' matching:parentname='fuzzy' fuzzylevel:parentname='0.0' matching:rowName='fuzzy' fuzzylevel:rowName='0.0' /&gt;&lt;webctrl id='*content*' tag='INPUT' type='text' class='x2c' aaname='Identifying PO' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="49c3f268-7adb-4831-9389-85b7bf8201c7" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="256, 287, 82, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic1' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='af_inputListOfValues_label-text' aaname='Identifying PO' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Identifying PO' /&gt;" Guid="28fdcbde-1392-4760-b8e4-5e207d4bdfaf" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6b43ac479356d224a2c358d337a8f0c9.jpg" xmlns="">0Xtdqw1k9lEe7ByoKvKtaFg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

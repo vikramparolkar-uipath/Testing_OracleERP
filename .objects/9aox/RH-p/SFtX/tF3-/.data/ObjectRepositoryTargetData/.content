@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qP3NTliFP0eJgUlYPj0FFA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1885, 296, 42, 42" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Tasks' role='link' /&gt;" Guid="2b538090-3146-42f7-86b4-94053a0d05ab" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Invoice Workbench - Invoices - Oracle Fusion Cloud Applications *' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b75da3bd244776079e4f668a01129b48.jpg" xmlns="">0OuF2TDCmmE-m7f7VCBzaMQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

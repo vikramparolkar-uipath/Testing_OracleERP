@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoices Tile",
+  "Description": "Invoices link in the active Payables group",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "aWeHkGyINE6oWIEMN9KhDA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/aWeHkGyINE6oWIEMN9KhDA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/JR2-Q2NU-UaMONzNwJlNyA",
+  "Created": "2026-10-25T20:39:46.8651414Z",
+  "Updated": "2026-10-25T20:39:46.8651414Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

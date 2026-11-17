@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fr2uNWhxUk-gJuH6G2p6xA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="981, 352, 174, 28" DesignTimeScaleFactor="1" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:so1::content' tag='SELECT' aaname='Type' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' colName='*Number*AmountUSD - US DollarEUR - EuroGBP - Pound SterlingJPY - YenADP - Andorran PesetaAED - UAE DirhamAFA - Afghani (old)AFN - AfghaniALL - LekAMD - Armenian DramANG - Netherlands Antillian GuilderAOA - KwanzaAOK - Kwanza (Obsolete)AON - New KwanzaARA - AustralARS - Argentine PesoATS - SchillingAUD - Australian DollarAWG - Aruban GuilderAZM - Azerbaijanian Manat (old)AZN - Azerbaijanian ManatBAM - Convertible MarksBBD - Barbados DollarBDT - TakaBEF - Belgian FrancBGL - Bulgarian Lev (Obsolete)BGN - Bulga*' tag='TABLE' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' fuzzylevel:colName='0.0' /&gt;&lt;webctrl id='*content*' type='' tag='SELECT' class='x2h' aaname='Type' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="327c5eb0-63c1-4326-bc35-c0c5f77acea0" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="946, 359, 28, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='so1' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2t0' aaname='Type' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Type' /&gt;" Guid="2a1a6cf9-d048-4741-9a9b-78ab443b2780" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a9c4091f4b88cce2318df84c61359d9d.jpg" xmlns="">0cEoYi8uCbUiIhd2Oi9ghcg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

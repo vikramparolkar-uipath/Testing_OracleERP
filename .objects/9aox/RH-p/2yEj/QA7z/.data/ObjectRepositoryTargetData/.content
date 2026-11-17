@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="PZKWr0MoskWrJcg0dr_y6w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="135, 722, 110, 28" DesignTimeScaleFactor="1" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ta2:*:so12::content' tag='SELECT' /&gt;" Guid="e22f04c9-f7ce-46ca-87f7-a0abc649c9e5" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="5287871fd0518cb21164a6a0ea51aff0.jpg" xmlns="">0MsCKIEN7vUenMbLFynEwhw</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

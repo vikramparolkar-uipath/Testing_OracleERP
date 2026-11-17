@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Navigation Tabs Right Arrow",
+  "Description": "Right-arrow control that reveals additional Oracle Home group tabs",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "dKV0ZjkS70OimnvO1aCTMw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/dKV0ZjkS70OimnvO1aCTMw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:35:50.7565073Z",
+  "Updated": "2026-10-16T02:35:50.7565073Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

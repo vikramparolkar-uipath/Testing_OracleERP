@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="LKLv5B4Tb0ejy8yXsvU4XA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="2264, 791, 945, 1060" FilePath="C:\Program Files\Google\Chrome\Application\chrome.exe" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Oracle Fusion Cloud Applications - Google Chrome' /&gt;" Version="V3">
+      <TargetApp.SapInfo>
+        <SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="None" />
+      </TargetApp.SapInfo>
+      <imageRef attrName="InformativeScreenshot" originalValue="792d9f6479dcd551e14c55a887b40bf3.jpg" xmlns="">0p1nhxcC7okanQP6GOmnvXw</imageRef>
+    </TargetApp>
+    <NInteractionMode x:Key="InteractionMode">HardwareEvents</NInteractionMode>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

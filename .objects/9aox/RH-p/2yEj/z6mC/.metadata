@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Approval Menu Item",
+  "Description": "Approval submenu item in the Invoice Actions menu",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "z6mCLFzPwU62zUZIBdLQ2A",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/z6mCLFzPwU62zUZIBdLQ2A",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:29:57.6274406Z",
+  "Updated": "2026-11-16T22:29:57.6274406Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

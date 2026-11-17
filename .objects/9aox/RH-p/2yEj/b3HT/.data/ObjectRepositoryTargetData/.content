@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="IzO0qtbcPEyf7rjSsTtFXw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1611, 298, 161, 28" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:id2::content' tag='INPUT' aria-label='Date' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' colName='*DatePress down arrow to access Calendar*Payment TermsAutocompletes on TAB*Terms DatePress down arrow to access CalendarRequesterTab to the associated search button or type a value. Autocompletes on TABAttachmentsNoneNote' tag='TABLE' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' fuzzylevel:colName='0.0' /&gt;&lt;webctrl aria-label='Date' id='*content*' tag='INPUT' type='' class='x2b' placeholder='m/d/yy' aaname='Date' matching:aria-label='fuzzy' fuzzylevel:aria-label='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="02ca8e07-94b7-46b6-99ee-bebe16b9439d" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="1578, 305, 26, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='id2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sy' aaname='Date' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Date' /&gt;" Guid="50cc72df-ad2f-45d6-9101-3d7ac67f12d5" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="91edd0987a049d1b89d85bd8bd4c88be.jpg" xmlns="">0n3piPU2wCkqXVhqVE0LPHg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

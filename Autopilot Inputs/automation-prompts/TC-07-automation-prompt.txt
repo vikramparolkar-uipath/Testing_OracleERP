@@ -1,0 +1,51 @@
+Turn the test case below into a UI automation (built with UiPath via the uipcli) for Oracle Fusion Cloud Self Service Procurement (Redwood) - 26C feature. Don't build anything yet.
+First, write specs/oracle-tc07-notes-attachments-indicator.md from my steps. In it, infer and list:
+
+* Workflow arguments: every value that should be a parameter, with a type and a default taken from my steps (record names, business units, suppliers, amounts, quantities, etc.).
+* Outputs: a pass/fail Boolean, a message, and any IDs, numbers or totals I'd want back.
+* Assertions: each "expected result" in my steps, written as a check the workflow makes. If I give a calculation (e.g. line + tax = total), assert it.
+* Selectors and risky points: lookups (LOVs), dialogs, loading spinners, popups, anything likely to need a wait.
+* What you're unsure about. Ask me these as questions instead of guessing.
+
+Then reply with your implementation plan (workflow structure and how we'll verify it) and wait for me.
+Rules for the build, when I approve it:
+
+* UI Automation modern activities with the UiPath browser extension.
+* Attach to my already signed-in Edge tab. Never automate login or store credentials.
+* Selectors use stable attributes (id suffix, aria-label, name, title), never position. Use element waits, not fixed Delays.
+* Don't take irreversible actions beyond what my steps say. For example, don't submit, approve, pay, post, cancel or delete records unless a step explicitly says so.
+* Put the workflow in Workflows/, call it from a test case in Tests/ that runs it and asserts the Boolean result.
+
+Oracle Fusion notes from exploratory testing (use these, but verify them):
+
+* Classic (ADF) pages: element ids look like pt1:_FOr1:1:_FONSr2:0:...:<field>::content. The numeric segments change between sessions, so match on the END of the id (e.g. id ends with "ap1:r2:0:i2::content") or on aria-label / label text. ADF pages can scroll horizontally without warning, so never click by coordinates.
+* Redwood pages (Oracle JET, URLs under /fscmUI/redwood/...) expose stable ids and aria-labels. First load can take 15-20 s.
+* Wait on the browser title or a specific element after every navigation; typical ADF transitions take 3-6 s.
+* A yellow "Sandbox Mode: Edit / Refresh Needed" banner is always shown. Ignore it.
+* LOV / combo fields: type the full value and press Tab; a partial value may open a "Search and Select" dialog.
+* The Home page reopens on the last group tab used, so always click the needed group tab (Sales, Procurement, Payables, Receivables) first.
+* Full object repository, picklists and findings: exploration-notes.md (in the Oracle demo folder).
+
+-----------------------------------
+
+TEST CASE: TC-07: Notes & Attachments indicator on a requisition line (Oracle 26C)
+Objective: Check that adding a Note to Supplier on a requisition line shows the Notes and Attachments indicator on that line only, and that the indicator opens the note.
+Release note: https://docs.oracle.com/en/cloud/saas/readiness/scm/26c/ssproc26c/26C-ssproc-wn-f49452.htm
+
+Org URL: https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?fndThemeName=Vision_Default
+
+Preconditions: Signed in as natalie.salesrep. The cart (draft requisition 381638) contains a line "Laptop Carrycase Black" (run TC-05 steps 1-3 first if needed).
+
+Test data:
+
+* Line: Laptop Carrycase Black
+* Note to Supplier: "UIP test - please deliver to reception desk, Bldg 2. " + today's date (yyyy-MM-dd)
+
+Steps and expected results:
+
+1. Go to Home > Procurement > Purchase Requisitions (New) and open the Cart from the bottom navigation bar. Select the edit (pencil) icon on the Laptop Carrycase Black line. Expected: "Requisition Line Details" opens for that line.
+2. Under Notes, enter the Note to Supplier and select Save and Close. Expected: the Cart opens again. A transient toast "Error response during RestAction" may appear; ignore it (token refresh) and verify the data instead.
+3. Open My Requisitions and switch to the Lines view. Expected: a button with aria-label "Notes and Attachments" appears on the Laptop Carrycase Black line, and on no other line of that requisition that has no notes.
+4. Select the indicator. Expected: a drawer titled "Laptop Carrycase Black / Requisition 381638" opens with tabs Line Details and Notes and Attachments, and shows the exact note text.
+
+Overall pass condition: all expected results above are met. Out of scope: file or URL attachments, Submit, editing other lines.

@@ -1,0 +1,101 @@
+<Activity mc:Ignorable="sap2010" x:Class="Workflows_AP_AP_CloseManageInvoices" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>Testing_OracleERP</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_OracleERP</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AP - Close Manage Invoices" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Close Manage Invoices" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="back" />
+      </Sequence.Variables>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="bfbe8a03-bf9f-4e19-a422-d52f5cb1b22e" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Click Done" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <Sequence DisplayName="Click Done" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Done" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bfbe8a03-bf9f-4e19-a422-d52f5cb1b22e" Version="V5">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable ContentHash="ot2UDQaY_ES2XbUED0EOdw" DesignTimeRectangle="1843, 154, 45, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' aaname='Done' /&gt;" Guid="769db0d0-4356-4a2c-9991-ebfbba792549" InformativeScreenshot="fac1bb717851e9453c36d12d5112a7ae.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/SfrhDsxiBEqudyYPzqjYFw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                </ui:RetryScope.Condition>
+              </ui:RetryScope>
+              <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Invoices work area" Exists="[back]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="bfbe8a03-bf9f-4e19-a422-d52f5cb1b22e" Timeout="60" Version="V5">
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable ContentHash="8-Qfe0q3uUK7SuOHTqQldg" DesignTimeRectangle="1881, 302, 42, 14" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTsdiitemNode_InvoiceWorkbench_FndTasksList::disAcr' tag='A' /&gt;" Guid="b10988f4-96a2-4384-91c5-40bfd7efe53d" InformativeScreenshot="1f5d4139174257932bf4df9ab00b1f60.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/boAMkHcrjkWaiL6BcsPohQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+              <If Condition="[Not back]" DisplayName="Back on work area" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Back on work area - then" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Throw DisplayName="Throw not back" Exception="[New UiPath.Core.BusinessRuleException(&quot;Invoices work area did not return after Done.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  </Sequence>
+                </If.Then>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.OCREngine>
+          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+            <ActivityFunc.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            </ActivityFunc.Argument>
+          </ActivityFunc>
+        </uix:NApplicationCard.OCREngine>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Edge" ContentHash="tDYOlPG-HkGNhvURk3xUww" InformativeScreenshot="9486c0e63510514ec4fcb5f71b4ace81.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ" Selector="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" Url="https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?_afrLoop=2586559024738337&amp;_afrWindowMode=0&amp;_afrWindowId=null&amp;_adf.ctrl-state=mu593lduou6wrw_1&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1912&amp;_afrMFH=994&amp;_afrMFDW=1920&amp;_afrMFDH=1080&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=96&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" Version="V3" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

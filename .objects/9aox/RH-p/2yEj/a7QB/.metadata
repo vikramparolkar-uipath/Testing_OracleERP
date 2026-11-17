@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Details Holds Row",
+  "Description": "Holds label and count row in the Manage Invoices Invoice Details header",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "a7QBI3c5oEa2Z-wQ0_tWXA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/a7QBI3c5oEa2Z-wQ0_tWXA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:55:50.5693479Z",
+  "Updated": "2026-11-16T22:55:50.5693479Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Totals Total And Due Block",
+  "Description": "Total and Due block in the invoice Totals section",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "Nmangf_iVUWl3xoXmcN2lg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/Nmangf_iVUWl3xoXmcN2lg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:39:39.5574615Z",
+  "Updated": "2026-11-16T22:39:39.5574615Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

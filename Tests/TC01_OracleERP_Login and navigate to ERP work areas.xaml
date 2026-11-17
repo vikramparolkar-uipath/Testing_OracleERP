@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Tests_OracleTc01LoginAndNavigation" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Oracle TC-01 Given When Then" sap:VirtualizedContainerService.HintSize="824,913" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="testPassed" />
+      <Variable x:TypeArguments="x:String" Name="testMessage" />
+      <Variable x:TypeArguments="x:String" Name="failedStep" />
+      <Variable x:TypeArguments="x:String" Name="observedGreeting" />
+      <Variable x:TypeArguments="x:String" Name="observedHomeTitle" />
+      <Variable x:TypeArguments="x:String" Name="observedHomePath" />
+      <Variable x:TypeArguments="x:String" Name="observedPayablesTiles" />
+      <Variable x:TypeArguments="x:Boolean" Name="observedProcurementPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="observedSalesPresent" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="... Given" sap:VirtualizedContainerService.HintSize="650,258" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Given - prepare a new signed-out Edge InPrivate session" sap:VirtualizedContainerService.HintSize="616,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;TC-01 Given: reusable workflow will create a new Edge InPrivate window and prompt for password entry.&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="650,260" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="When - invoke Oracle TC-01 reusable workflow" sap:VirtualizedContainerService.HintSize="616,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Login to Oracle ERP.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedDisplayName">["Natalie Sales Rep"]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_HumanHandoffTimeoutSeconds">[300]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedPayablesTiles">["Payables Dashboard|Invoices|Payments"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedProcurementTile">["Purchase Requisitions (New)"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedSalesQuickAction">["Create Opportunity"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedSandboxBannerText">["Sandbox Mode: Edit"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedSignInTitle">["Cloud Sign In"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedHomeTitle">["Oracle Fusion Cloud Applications"]</InArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Passed">[testPassed]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_Message">[testMessage]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_FailedStep">[failedStep]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedGreeting">[observedGreeting]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedHomeTitle">[observedHomeTitle]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedHomePath">[observedHomePath]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedPayablesTiles">[observedPayablesTiles]</OutArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ObservedProcurementTilePresent">[observedProcurementPresent]</OutArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ObservedSalesQuickActionPresent">[observedSalesPresent]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="650,372" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Then - report safe workflow result" sap:VirtualizedContainerService.HintSize="616,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;TC-01 result: &quot; &amp; testMessage &amp; &quot; | Failed step: &quot; &amp; failedStep]" />
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TC-01 overall pass assertion" ContinueOnFailure="False" DisplayName="Then - verify TC-01 passed" Expression="[testPassed]" sap:VirtualizedContainerService.HintSize="616,114" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+    </Sequence>
+  </Sequence>
+</Activity>

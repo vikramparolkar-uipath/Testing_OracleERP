@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Create Invoice",
+  "Description": "Create Invoice link in the Invoice Workbench Tasks navigation",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "rTJV4YiybUeo8dTqkF-rbQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/rTJV4YiybUeo8dTqkF-rbQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/SFtXQ1fuskOnV3Sk6fMd5A",
+  "Created": "2026-10-25T20:45:54.1794459Z",
+  "Updated": "2026-10-25T20:45:54.1794459Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

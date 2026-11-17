@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="9K4suvzTE0errdOFPadLyw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1729, 98, 140, 24" DesignTimeScaleFactor="1" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Sandbox Mode: Edit' aria-role='menuitem' tag='DIV' /&gt;" Guid="0733a220-322e-4c44-982f-1766e9c68e56" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' url='https://eqjz.ds-fa.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="d9657d190d26bbfca5e9c7f6d850e106.jpg" xmlns="">0OoV0Z0ChwUCDzu8KgI_RwQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

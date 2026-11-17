@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Payables Group Tab",
+  "Description": "Payables group tab on the Oracle Fusion home page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "qNLoNVhJP0iG7PMNMBgCkA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/qNLoNVhJP0iG7PMNMBgCkA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:35:50.9202948Z",
+  "Updated": "2026-11-17T00:24:20.751814Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

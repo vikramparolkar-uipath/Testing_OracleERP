@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Identifying PO",
+  "Description": "Identifying PO autocomplete in the Create Invoice header",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "SdB05Au7ikyTUeGuB7zfVQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/SdB05Au7ikyTUeGuB7zfVQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:31.3276573Z",
+  "Updated": "2026-11-16T21:57:31.3276573Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

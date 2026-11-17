@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Lines Action",
+  "Description": "Lines section Action select (Match Invoice Lines, Add Row)",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "VEJiSJEKgUK7irh8GOOpAA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/VEJiSJEKgUK7irh8GOOpAA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:06:11.8480005Z",
+  "Updated": "2026-11-16T22:06:11.8480005Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

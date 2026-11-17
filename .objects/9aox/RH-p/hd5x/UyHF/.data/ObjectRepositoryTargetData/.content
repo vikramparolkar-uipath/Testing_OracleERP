@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="D-TEUXo2GUOw57cpmqP6ww" Reference="8LVFhcqBDUWVgtwLn_b78g/UyHFQtPlu0a79H1G5aQ0dQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" ContentHash="1_RVPCbq50eBhvXsAD1Kzg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="07f64910-a441-4011-ae9d-33a9f6df0e4c" Reference="8LVFhcqBDUWVgtwLn_b78g/UyHFQtPlu0a79H1G5aQ0dQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the invoice number text box labeled Number in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="926d8e55823b25239d7e5c61f32b2f2a.jpg" xmlns="">0xkfqvMwSNkig-qfqz7ctxQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

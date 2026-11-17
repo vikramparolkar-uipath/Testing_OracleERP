@@ -1,0 +1,167 @@
+{
+  "name": "Testing_OracleERP",
+  "projectId": "cabc65d8-ed3a-47e1-ae02-b985476d5d7a",
+  "description": "New Test Automation Framework",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.DataService.Activities": "26.10.1",
+    "UiPath.System.Activities": "[26.10.0]",
+    "UiPath.Testing.Activities": "[25.10.3]",
+    "UiPath.UIAutomation.Activities": "26.10.6"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "namespace": "Testing_OracleERP"
+    }
+  ],
+  "schemaVersion": "4.1",
+  "studioVersion": "26.0.203.0",
+  "projectVersion": "1.1.1",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "NewtonsoftJson",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Tests",
+    "libraryOptions": {
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "templateType": "ExecutionTemplate",
+        "fileName": ".templates\\TestFramework.xaml"
+      },
+      {
+        "templateType": "TestCase",
+        "fileName": ".templates\\TestCaseWebTemplate.xaml"
+      },
+      {
+        "templateType": "TestCase",
+        "fileName": ".templates\\TestCaseAppTemplate.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "9627bc1b-a6e1-4925-99f3-9bddaf0412b3",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\TC01_OracleERP_Login and navigate to ERP work areas.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "461d4b3a-5168-47c4-a7f8-2b848146f94e",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\TC02_OracleERP_Create_AP_Invoice.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "2299c60c-74e2-4079-92fc-19692a67a76e",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-010-001 Enter Invoice Manually.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "02fbeb82-4bbb-4e5b-9283-832f6bebc519",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-030-001 Enter Prepaid Invoice.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "92c0189f-467d-4aa7-a53d-40d1fcdb556d",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-130-001 Enter Pre-Paid Advance Invoice.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "afa4823c-799a-485a-af4c-d1e90a9f55e8",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-060-001 Invoice Lines and Projects.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "eb9ace5a-b0ea-4cd4-8463-2ba79abe1c96",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-160-001 Enter Invoice and Credit Memo.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "1cd43a90-2ae3-4cdb-986b-87ee413a9b8b",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-080-001 Validate Invoice.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "a2dfef82-d35e-4c3a-9963-312d65f8d325",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\STR-PTP-080-010-006 Manual Invoices Auto-Approval.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "dca5467b-0260-4ba7-ba4f-68764cec0e28",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\STR-PTP-080-010-005 Manual Invoices Approval Workflow.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "6381c20d-c51c-48e8-b6e8-9c21f2689e4c",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-090-001 Review Invoices.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "5cd95c08-afc8-438a-b5e3-7d27ba20e886",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-040-001 Match Invoice with PO and Receipt.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "bff1706f-c060-48b5-82a8-7d9c46ff9ac7",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-050-001 Match Invoice with PO 2-Way.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "20129ad6-a87d-4b7f-bec1-c8e5575333c4",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Tests\\P2P\\UNIT-PTP-080-010-150-001 Match Invoice to PO 2-Way.xaml"
+      }
+    ],
+    "saveToCloud": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

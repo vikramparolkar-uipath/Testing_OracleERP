@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="bKbho0hQPUC9u2jyuSQOBQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="715, 588, 482, 44" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='idcs-signin-basic-signin-form-submit' tag='OJ-BUTTON' /&gt;&lt;webctrl tag='BUTTON' /&gt;" Guid="493fdfb7-8545-446e-9d3f-47e399f55e98" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Cloud Sign In' url='https://idcs-*.identity.oraclecloud.com/ui*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="be1ad38c2723ffe6f6b9ee1e0cc85a5e.jpg" xmlns="">06m76eCD7UUeB7brrxrzd0w</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

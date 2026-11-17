@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Create Invoice Task",
+  "Description": "Create Invoice link in the Tasks panel of the Invoices work area",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "-TF4njf0wUu-QsnC2auLeA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/-TF4njf0wUu-QsnC2auLeA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:50:18.9809303Z",
+  "Updated": "2026-11-16T21:50:18.9809303Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

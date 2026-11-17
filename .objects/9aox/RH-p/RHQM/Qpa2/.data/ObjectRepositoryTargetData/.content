@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0p7LW9sBUk-pX4OQszhLjA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="442, 719, 119, 17" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl action='/fscmUI/faces/FuseWelcome?_adf.ctrl-state=mu593lduou6wrw_5' adf-comptype='oracle.adf.RichForm' parentclass='*AFMaximized*' tag='FORM' /&gt;&lt;webctrl destinationurl='undefined' group='groupNode_sales' isdesturlexist='false' quickactioncategory='groupNode' tag='DIV' target='itemNode_create_opportunity' /&gt;&lt;webctrl href='#' tag='A' /&gt;" Guid="a88182a8-9d1e-402a-a3c0-8a768ab7a199" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' url='https://eqjz.ds-fa.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="51c719f0822030c8096fafc14346bf54.jpg" xmlns="">0WLb1HW2LRUKfoMi6f0W11A</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Manage Invoices Result Invoice Link",
+  "Description": "Invoice number link in the Manage Invoices results, selected by invoice number",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "ypyFhNo950KOuFmyu2alAw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/ypyFhNo950KOuFmyu2alAw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:49:11.7675481Z",
+  "Updated": "2026-11-16T22:49:11.7675481Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

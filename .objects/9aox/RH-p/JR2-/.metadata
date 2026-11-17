@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Fusion Home Screen",
+  "Description": "Oracle Fusion Cloud ERP Home page in Chrome for the AP invoice test",
+  "Type": "Screen",
+  "Id": "JR2-Q2NU-UaMONzNwJlNyA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/JR2-Q2NU-UaMONzNwJlNyA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RH-py2e2SUCEeU-QfBPing",
+  "Created": "2026-10-25T20:34:51.0529204Z",
+  "Updated": "2026-10-26T01:36:59.6136079Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

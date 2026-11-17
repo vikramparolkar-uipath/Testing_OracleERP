@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="So6Dypsloky_vt8E8vsK0g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="345, 352, 180, 28" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic3::content' tag='INPUT' aaname='Supplier' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' role='element' tag='TABLE' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' /&gt;&lt;webctrl parentname='f1' rowName='*Supplier' tag='TD' matching:parentname='fuzzy' fuzzylevel:parentname='0.0' fuzzylevel:rowName='0.0' /&gt;&lt;webctrl id='*content*' tag='INPUT' type='text' class='x2c' aaname='Supplier' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2dfb9576-e806-4719-8675-d3013169656b" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="290, 359, 48, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic3' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='af_inputListOfValues_label-text' aaname='Supplier' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Supplier' /&gt;" Guid="18c053e3-6034-44aa-b4ab-8aeddf9dfbf3" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="78e52939278a43548243bb8bc7f95ba6.jpg" xmlns="">0WM_A2yfFeUe33ZFloyAtFg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

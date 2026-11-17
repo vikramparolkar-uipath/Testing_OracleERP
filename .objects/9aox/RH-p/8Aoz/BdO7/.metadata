@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Sign In Heading",
+  "Description": "Oracle Cloud Sign in heading on the IDCS page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "BdO7WjkjrE2VI9kgwXIuVA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/BdO7WjkjrE2VI9kgwXIuVA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/8Aoz72eJ7UatyQiw4JQVMA",
+  "Created": "2026-10-16T02:29:10.2918405Z",
+  "Updated": "2026-10-16T02:29:10.2918405Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

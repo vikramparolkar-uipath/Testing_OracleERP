@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Line Type",
+  "Description": "Invoice line Type select in the Lines table row",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "QA7za76BoEW5yyFDR9AZcQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/QA7za76BoEW5yyFDR9AZcQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:06:11.5317815Z",
+  "Updated": "2026-11-17T02:15:03.0206171Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

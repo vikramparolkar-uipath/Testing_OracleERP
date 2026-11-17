@@ -1,0 +1,55 @@
+Turn the test case below into a UI automation (built with UiPath via the uipcli) for Oracle Fusion Cloud Self Service Procurement (Redwood) - 26D feature. Don't build anything yet.
+First, write specs/oracle-tc06-saved-views.md from my steps. In it, infer and list:
+
+* Workflow arguments: every value that should be a parameter, with a type and a default taken from my steps (record names, business units, suppliers, amounts, quantities, etc.).
+* Outputs: a pass/fail Boolean, a message, and any IDs, numbers or totals I'd want back.
+* Assertions: each "expected result" in my steps, written as a check the workflow makes. If I give a calculation (e.g. line + tax = total), assert it.
+* Selectors and risky points: lookups (LOVs), dialogs, loading spinners, popups, anything likely to need a wait.
+* What you're unsure about. Ask me these as questions instead of guessing.
+
+Then reply with your implementation plan (workflow structure and how we'll verify it) and wait for me.
+Rules for the build, when I approve it:
+
+* UI Automation modern activities with the UiPath browser extension.
+* Attach to my already signed-in Edge tab. Never automate login or store credentials.
+* Selectors use stable attributes (id suffix, aria-label, name, title), never position. Use element waits, not fixed Delays.
+* Don't take irreversible actions beyond what my steps say. For example, don't submit, approve, pay, post, cancel or delete records unless a step explicitly says so.
+* Put the workflow in Workflows/, call it from a test case in Tests/ that runs it and asserts the Boolean result.
+
+Oracle Fusion notes from exploratory testing (use these, but verify them):
+
+* Classic (ADF) pages: element ids look like pt1:_FOr1:1:_FONSr2:0:...:<field>::content. The numeric segments change between sessions, so match on the END of the id (e.g. id ends with "ap1:r2:0:i2::content") or on aria-label / label text. ADF pages can scroll horizontally without warning, so never click by coordinates.
+* Redwood pages (Oracle JET, URLs under /fscmUI/redwood/...) expose stable ids and aria-labels. First load can take 15-20 s.
+* Wait on the browser title or a specific element after every navigation; typical ADF transitions take 3-6 s.
+* A yellow "Sandbox Mode: Edit / Refresh Needed" banner is always shown. Ignore it.
+* LOV / combo fields: type the full value and press Tab; a partial value may open a "Search and Select" dialog.
+* The Home page reopens on the last group tab used, so always click the needed group tab (Sales, Procurement, Payables, Receivables) first.
+* Full object repository, picklists and findings: exploration-notes.md (in the Oracle demo folder).
+
+-----------------------------------
+
+TEST CASE: TC-06: Save and reuse a requisition search ("Saved views", Oracle 26D)
+Objective: Check that a keyword search on My Requisitions can be saved as a named view and reapplied.
+Release note: https://docs.oracle.com/en/cloud/saas/readiness/scm/26d/ssproc26d/26D-ssproc-wn-f47414.htm
+
+Org URL: https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?fndThemeName=Vision_Default
+
+Preconditions: Signed in as natalie.salesrep. Requisition 381637 (Jabra Talk 45 Bluetooth Headset, Ordered) exists.
+
+Test data:
+
+* Keyword: Jabra
+* View name: "UIP Jabra " + today's date (yyyy-MM-dd) + " " + time (HHmmss)
+* Expected result: 1 requisition, 381637
+
+Steps and expected results:
+
+1. Go to Home > Procurement > Purchase Requisitions (New), then select My Requisitions in the bottom navigation bar. Expected: the "Entered By Natalie Sales Rep" filter chip, a Requisitions/Lines toggle and a Saved views button (aria-label "Saved views") are shown.
+2. Type Jabra in "Search for requisitions" and press Enter. Expected: 1 item, 381637 Jabra Talk 45 Bluetooth Headset, status Ordered.
+3. Select Saved views, enter the view name and select Save. Expected: the popup closes and a bookmark chip for the view appears at the start of the filter row.
+4. Remove the Jabra keyword chip. Expected: the list shows all of Natalie's requisitions again (more than 1).
+5. Select Saved views > Saved views link and select the new view. Expected: the keyword is reapplied and the list again shows exactly 1 item, 381637.
+6. Open the view's ... menu. Expected: Set as Default and Delete are offered. Do NOT select Set as Default.
+7. Teardown: select Delete on the view this test created. Expected: the view is no longer listed.
+
+Overall pass condition: all expected results above are met. Out of scope: Set as Default, opening requisition details, deleting any view not created by this run.

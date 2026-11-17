@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Oracle Fusion Chrome Invoice Workbench",
+  "Description": "Invoice Workbench state of the Oracle Fusion Payables application",
+  "Type": "Screen",
+  "Id": "SFtXQ1fuskOnV3Sk6fMd5A",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/SFtXQ1fuskOnV3Sk6fMd5A",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RH-py2e2SUCEeU-QfBPing",
+  "Created": "2026-10-25T20:45:31.3509167Z",
+  "Updated": "2026-10-25T20:45:31.3509167Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,71 @@
+<Activity mc:Ignorable="sap2010" x:Class="Workflows_Common_CloseOracleBrowser" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>Testing_OracleERP</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_OracleERP</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Common - Close Oracle browser" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Close Oracle browser" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Oracle Fusion (Edge) - close" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="3553effe-dd90-4014-b23b-381ceaf59183" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <ui:LogMessage DisplayName="Log close" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Closing the Oracle browser window to end the session&quot;]" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.OCREngine>
+          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+            <ActivityFunc.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            </ActivityFunc.Argument>
+          </ActivityFunc>
+        </uix:NApplicationCard.OCREngine>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Edge" ContentHash="tDYOlPG-HkGNhvURk3xUww" InformativeScreenshot="9486c0e63510514ec4fcb5f71b4ace81.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ" Selector="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" Url="https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?_afrLoop=2586559024738337&amp;_afrWindowMode=0&amp;_afrWindowId=null&amp;_adf.ctrl-state=mu593lduou6wrw_1&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1912&amp;_afrMFH=994&amp;_afrMFDW=1920&amp;_afrMFDH=1080&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=96&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" Version="V3" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

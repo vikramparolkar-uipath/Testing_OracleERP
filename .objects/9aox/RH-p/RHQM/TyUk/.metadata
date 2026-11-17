@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Home Greeting",
+  "Description": "Personalized Oracle Home greeting for the signed-in user",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "TyUkDGP-k0Oxyre7SH4k7g",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/TyUkDGP-k0Oxyre7SH4k7g",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:35:50.6839845Z",
+  "Updated": "2026-10-16T02:35:50.6839845Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

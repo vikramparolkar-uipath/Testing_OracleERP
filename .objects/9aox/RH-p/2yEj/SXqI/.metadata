@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Match Dialog Title",
+  "Description": "Title of the Match Invoice Lines dialog",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "SXqI1kTGp0WUMmkAlzg1YQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/SXqI1kTGp0WUMmkAlzg1YQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T02:56:06.1559273Z",
+  "Updated": "2026-11-17T02:56:06.1559273Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

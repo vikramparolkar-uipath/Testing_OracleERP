@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Approval Initiate Menu Item",
+  "Description": "Initiate in the Approval submenu",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "RXQsgp7xOE2MkjyZwaJmiA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/RXQsgp7xOE2MkjyZwaJmiA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:31:04.0197854Z",
+  "Updated": "2026-11-17T08:21:16.7885862Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

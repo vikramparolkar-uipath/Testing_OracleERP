@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Manage Invoices Invoice Number",
+  "Description": "Invoice Number search field on Manage Invoices",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "rgjLZxf3AE-2c1J5NzEwmQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/rgjLZxf3AE-2c1J5NzEwmQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:43:10.8905642Z",
+  "Updated": "2026-11-16T22:43:10.8905642Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

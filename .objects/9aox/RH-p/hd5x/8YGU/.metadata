@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Save Invoice",
+  "Description": "Toolbar button that saves the current invoice without closing the form",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "8YGUg02YrkKJhk6pWas2BQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/8YGUg02YrkKJhk6pWas2BQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:56:26.2911546Z",
+  "Updated": "2026-10-25T21:56:26.2911546Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

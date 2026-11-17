@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Notification Invoice Link",
+  "Description": "Notification link for invoice {{invoiceNumber}}",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "ImXh2JBNE0qoPqWy238xaA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/ImXh2JBNE0qoPqWy238xaA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-11-17T08:26:38.7709394Z",
+  "Updated": "2026-11-17T08:26:38.7709394Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

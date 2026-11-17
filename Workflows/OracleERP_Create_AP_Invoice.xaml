@@ -1,0 +1,774 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_OracleERP_Create_AP_Invoice" this:Workflows_OracleERP_Create_AP_Invoice.in_BusinessUnit="US1 Business Unit" this:Workflows_OracleERP_Create_AP_Invoice.in_SupplierName="ABC Consulting" this:Workflows_OracleERP_Create_AP_Invoice.in_InvoiceNumberPattern="UIP-AP-&lt;ddMMyy&gt;-&lt;HHmmss&gt;" this:Workflows_OracleERP_Create_AP_Invoice.in_InvoiceDescription="This is a UiPath Test" this:Workflows_OracleERP_Create_AP_Invoice.in_InvoiceType="Standard" this:Workflows_OracleERP_Create_AP_Invoice.in_Currency="USD" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_BusinessUnit" Type="InArgument(x:String)" />
+    <x:Property Name="in_SupplierName" Type="InArgument(x:String)" />
+    <x:Property Name="in_InvoiceNumberPattern" Type="InArgument(x:String)" />
+    <x:Property Name="in_InvoiceDescription" Type="InArgument(x:String)" />
+    <x:Property Name="in_InvoiceType" Type="InArgument(x:String)" />
+    <x:Property Name="in_HeaderAmount" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_LineAmount" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_Currency" Type="InArgument(x:String)" />
+    <x:Property Name="out_Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_Message" Type="OutArgument(x:String)" />
+    <x:Property Name="out_InvoiceNumber" Type="OutArgument(x:String)" />
+    <x:Property Name="out_FinalInvoiceStatus" Type="OutArgument(x:String)" />
+    <x:Property Name="out_TaxAmount" Type="OutArgument(x:Decimal)" />
+    <x:Property Name="out_TotalAmount" Type="OutArgument(x:Decimal)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Oracle TC-02 Create and Validate AP Invoice" sap:VirtualizedContainerService.HintSize="724,11505" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="invoiceNumber" />
+      <Variable x:TypeArguments="x:String" Default="Input validation" Name="failureStep" />
+      <Variable x:TypeArguments="x:String" Name="workflowMessage" />
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="workflowPassed" />
+      <Variable x:TypeArguments="s:DateTime" Name="effectiveExpectedTermsDate" />
+      <Variable x:TypeArguments="s:DateTime" Name="effectiveExpectedInvoiceDate" />
+      <Variable x:TypeArguments="x:Boolean" Name="createInvoiceAvailable" />
+      <Variable x:TypeArguments="x:Boolean" Name="lineVisible" />
+      <Variable x:TypeArguments="x:Boolean" Name="workbenchReturned" />
+      <Variable x:TypeArguments="x:Boolean" Name="validatedReady" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="statusPollIndex" />
+      <Variable x:TypeArguments="x:String" Name="observedBusinessUnit" />
+      <Variable x:TypeArguments="x:String" Name="observedInvoiceDate" />
+      <Variable x:TypeArguments="x:String" Name="observedTermsDate" />
+      <Variable x:TypeArguments="x:String" Name="observedPaymentTerms" />
+      <Variable x:TypeArguments="x:String" Name="observedSupplierNumber" />
+      <Variable x:TypeArguments="x:String" Name="observedSupplierSite" />
+      <Variable x:TypeArguments="x:String" Name="observedLegalEntity" />
+      <Variable x:TypeArguments="x:String" Name="observedHeaderAmountText" />
+      <Variable x:TypeArguments="x:Decimal" Name="observedHeaderAmount" />
+      <Variable x:TypeArguments="x:String" Name="observedInvoiceType" />
+      <Variable x:TypeArguments="x:String" Name="observedCurrency" />
+      <Variable x:TypeArguments="x:String" Name="observedLineAmountText" />
+      <Variable x:TypeArguments="x:Decimal" Name="observedLineAmount" />
+      <Variable x:TypeArguments="x:String" Name="observedDistributionSet" />
+      <Variable x:TypeArguments="x:String" Name="observedInvoiceNumber" />
+      <Variable x:TypeArguments="x:String" Name="observedInitialStatus" />
+      <Variable x:TypeArguments="x:String" Name="observedFinalStatus" />
+      <Variable x:TypeArguments="x:String" Name="observedTaxText" />
+      <Variable x:TypeArguments="x:Decimal" Name="observedTaxAmount" />
+      <Variable x:TypeArguments="x:String" Name="observedTotalText" />
+      <Variable x:TypeArguments="x:Decimal" Name="observedTotalAmount" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Create and validate one AP invoice" sap:VirtualizedContainerService.HintSize="724,11141" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Create and validate invoice" sap:VirtualizedContainerService.HintSize="722,10934" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Set effective Terms Date" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:DateTime">[effectiveExpectedTermsDate]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:DateTime">[DateTime.Today]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Set effective Invoice Date" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="Assign_25">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:DateTime">[effectiveExpectedInvoiceDate]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:DateTime">[DateTime.Today]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Generate unique invoice number" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="Assign_26">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[invoiceNumber]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[in_InvoiceNumberPattern.Replace("&lt;ddMMyy&gt;", DateTime.Now.ToString("ddMMyy")).Replace("&lt;HHmmss&gt;", DateTime.Now.ToString("HHmmss"))]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[String.IsNullOrWhiteSpace(invoiceNumber)]" DisplayName="Reject empty invoice number" sap:VirtualizedContainerService.HintSize="688,337" sap2010:WorkflowViewState.IdRef="If_18">
+            <If.Then>
+              <Sequence DisplayName="Reject invalid invoice number" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw DisplayName="Throw invalid invoice number" Exception="[New BusinessRuleException(&quot;Invoice number pattern produced an empty value&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </Sequence>
+            </If.Then>
+          </If>
+          <Assign DisplayName="Set navigation failure step" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="Assign_27">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Navigate to Invoice Workbench"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Chrome Create Invoice" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="688,9447" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="d34e7a15-3ca0-434f-a054-e12466ad921a" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="686,9191" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Navigate - Payables group" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="nPVopGGEeEO1LajOuWp3kw" DesignTimeRectangle="2626, 303, 66, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Payables' role='link' /&gt;" Guid="1e946b4f-2459-4e5a-997d-3a9e7956f601" InformativeScreenshot="7d4af67e7f4036c11f06c2feb4a0b928.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/EhkoTYcHGE-W0pmta_QSwQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Oracle Fusion Cloud Applications - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Navigate - Invoices" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="HxQGbHasOUKvYeRwWrWE5Q" DesignTimeRectangle="639, 507, 48, 55" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Invoices' role='link' /&gt;" Guid="8411f77d-c331-4f1e-875b-8adc20db070b" InformativeScreenshot="f64ef803b3a08a190e2535925347ae55.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/aWeHkGyINE6oWIEMN9KhDA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Oracle Fusion Cloud Applications - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Verify Invoice Workbench is ready" Exists="[createInvoiceAvailable]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="652,525" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Timeout="60" Version="V5">
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable ContentHash="D9WSzB8LtUqwDRleOmfgEw" DesignTimeRectangle="815, 173, 78, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Create Invoice' role='link' /&gt;" Guid="70e48c04-0eb0-47ab-a104-b610dc69c36a" InformativeScreenshot="ebbc1f99ec3bdbcee18e4735024cf1fe.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/rTJV4YiybUeo8dTqkF-rbQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Invoice Workbench - Invoices - Oracle Fusion Cloud Applications *' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <If Condition="[Not createInvoiceAvailable]" DisplayName="Fail when Invoice Workbench is not ready" sap:VirtualizedContainerService.HintSize="652,337" sap2010:WorkflowViewState.IdRef="If_19">
+                    <If.Then>
+                      <Sequence DisplayName="Invoice Workbench unavailable" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw Invoice Workbench readiness failure" Exception="[New BusinessRuleException(&quot;Invoice Workbench did not become ready&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign DisplayName="Set create form failure step" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="Assign_28">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Open Create Invoice"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Create Invoice" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="D9WSzB8LtUqwDRleOmfgEw" DesignTimeRectangle="815, 173, 78, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Create Invoice' role='link' /&gt;" Guid="70e48c04-0eb0-47ab-a104-b610dc69c36a" InformativeScreenshot="ebbc1f99ec3bdbcee18e4735024cf1fe.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/rTJV4YiybUeo8dTqkF-rbQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Invoice Workbench - Invoices - Oracle Fusion Cloud Applications *' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Assign DisplayName="Set header failure step" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="Assign_29">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Enter and verify invoice header"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Business Unit and Tab" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Text="[in_BusinessUnit &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="lBeMJpcN_U-WkMjZgvnwIw" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="25a6666c-745e-4016-baf2-b7b028524f54" InformativeScreenshot="e2222a3b4d22f8bde92b70f4bd4cca94.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/EEq4AluPfESjDyMeZCF_ag" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Business Unit autocomplete field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NGetText DisplayName="Read accepted Business Unit" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedBusinessUnit]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="lBeMJpcN_U-WkMjZgvnwIw" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="25a6666c-745e-4016-baf2-b7b028524f54" InformativeScreenshot="e2222a3b4d22f8bde92b70f4bd4cca94.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/EEq4AluPfESjDyMeZCF_ag" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Business Unit autocomplete field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If Condition="[Not observedBusinessUnit.Trim.Equals(in_BusinessUnit.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Business Unit" sap:VirtualizedContainerService.HintSize="652,337" sap2010:WorkflowViewState.IdRef="If_20">
+                    <If.Then>
+                      <Sequence DisplayName="Business Unit mismatch" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw Business Unit mismatch" Exception="[New BusinessRuleException(&quot;Business Unit was not accepted&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <uix:NGetText DisplayName="Read Invoice Date" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedInvoiceDate]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="zOmuQ9_gW0WgsCcQmE52yw" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="5d82690c-ad7d-488f-9246-f2866b49b738" InformativeScreenshot="09c563099771dfc5152c60da23611bd4.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/FGfKUi3ZlESdHJEuRdXjDA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the invoice date text box labeled Date in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Read Terms Date" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedTermsDate]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="zfsiK84E1Eez39LLIqpeqw" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="a5f53e7c-c211-48bc-841b-d3b700edeac6" InformativeScreenshot="ddd5e74045f54f0786eb19c936b88af9.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/BdLvvNJkLUWHMVki65pu5w" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Terms Date text box in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Read Payment Terms" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedPaymentTerms]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="Ut4V_MY0NEefPiwgoGxGGA" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="c7d16104-e412-41a1-afa0-69d087eb1297" InformativeScreenshot="14854aecaadd4552e548d50e9769afaa.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/EfsuYluDdEChu-UhhZLhWw" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Payment Terms autocomplete field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If Condition="[observedInvoiceDate.Trim &lt;&gt; effectiveExpectedInvoiceDate.ToString(&quot;MM/dd/yy&quot;)]" DisplayName="Verify Invoice Date" sap:VirtualizedContainerService.HintSize="652,183" sap2010:WorkflowViewState.IdRef="If_21">
+                    <If.Then>
+                      <Sequence DisplayName="Invoice Date mismatch" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Throw DisplayName="Throw Invoice Date mismatch" Exception="[New BusinessRuleException(&quot;Invoice Date did not match the expected local date&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[observedTermsDate.Trim &lt;&gt; effectiveExpectedTermsDate.ToString(&quot;MM/dd/yy&quot;)]" DisplayName="Verify Terms Date" sap:VirtualizedContainerService.HintSize="652,183" sap2010:WorkflowViewState.IdRef="If_22">
+                    <If.Then>
+                      <Sequence DisplayName="Terms Date mismatch" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Throw DisplayName="Throw Terms Date mismatch" Exception="[New BusinessRuleException(&quot;Terms Date did not match the expected local date&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[Not observedPaymentTerms.Trim.Equals(&quot;Immediate&quot;.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Payment Terms" sap:VirtualizedContainerService.HintSize="652,183" sap2010:WorkflowViewState.IdRef="If_23">
+                    <If.Then>
+                      <Sequence DisplayName="Payment Terms mismatch" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Throw DisplayName="Throw Payment Terms mismatch" Exception="[New BusinessRuleException(&quot;Payment Terms did not match the expected value&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Supplier and Tab" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Text="[in_SupplierName &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="35BpQG1_AEijMfnQQpUgaQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="a24fba92-3978-48de-9968-b9074ce25027" InformativeScreenshot="89cc118847a8fdcc12f7629ccc5dbeba.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/u-NJaUNni02SCtbMMpyCsA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Supplier autocomplete field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NGetText DisplayName="Read Supplier Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedSupplierNumber]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="w6Tc2VuZ1kKuDiGU60D1qQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="a5e63d5f-6d6c-437f-8746-db5db491d99d" InformativeScreenshot="583b5d263d411245c11f7af1b70b9b2f.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/5rdCvcQ7zU-6_EfJM75QxQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Supplier Number displayed in the Invoice Header section beside the Supplier field" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Read Supplier Site" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedSupplierSite]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="J3XI3EAKCEy5Ep9zurU96A" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="4060c3fb-e805-4bba-8690-ec7f4346e50d" InformativeScreenshot="6fd29456225bf604942aff74e71c5d83.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/sWIn9IyJwEOktIt4tTZ0wA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Supplier Site autocomplete field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Read Legal Entity" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedLegalEntity]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="CsTCNqM2B0K09dVT-Jxkzg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="d7ad0ba8-2979-49de-bbfb-20ac16e0e83f" InformativeScreenshot="7e0b91c7b3e41b241f98a8fa4b2513e1.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/ZPMTjwVIaUuV8OkO990d-Q" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Legal Entity dropdown value in the Invoice Header section below Supplier Site" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If Condition="[Not observedSupplierNumber.Trim.Equals(&quot;1288&quot;.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Supplier Number" sap:VirtualizedContainerService.HintSize="652,337" sap2010:WorkflowViewState.IdRef="If_15">
+                    <If.Then>
+                      <Sequence DisplayName="Supplier Number mismatch" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw Supplier Number mismatch" Exception="[New BusinessRuleException(&quot;Supplier Number did not match the expected value&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_19" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[Not observedSupplierSite.Trim.Equals(&quot;ABC US1&quot;.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Supplier Site" sap:VirtualizedContainerService.HintSize="652,337" sap2010:WorkflowViewState.IdRef="If_16">
+                    <If.Then>
+                      <Sequence DisplayName="Supplier Site mismatch" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw Supplier Site mismatch" Exception="[New BusinessRuleException(&quot;Supplier Site did not match the expected value&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_20" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[Not observedLegalEntity.Trim.Equals(&quot;US1 Legal Entity&quot;.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Legal Entity" sap:VirtualizedContainerService.HintSize="652,183" sap2010:WorkflowViewState.IdRef="If_17">
+                    <If.Then>
+                      <Sequence DisplayName="Legal Entity mismatch" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                        <Throw DisplayName="Throw Legal Entity mismatch" Exception="[New BusinessRuleException(&quot;Legal Entity did not match the expected value&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_21" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign DisplayName="Set header failure step after supplier" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Enter invoice values"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Invoice Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="HardwareEvents" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Text="[invoiceNumber]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="1_RVPCbq50eBhvXsAD1Kzg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="07f64910-a441-4011-ae9d-33a9f6df0e4c" InformativeScreenshot="926d8e55823b25239d7e5c61f32b2f2a.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/UyHFQtPlu0a79H1G5aQ0dQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the invoice number text box labeled Number in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Header Amount" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Text="[in_HeaderAmount.ToString(&quot;F2&quot;, Globalization.CultureInfo.InvariantCulture)]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="gLPCZ7PBUEOc-pavcXpu1w" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="62eef799-e2e9-4f78-8905-df7c77882464" InformativeScreenshot="6846cc0f8de0180f3fd6700c08e3fd68.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/mgHZdEGARUuUE8cYkmHZWg" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the required editable Amount field beside the Invoice Currency dropdown in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NGetText DisplayName="Read Header Amount" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedHeaderAmountText]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="gLPCZ7PBUEOc-pavcXpu1w" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="62eef799-e2e9-4f78-8905-df7c77882464" InformativeScreenshot="6846cc0f8de0180f3fd6700c08e3fd68.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/mgHZdEGARUuUE8cYkmHZWg" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the required editable Amount field beside the Invoice Currency dropdown in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <Assign DisplayName="Parse Header Amount" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Decimal">[observedHeaderAmount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(observedHeaderAmountText, Globalization.NumberStyles.Any, Globalization.CultureInfo.CurrentCulture)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[Math.Abs(observedHeaderAmount - in_HeaderAmount) &gt; 0.01D]" DisplayName="Verify Header Amount" sap:VirtualizedContainerService.HintSize="652,183" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="Header Amount mismatch" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <Throw DisplayName="Throw Header Amount mismatch" Exception="[New BusinessRuleException(&quot;Header Amount did not match the expected value&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Invoice Description" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,246" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="HardwareEvents" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Text="[in_InvoiceDescription]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="vu_DrEFY10K_VYjvNmXhLg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="33f872e6-9443-478d-ab4b-8d11033d7f25" InformativeScreenshot="9478668e2bba1c4f2843486744e441c2.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/ZDONiH_pqk-dwrYAEZc97g" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the multiline Description text box in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NSelectItem DisplayName="Set Invoice Type" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_InvoiceType]" Version="V5">
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable ContentHash="XakfP78EYkqLA7kuLjAspA" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="d475282e-39e8-4ec9-957c-4f7791a39cae" InformativeScreenshot="85c8b6d35ccc45c8dc032a7f3e89df3c.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/SIJJxuLQ2kyqrtiKh0PkQA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Type dropdown below the required Amount field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <uix:NSelectItem DisplayName="Set Currency" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[in_Currency]" Version="V5">
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable ContentHash="dn_wzxfpj0etQ_cU5_CZ7Q" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="3d04ab8f-698b-424f-be5a-1b8e4b8372db" InformativeScreenshot="804b9bffe9010b30d264f4b29bf8fe7d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Oy118VHPVUijb6EOGX9odw" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Invoice Currency dropdown beside the required Amount field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <uix:NGetText DisplayName="Read Invoice Type" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedInvoiceType]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="XakfP78EYkqLA7kuLjAspA" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="d475282e-39e8-4ec9-957c-4f7791a39cae" InformativeScreenshot="85c8b6d35ccc45c8dc032a7f3e89df3c.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/SIJJxuLQ2kyqrtiKh0PkQA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Type dropdown below the required Amount field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Read Currency" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_10" TextString="[observedCurrency]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="dn_wzxfpj0etQ_cU5_CZ7Q" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="3d04ab8f-698b-424f-be5a-1b8e4b8372db" InformativeScreenshot="804b9bffe9010b30d264f4b29bf8fe7d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Oy118VHPVUijb6EOGX9odw" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Invoice Currency dropdown beside the required Amount field in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If Condition="[Not observedInvoiceType.Trim.Equals(in_InvoiceType.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Invoice Type" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence DisplayName="Invoice Type mismatch" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Throw DisplayName="Throw Invoice Type mismatch" Exception="[New BusinessRuleException(&quot;Invoice Type did not match the expected value&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[Not observedCurrency.Trim.Equals(in_Currency.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Currency" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence DisplayName="Currency mismatch" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Throw DisplayName="Throw Currency mismatch" Exception="[New BusinessRuleException(&quot;Currency did not match the expected value&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_9" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign DisplayName="Set line failure step" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Enter and verify invoice line"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Expand Invoice Lines" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="Gn9jmDt-OEiN0KIxG0QrHQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="5fb45fda-fb6c-4b6b-b842-a147f8a6d51d" InformativeScreenshot="98412bf53c69c152f0d98eb2973bdb82.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/8KyGiGY_zkWZaCft8H0Alg" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Expand Lines button for the Lines section of the invoice form" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Verify Invoice Lines are visible" Exists="[lineVisible]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" Timeout="30" Version="V5">
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable ContentHash="ucuhmCZkJEKmKKnwiGzFwg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="e58b20a6-4ad8-46f9-a33a-389d663af990" InformativeScreenshot="77bc46ec7df2b02ceff0989e907a06c3.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/sfaa9NB-d0y3IWsdqXIioQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the editable Amount field in the first invoice line row under the Amount column" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <If Condition="[Not lineVisible]" DisplayName="Fail when Invoice Lines are unavailable" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <Sequence DisplayName="Invoice Lines unavailable" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Throw DisplayName="Throw Invoice Lines readiness failure" Exception="[New BusinessRuleException(&quot;Invoice Lines did not become visible&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_10" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Invoice Line Amount" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" Text="[in_LineAmount.ToString(&quot;F2&quot;, Globalization.CultureInfo.InvariantCulture)]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="ucuhmCZkJEKmKKnwiGzFwg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="e58b20a6-4ad8-46f9-a33a-389d663af990" InformativeScreenshot="77bc46ec7df2b02ceff0989e907a06c3.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/sfaa9NB-d0y3IWsdqXIioQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the editable Amount field in the first invoice line row under the Amount column" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NGetText DisplayName="Read Invoice Line Amount" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedLineAmountText]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="ucuhmCZkJEKmKKnwiGzFwg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="e58b20a6-4ad8-46f9-a33a-389d663af990" InformativeScreenshot="77bc46ec7df2b02ceff0989e907a06c3.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/sfaa9NB-d0y3IWsdqXIioQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the editable Amount field in the first invoice line row under the Amount column" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <Assign DisplayName="Parse Invoice Line Amount" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Decimal">[observedLineAmount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(observedLineAmountText, Globalization.NumberStyles.Any, Globalization.CultureInfo.CurrentCulture)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NGetText DisplayName="Read Distribution Set" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedDistributionSet]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="SRGdS9bEFkWpSIf9scE3sg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="d08546b3-b751-409f-8db7-fe77c2cc6144" InformativeScreenshot="c1cde2f538b884ec28c661724c4ad76d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/QIK8zvX1bkGhjACQCTSx-Q" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Distribution Set dropdown in the first invoice line row under the Distribution Set column" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If Condition="[Math.Abs(observedLineAmount - in_LineAmount) &gt; 0.01D]" DisplayName="Verify Invoice Line Amount" sap:VirtualizedContainerService.HintSize="652,337" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Then>
+                      <Sequence DisplayName="Invoice Line Amount mismatch" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw Invoice Line Amount mismatch" Exception="[New BusinessRuleException(&quot;Invoice line amount did not match the expected value&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_11" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[Not observedDistributionSet.Trim.Contains(&quot;Contractor Expense&quot;.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify Distribution Set" sap:VirtualizedContainerService.HintSize="652,337" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If.Then>
+                      <Sequence DisplayName="Distribution Set mismatch" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw Distribution Set mismatch" Exception="[New BusinessRuleException(&quot;Distribution Set did not match the expected value; no LOV change was attempted&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_12" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign DisplayName="Set save failure step" sap:VirtualizedContainerService.HintSize="652,175" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Save invoice"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Save Invoice" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,194" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="PWqWNZqiOk6yydAKkRkXVw" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="5a7c5968-3a0d-4cb7-b714-bb4594cd0d90" InformativeScreenshot="154bca437313de75c4f89b9a690f1580.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/8YGUg02YrkKJhk6pWas2BQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Save button in the Create Invoice form header toolbar" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NGetText DisplayName="Read saved Invoice Number" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedInvoiceNumber]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="1_RVPCbq50eBhvXsAD1Kzg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="07f64910-a441-4011-ae9d-33a9f6df0e4c" InformativeScreenshot="926d8e55823b25239d7e5c61f32b2f2a.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/UyHFQtPlu0a79H1G5aQ0dQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the invoice number text box labeled Number in the Invoice Header section" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Read initial Invoice Status" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="652,143" sap2010:WorkflowViewState.IdRef="NGetText_14" ScopeIdentifier="d34e7a15-3ca0-434f-a054-e12466ad921a" TextString="[observedInitialStatus]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="YfMn9rVy5U6yMn2Tkka3eQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="7b863d41-d40d-4a6c-a339-814fee0e4270" InformativeScreenshot="6e91c4995e288b0e11404abd8b900fbc.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Bmf8A-7NIEmees1woRJS7A" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the current invoice lifecycle status link beside the status icon in the record header, directly below the invoice title" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <If Condition="[Not observedInvoiceNumber.Contains(invoiceNumber)]" DisplayName="Verify saved Invoice Number" sap2010:WorkflowViewState.IdRef="If_7">
+                    <If.Then>
+                      <Sequence DisplayName="Invoice Number mismatch" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <Throw DisplayName="Throw Invoice Number mismatch" Exception="[New BusinessRuleException(&quot;Saved invoice number did not match the generated number&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_13" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[Not observedInitialStatus.Trim.Equals(&quot;Not validated&quot;.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Verify initial Invoice Status" sap2010:WorkflowViewState.IdRef="If_8">
+                    <If.Then>
+                      <Sequence DisplayName="Initial status mismatch" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <Throw DisplayName="Throw initial status mismatch" Exception="[New BusinessRuleException(&quot;Initial invoice status did not match the expected value&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_14" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign DisplayName="Set validation failure step" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Validate invoice"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Invoice Actions" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="wt0LXiGZv0y3iqPeCaPQcg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="29033806-e32c-44e8-b3a4-41a3c64b3442" InformativeScreenshot="c5b6e2e465a1f4fab827d11119f9adff.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/OjceZZYL4E-_wIfoyxM4JQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Invoice Actions menu in the Create Invoice form header toolbar" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Validate Invoice" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="Jk__2Qjow0K3biQFBA4jOw" DesignTimeRectangle="413, 242, 319, 30" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Validate Ctrl+Alt+V' role='menu item' /&gt;" Guid="2b61e461-6ee1-44ab-adf4-3cd53a46d1f4" InformativeScreenshot="a19cc0660008de010172912f912c275d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/PzEq9BAtv06w88KWikyMDg" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Oracle Fusion Cloud Applications - Google Chrome' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[Not validatedReady AndAlso statusPollIndex &lt; 30]" DisplayName="Poll for Validated status" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1" MaxIterations="30">
+                    <ui:InterruptibleDoWhile.Body>
+                      <Sequence DisplayName="Poll status" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <uix:NGetText DisplayName="Read current Invoice Status" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_15" TextString="[observedFinalStatus]" Version="V5">
+                          <uix:NGetText.Target>
+                            <uix:TargetAnchorable ContentHash="YfMn9rVy5U6yMn2Tkka3eQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="7b863d41-d40d-4a6c-a339-814fee0e4270" InformativeScreenshot="6e91c4995e288b0e11404abd8b900fbc.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Bmf8A-7NIEmees1woRJS7A" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the current invoice lifecycle status link beside the status icon in the record header, directly below the invoice title" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NGetText.Target>
+                        </uix:NGetText>
+                        <If Condition="[observedFinalStatus.Trim.Equals(&quot;Validated&quot;.Trim, StringComparison.OrdinalIgnoreCase)]" DisplayName="Set validated status flag" sap2010:WorkflowViewState.IdRef="If_9">
+                          <If.Then>
+                            <Sequence DisplayName="Validated status found" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <Assign DisplayName="Mark validation ready" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[validatedReady]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                        </If>
+                        <If Condition="[Not validatedReady]" DisplayName="Increment validation poll" sap2010:WorkflowViewState.IdRef="If_10">
+                          <If.Then>
+                            <Sequence DisplayName="Continue polling" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <Assign DisplayName="Increment poll index" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[statusPollIndex]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[statusPollIndex + 1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Delay DisplayName="Wait before status poll" Duration="00:00:02" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                            </Sequence>
+                          </If.Then>
+                        </If>
+                      </Sequence>
+                    </ui:InterruptibleDoWhile.Body>
+                  </ui:InterruptibleDoWhile>
+                  <If Condition="[Not validatedReady]" DisplayName="Fail when validation does not settle" sap2010:WorkflowViewState.IdRef="If_11">
+                    <If.Then>
+                      <Sequence DisplayName="Validation timeout" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <Throw DisplayName="Throw validation timeout" Exception="[New BusinessRuleException(&quot;Invoice validation did not settle to the expected status&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_15" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <uix:NGetText DisplayName="Read Tax Amount" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_16" TextString="[observedTaxText]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="V2hZZUK87EC4b7hTp-wlvw" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="b685ab2c-7707-4d0b-b3d7-3a41e3765aa4" InformativeScreenshot="c223512b9e55ea49098d308462a3bcb2.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/FEj0U99-a0ixabo1A7uvxA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Oracle Fusion Cloud Applications - Google Chrome' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Tax amount value in the Totals section, immediately associated with the Tax label" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Read Total Amount" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_17" TextString="[observedTotalText]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="hUN1drR9nECYJbu9VOE2PQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="7b6ed391-a9b6-4757-8be4-a393bc5068bf" InformativeScreenshot="a43f4342c279322eed90d7db3b231899.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/MsxXjee7mkOJCXySBm2GdQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Oracle Fusion Cloud Applications - Google Chrome' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Total amount value in the Totals section, immediately associated with the Total label" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <Assign DisplayName="Parse Tax Amount" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Decimal">[observedTaxAmount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(observedTaxText, Globalization.NumberStyles.Any, Globalization.CultureInfo.CurrentCulture)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Parse Total Amount" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Decimal">[observedTotalAmount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(observedTotalText, Globalization.NumberStyles.Any, Globalization.CultureInfo.CurrentCulture)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[Math.Abs(observedTaxAmount - 112.50D) &gt; 0.01D]" DisplayName="Verify Tax Amount" sap2010:WorkflowViewState.IdRef="If_12">
+                    <If.Then>
+                      <Sequence DisplayName="Tax mismatch" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <Throw DisplayName="Throw Tax mismatch" Exception="[New BusinessRuleException(&quot;Tax Amount did not match the expected value&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_16" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <If Condition="[Math.Abs(observedTotalAmount - 1362.50D) &gt; 0.01D OrElse Math.Abs(observedTotalAmount - (in_LineAmount + observedTaxAmount)) &gt; 0.01D]" DisplayName="Verify Total Amount" sap2010:WorkflowViewState.IdRef="If_13">
+                    <If.Then>
+                      <Sequence DisplayName="Total mismatch" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                        <Throw DisplayName="Throw Total mismatch" Exception="[New BusinessRuleException(&quot;Total Amount did not match the expected calculation&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_17" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign DisplayName="Set close failure step" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[failureStep]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Save and Close invoice"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Save and Close Invoice" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="aJjPhqgw5kSgztv9YUwyFg" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" Guid="8c844879-b8d6-4837-a1db-01c260b67285" InformativeScreenshot="79a323c8520f42c44b3adacde621fec0.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/dqmKb23wnUyGlvRLo-SY-g" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="the Save and Close button in the Create Invoice form header toolbar" SemanticSelectorFindMethod="Image" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Verify Invoice Workbench returned" Exists="[workbenchReturned]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_3" Timeout="60" Version="V5">
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable ContentHash="D9WSzB8LtUqwDRleOmfgEw" DesignTimeRectangle="815, 173, 78, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Create Invoice' role='link' /&gt;" Guid="70e48c04-0eb0-47ab-a104-b610dc69c36a" InformativeScreenshot="ebbc1f99ec3bdbcee18e4735024cf1fe.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/rTJV4YiybUeo8dTqkF-rbQ" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Invoice Workbench - Invoices - Oracle Fusion Cloud Applications *' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <If Condition="[Not workbenchReturned]" DisplayName="Fail when Invoice Workbench does not return" sap2010:WorkflowViewState.IdRef="If_14">
+                    <If.Then>
+                      <Sequence DisplayName="Invoice Workbench return failure" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <Throw DisplayName="Throw Invoice Workbench return failure" Exception="[New BusinessRuleException(&quot;Save and Close did not return to Invoice Workbench&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_18" />
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                  <Assign DisplayName="Set workflow passed" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[workflowPassed]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Set workflow success message" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[workflowMessage]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Invoice " &amp; invoiceNumber &amp; " saved, validated, and closed successfully"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+              </ActivityFunc>
+            </uix:NApplicationCard.OCREngine>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="2264, 791, 945, 1060" ContentHash="pfX4qoP7kUaznsr5SYmXkQ" FilePath="C:\Program Files\Google\Chrome\Application\chrome.exe" InformativeScreenshot="d6c8c0cdb5900b192d40f2fb00843f04.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Create Invoice - Invoices - Oracle Fusion Cloud Applications - G*' /&gt;" Version="V3">
+                <uix:TargetApp.SapInfo>
+                  <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="None" />
+                </uix:TargetApp.SapInfo>
+              </uix:TargetApp>
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Return invoice number" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="Assign_14">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_InvoiceNumber]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[invoiceNumber]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Return final status" sap:VirtualizedContainerService.HintSize="688,175" sap2010:WorkflowViewState.IdRef="Assign_15">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_FinalInvoiceStatus]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[observedFinalStatus]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Return tax amount" sap2010:WorkflowViewState.IdRef="Assign_16">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Decimal">[out_TaxAmount]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Decimal">[observedTaxAmount]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Return total amount" sap2010:WorkflowViewState.IdRef="Assign_17">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Decimal">[out_TotalAmount]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Decimal">[observedTotalAmount]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="businessException" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Business failure" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <ui:LogMessage DisplayName="Log business failure" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[failureStep &amp; &quot;: &quot; &amp; businessException.Message]" />
+              <Assign DisplayName="Return business failure status" sap2010:WorkflowViewState.IdRef="Assign_18">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_Passed]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Return business failure message" sap2010:WorkflowViewState.IdRef="Assign_19">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[workflowMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[failureStep &amp; ": " &amp; businessException.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="systemException" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="System failure" sap2010:WorkflowViewState.IdRef="Sequence_26">
+              <ui:LogMessage DisplayName="Log system failure" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[failureStep &amp; &quot;: &quot; &amp; systemException.ToString()]" />
+              <Assign DisplayName="Return system failure status" sap2010:WorkflowViewState.IdRef="Assign_20">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_Passed]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="Return system failure message" sap2010:WorkflowViewState.IdRef="Assign_21">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[workflowMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[failureStep &amp; ": system failure"]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <Assign DisplayName="Return workflow pass flag" sap:VirtualizedContainerService.HintSize="724,175" sap2010:WorkflowViewState.IdRef="Assign_22">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[out_Passed]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[workflowPassed]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Return workflow message" sap:VirtualizedContainerService.HintSize="724,166" sap2010:WorkflowViewState.IdRef="Assign_23">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_Message]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[workflowMessage]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

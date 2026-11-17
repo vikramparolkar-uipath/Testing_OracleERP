@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Oracle Fusion Home",
+  "Description": "Oracle Fusion Cloud Home page used by TC-01",
+  "Type": "Screen",
+  "Id": "RHQMhyGd8EaK4rqDPSh1cA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RH-py2e2SUCEeU-QfBPing",
+  "Created": "2026-10-16T02:34:01.4650538Z",
+  "Updated": "2026-11-16T21:44:14.9434573Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

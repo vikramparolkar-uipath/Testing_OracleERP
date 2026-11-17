@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Actions Menu",
+  "Description": "Invoice Actions menu link in the invoice page toolbar",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "XfsJJmO8xk-Xwa0_ASw3QQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/XfsJJmO8xk-Xwa0_ASw3QQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:32.0918415Z",
+  "Updated": "2026-11-16T21:57:32.0918415Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

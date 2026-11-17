@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Invoices Tile",
+  "Description": "Invoices tile under the Payables group on the home page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "VwRxazyM-kG-VzN0xj8FCw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/VwRxazyM-kG-VzN0xj8FCw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:37:54.4279104Z",
+  "Updated": "2026-11-17T00:24:20.8325594Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

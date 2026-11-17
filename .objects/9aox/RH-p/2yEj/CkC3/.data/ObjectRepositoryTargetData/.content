@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="sIjM1g-B5kerJxzj_lcGgw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1088, 746, 35, 28" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ta2:*:kf1SEl' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' colName='Distribution Combination ID' role='element' tag='TABLE' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:colName='fuzzy' fuzzylevel:colName='0.0' /&gt;&lt;webctrl tag='TR' visibleinnertext='SearchReset |OKCancel&amp;#x9;' matching:visibleinnertext='fuzzy' fuzzylevel:visibleinnertext='0.0' /&gt;&lt;webctrl parentclass='*AFResizable*' parentid='*_kffSearchDialog::_fcc*' tag='SPAN' fuzzylevel:parentclass='0.0' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl class='*AFTextOnly*' colName='SearchReset |OKCancel' type='' tag='BUTTON' aaname='OK' fuzzylevel:class='0.0' matching:colName='fuzzy' fuzzylevel:colName='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='OK' /&gt;" Guid="82b8f18f-28d0-478b-b56e-2e3163990c5a" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="1106, 752, 9, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-relative-id='pt1:_FOr1:_FONSr2:MAnt2:pm1:r1:ap1:at2:_ATp:ta2:kf1SEl' tag='BUTTON' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='SPAN' type='' class='xvc' aaname='K' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='K' /&gt;" Guid="e3f14020-f05f-48f4-b66e-12c3ab9e95ac" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="9067a0a3b626d198118539b46d9ed94f.jpg" xmlns="">0J05AUUGJaEiclBzoEOIdvQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

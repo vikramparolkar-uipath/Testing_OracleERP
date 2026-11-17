@@ -1,0 +1,248 @@
+<Activity mc:Ignorable="sap2010" x:Class="Workflows_AP_AP_OpenTask" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TaskName" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>Testing_OracleERP</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_OracleERP</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AP - Open Invoices task" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Open task" sap2010:WorkflowViewState.IdRef="Sequence_14">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="visible" />
+        <Variable x:TypeArguments="x:Boolean" Name="ready" />
+      </Sequence.Variables>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="bfc8384e-376b-4e05-8fb5-2811f54e039d" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
+              <If Condition="[in_TaskName.Trim.Equals(&quot;Create Invoice&quot;, StringComparison.OrdinalIgnoreCase)]" DisplayName="Create Invoice" sap2010:WorkflowViewState.IdRef="If_6">
+                <If.Then>
+                  <Sequence DisplayName="Create Invoice - then" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <Delay DisplayName="Let the work area settle" Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                    <uix:NClick ActivateBefore="False" ClickType="Single" ContinueOnError="True" DisplayName="Try Create Invoice task (panel may already be open)" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="8" Version="V5">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable ContentHash="Nw7w8czE7U6w8pxWso1vTw" DesignTimeRectangle="1635, 174, 77, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTRaT*' tag='A' aaname='Create Invoice' /&gt;" Guid="2c361df9-f159-4317-9c0a-6e709f3b66ac" InformativeScreenshot="37140697c94315572c0339643963d882.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/-TF4njf0wUu-QsnC2auLeA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NCheckState CheckVisibility="True" DisplayName="Did Create Invoice form open" Exists="[ready]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="10" Version="V5">
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable ContentHash="JhOaqNtarEOJQMLaqbO1_A" DesignTimeRectangle="981, 280, 176, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i2::content' tag='INPUT' aaname='Number' /&gt;" Guid="80f44605-c949-4f05-b29f-c1ae916fb41a" InformativeScreenshot="dc6e94e1047db5453899fcb2664c4498.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/68yP1XdTmUiivbsoBrK5UA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="928, 287, 46, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='i2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sz' aaname='Number' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Number' /&gt;" Guid="ad7db021-46a2-4af8-bc36-9ec7887619e0" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                    <If Condition="[Not ready]" DisplayName="Open via Tasks panel" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Sequence DisplayName="Open via Tasks panel - then" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Open Tasks panel" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+                            <ui:RetryScope.ActivityBody>
+                              <ActivityAction>
+                                <Sequence DisplayName="Open Tasks panel" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Tasks panel" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Version="V5">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable ContentHash="8-Qfe0q3uUK7SuOHTqQldg" DesignTimeRectangle="1881, 302, 42, 14" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTsdiitemNode_InvoiceWorkbench_FndTasksList::disAcr' tag='A' /&gt;" Guid="b10988f4-96a2-4384-91c5-40bfd7efe53d" InformativeScreenshot="1f5d4139174257932bf4df9ab00b1f60.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/boAMkHcrjkWaiL6BcsPohQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:RetryScope.ActivityBody>
+                            <ui:RetryScope.Condition>
+                              <ActivityFunc x:TypeArguments="x:Boolean" />
+                            </ui:RetryScope.Condition>
+                          </ui:RetryScope>
+                          <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Create Invoice task" Exists="[visible]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="15" Version="V5">
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable ContentHash="Nw7w8czE7U6w8pxWso1vTw" DesignTimeRectangle="1635, 174, 77, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTRaT*' tag='A' aaname='Create Invoice' /&gt;" Guid="2c361df9-f159-4317-9c0a-6e709f3b66ac" InformativeScreenshot="37140697c94315572c0339643963d882.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/-TF4njf0wUu-QsnC2auLeA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <Delay DisplayName="Let the Tasks panel finish sliding in" Duration="00:00:02" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                          <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Click Create Invoice task" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:02">
+                            <ui:RetryScope.ActivityBody>
+                              <ActivityAction>
+                                <Sequence DisplayName="Click Create Invoice task" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Create Invoice task" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Version="V5">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable ContentHash="Nw7w8czE7U6w8pxWso1vTw" DesignTimeRectangle="1635, 174, 77, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTRaT*' tag='A' aaname='Create Invoice' /&gt;" Guid="2c361df9-f159-4317-9c0a-6e709f3b66ac" InformativeScreenshot="37140697c94315572c0339643963d882.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/-TF4njf0wUu-QsnC2auLeA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:RetryScope.ActivityBody>
+                            <ui:RetryScope.Condition>
+                              <ActivityFunc x:TypeArguments="x:Boolean" />
+                            </ui:RetryScope.Condition>
+                          </ui:RetryScope>
+                          <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Create Invoice form" Exists="[ready]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="60" Version="V5">
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable ContentHash="JhOaqNtarEOJQMLaqbO1_A" DesignTimeRectangle="981, 280, 176, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i2::content' tag='INPUT' aaname='Number' /&gt;" Guid="80f44605-c949-4f05-b29f-c1ae916fb41a" InformativeScreenshot="dc6e94e1047db5453899fcb2664c4498.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/68yP1XdTmUiivbsoBrK5UA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="928, 287, 46, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='i2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sz' aaname='Number' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Number' /&gt;" Guid="ad7db021-46a2-4af8-bc36-9ec7887619e0" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                    <If Condition="[Not ready]" DisplayName="Ready" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="Ready - then" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Throw DisplayName="Throw not ready" Exception="[New UiPath.Core.BusinessRuleException(&quot;Create Invoice form did not open.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Create Invoice - else" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <If Condition="[in_TaskName.Trim.Equals(&quot;Manage Invoices&quot;, StringComparison.OrdinalIgnoreCase)]" DisplayName="Manage Invoices" sap2010:WorkflowViewState.IdRef="If_5">
+                      <If.Then>
+                        <Sequence DisplayName="Manage Invoices - then" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <Delay DisplayName="Let the work area settle" Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                          <uix:NClick ActivateBefore="False" ClickType="Single" ContinueOnError="True" DisplayName="Try Manage Invoices task (panel may already be open)" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="8" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="6c8YIn1GU0a0AGdHgXUalg" DesignTimeRectangle="1635, 243, 91, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTRaT*' tag='A' aaname='Manage Invoices' /&gt;" Guid="f0782547-3eb2-402b-a8d4-023ec7ab07be" InformativeScreenshot="004ba2e0ae3b57ac516aaeb95343c868.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/LWnaNT72G0Svd2YQ9LQRGg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NCheckState CheckVisibility="True" DisplayName="Did Manage Invoices search open" Exists="[ready]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="10" Version="V5">
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable ContentHash="-bymAYb4E02j2P1DDczWvw" DesignTimeRectangle="406, 351, 218, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:q1:value10::content' tag='INPUT' /&gt;" Guid="f945adde-845e-408a-9faa-6094b17cb58f" InformativeScreenshot="bb0f998da18bb2d375b8990380e923a8.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/rgjLZxf3AE-2c1J5NzEwmQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <If Condition="[Not ready]" DisplayName="Open via Tasks panel" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If.Then>
+                              <Sequence DisplayName="Open via Tasks panel - then" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Open Tasks panel" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:02">
+                                  <ui:RetryScope.ActivityBody>
+                                    <ActivityAction>
+                                      <Sequence DisplayName="Open Tasks panel" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Tasks panel" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Version="V5">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable ContentHash="8-Qfe0q3uUK7SuOHTqQldg" DesignTimeRectangle="1881, 302, 42, 14" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTsdiitemNode_InvoiceWorkbench_FndTasksList::disAcr' tag='A' /&gt;" Guid="b10988f4-96a2-4384-91c5-40bfd7efe53d" InformativeScreenshot="1f5d4139174257932bf4df9ab00b1f60.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/boAMkHcrjkWaiL6BcsPohQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:RetryScope.ActivityBody>
+                                  <ui:RetryScope.Condition>
+                                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                                  </ui:RetryScope.Condition>
+                                </ui:RetryScope>
+                                <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Manage Invoices task" Exists="[visible]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="15" Version="V5">
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable ContentHash="6c8YIn1GU0a0AGdHgXUalg" DesignTimeRectangle="1635, 243, 91, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTRaT*' tag='A' aaname='Manage Invoices' /&gt;" Guid="f0782547-3eb2-402b-a8d4-023ec7ab07be" InformativeScreenshot="004ba2e0ae3b57ac516aaeb95343c868.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/LWnaNT72G0Svd2YQ9LQRGg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheckState.Target>
+                                </uix:NCheckState>
+                                <Delay DisplayName="Let the Tasks panel finish sliding in" Duration="00:00:02" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                                <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Click Manage Invoices task" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:02">
+                                  <ui:RetryScope.ActivityBody>
+                                    <ActivityAction>
+                                      <Sequence DisplayName="Click Manage Invoices task" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Manage Invoices task" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Version="V5">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable ContentHash="6c8YIn1GU0a0AGdHgXUalg" DesignTimeRectangle="1635, 243, 91, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTRaT*' tag='A' aaname='Manage Invoices' /&gt;" Guid="f0782547-3eb2-402b-a8d4-023ec7ab07be" InformativeScreenshot="004ba2e0ae3b57ac516aaeb95343c868.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/LWnaNT72G0Svd2YQ9LQRGg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:RetryScope.ActivityBody>
+                                  <ui:RetryScope.Condition>
+                                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                                  </ui:RetryScope.Condition>
+                                </ui:RetryScope>
+                                <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Manage Invoices search" Exists="[ready]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="bfc8384e-376b-4e05-8fb5-2811f54e039d" Timeout="60" Version="V5">
+                                  <uix:NCheckState.Target>
+                                    <uix:TargetAnchorable ContentHash="-bymAYb4E02j2P1DDczWvw" DesignTimeRectangle="406, 351, 218, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:q1:value10::content' tag='INPUT' /&gt;" Guid="f945adde-845e-408a-9faa-6094b17cb58f" InformativeScreenshot="bb0f998da18bb2d375b8990380e923a8.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/rgjLZxf3AE-2c1J5NzEwmQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                  </uix:NCheckState.Target>
+                                </uix:NCheckState>
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                          <If Condition="[Not ready]" DisplayName="Ready" sap2010:WorkflowViewState.IdRef="If_4">
+                            <If.Then>
+                              <Sequence DisplayName="Ready - then" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Throw DisplayName="Throw not ready" Exception="[New UiPath.Core.BusinessRuleException(&quot;Manage Invoices search did not open.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Manage Invoices - else" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <Throw DisplayName="Throw unsupported task" Exception="[New UiPath.Core.BusinessRuleException(&quot;Unsupported task: &quot; &amp; in_TaskName)]" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.OCREngine>
+          <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+            <ActivityFunc.Argument>
+              <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+            </ActivityFunc.Argument>
+          </ActivityFunc>
+        </uix:NApplicationCard.OCREngine>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Edge" ContentHash="tDYOlPG-HkGNhvURk3xUww" InformativeScreenshot="9486c0e63510514ec4fcb5f71b4ace81.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ" Selector="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" Url="https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?_afrLoop=2586559024738337&amp;_afrWindowMode=0&amp;_afrWindowId=null&amp;_adf.ctrl-state=mu593lduou6wrw_1&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1912&amp;_afrMFH=994&amp;_afrMFDW=1920&amp;_afrMFDH=1080&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=96&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" Version="V3" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

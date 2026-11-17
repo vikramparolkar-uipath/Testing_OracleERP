@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TdcdtbLWzkCABbXWxtX8yg" Reference="8LVFhcqBDUWVgtwLn_b78g/TyUkDGP-k0Oxyre7SH4k7g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="4050ae49-5442-4312-8865-9fb03e6e17f9" CvTextArea="397, 255, 519, 41" CvTextArgument="Good evening, Natalie Sales Rep" CvType="Text" DesignTimeRectangle="398, 254, 518, 42" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl action='/fscmUI/faces/FuseWelcome?_adf.ctrl-state=mu593lduou6wrw_5' adf-comptype='oracle.adf.RichForm' parentclass='*AFMaximized*' tag='FORM' /&gt;&lt;webctrl adf-comptype='oracle.adf.RichRegion' adf-relative-id='grid' adf-view='/AtkLayerHomePageTF/AtkLayerHomePage' aria-live='polite' tag='DIV' /&gt;&lt;webctrl parentid='*grid*' parentname='f1' tag='H1' /&gt;" Guid="e612b5e9-b5c7-4110-bb3e-d32e29a532ec" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' url='https://eqjz.ds-fa.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a3879e7f3d0366d63e659ddd84a09e45.jpg" xmlns="">0iU9cGmkAOEKggcV7wN5jqg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

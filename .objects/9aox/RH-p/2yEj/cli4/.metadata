@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Supplier Site",
+  "Description": "Supplier Site field in the invoice header",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "cli4qijeY0CXnhoBPfytPA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/cli4qijeY0CXnhoBPfytPA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:31.622507Z",
+  "Updated": "2026-11-16T21:57:31.622507Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

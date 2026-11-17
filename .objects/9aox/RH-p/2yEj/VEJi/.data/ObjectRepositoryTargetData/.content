@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="S2UwcYhA4ESMBa0I6ex5XA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="152, 534, 174, 28" DesignTimeScaleFactor="1" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:so3::content' tag='SELECT' aaname='Action' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' colName='HelpMatch Invoice LinesMatch to Receipt ChargesCorrect Matched InvoicesCorrect Unmatched InvoicesAction' tag='TABLE' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:colName='fuzzy' fuzzylevel:colName='0.0' /&gt;&lt;webctrl colName='Match Invoice LinesMatch to Receipt ChargesCorrect Matched InvoicesCorrect Unmatched InvoicesAction' id='*content*' tag='SELECT' type='' class='x2h' aaname='Action' matching:colName='fuzzy' fuzzylevel:colName='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="811ad997-7027-466d-b247-645976a41804" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="102, 540, 30, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/CreateInvoiceFlow/InvoiceEditPF' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ap1:AU3:AUi' tag='A' type='' class='svg-header-icon xko p_AFIconOnly' aaname='Help' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Help' /&gt;" Guid="7ae83741-d741-41a3-87a2-49be81bec736" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7e01d760de9a1c8daac68246e329375f.jpg" xmlns="">0RogqjoXaOECg0jwgyTHsEQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Oracle Fusion Payables (Edge)",
+  "Description": "Oracle Fusion Cloud Payables pages in Edge (Invoices work area, Create/Edit Invoice, Manage Invoices); matched on browser and Oracle host so it spans page transitions",
+  "Type": "Screen",
+  "Id": "2yEjMBnbuUWhk2E-UgtXgQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RH-py2e2SUCEeU-QfBPing",
+  "Created": "2026-11-16T21:46:19.9488823Z",
+  "Updated": "2026-11-16T21:46:19.9488823Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

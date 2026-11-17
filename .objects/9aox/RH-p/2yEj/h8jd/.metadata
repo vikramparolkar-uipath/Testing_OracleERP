@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Match Row Warning OK",
+  "Description": "OK on the warning shown when a PO schedule is ticked in Match Invoice Lines (for example differing payment terms)",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "h8jdWCr4y0SP0QK8vyfI1w",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/h8jdWCr4y0SP0QK8vyfI1w",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T03:06:38.174978Z",
+  "Updated": "2026-11-17T03:06:38.174978Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

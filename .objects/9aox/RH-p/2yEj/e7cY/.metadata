@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Supplier",
+  "Description": "Supplier autocomplete in the invoice header",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "e7cY033LEEqwZnOYo7JQdg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/e7cY033LEEqwZnOYo7JQdg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:31.5198738Z",
+  "Updated": "2026-11-16T21:57:31.5198738Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

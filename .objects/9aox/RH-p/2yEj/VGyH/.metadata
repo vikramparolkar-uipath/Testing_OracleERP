@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Manage Invoices Business Unit",
+  "Description": "Business Unit search field on Manage Invoices",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "VGyHDvPdHUiWGf5WwhzixA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/VGyHDvPdHUiWGf5WwhzixA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:43:11.1164216Z",
+  "Updated": "2026-11-16T22:43:11.1164216Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

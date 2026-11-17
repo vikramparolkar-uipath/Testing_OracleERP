@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Line PO Number",
+  "Description": "Purchase Order number on the active invoice line",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "tRLdJ9EqyE2B6JWatwj5PA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/tRLdJ9EqyE2B6JWatwj5PA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T03:09:27.3514109Z",
+  "Updated": "2026-11-17T03:09:27.3514109Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

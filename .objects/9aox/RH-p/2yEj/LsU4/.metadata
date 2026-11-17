@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Details Holds And Approvals Tab",
+  "Description": "Holds and Approvals tab in Manage Invoices Invoice Details",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "LsU4LIIHHEOTZ1SAwTjdDQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/LsU4LIIHHEOTZ1SAwTjdDQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:55:50.6329698Z",
+  "Updated": "2026-11-16T22:55:50.6329698Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

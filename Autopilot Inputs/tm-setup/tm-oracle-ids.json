@@ -1,0 +1,108 @@
+{
+  "reqs": {
+    "BR-01": {
+      "id": "225c1cc7-f0cd-0500-872f-0b4a3fc22b6d",
+      "objKey": "OFA:76"
+    },
+    "BR-02": {
+      "id": "594d639e-f1cd-0500-6ae9-0b4a3fc22cc0",
+      "objKey": "OFA:77"
+    },
+    "BR-03": {
+      "id": "2388c252-f2cd-0500-2124-0b4a3fc22df3",
+      "objKey": "OFA:78"
+    },
+    "BR-04": {
+      "id": "0d02aa3b-f3cd-0500-2fd1-0b4a3fc22f1f",
+      "objKey": "OFA:79"
+    },
+    "BR-05": {
+      "id": "bf6427d1-f4cd-0500-3494-0b4a3fc23046",
+      "objKey": "OFA:80"
+    },
+    "BR-06": {
+      "id": "7cfc25f7-f6cd-0500-2c5b-0b4a3fc2316f",
+      "objKey": "OFA:81"
+    },
+    "BR-07": {
+      "id": "9341a0a7-f7cd-0500-d197-0b4a3fc23279",
+      "objKey": "OFA:82"
+    },
+    "BR-08": {
+      "id": "c782e385-f8cd-0500-2401-0b4a3fc23388",
+      "objKey": "OFA:83"
+    },
+    "BR-09": {
+      "id": "9789789d-f9cd-0500-be8e-0b4a3fc234a9",
+      "objKey": "OFA:84"
+    },
+    "BR-10": {
+      "id": "31d3945e-facd-0500-62a1-0b4a3fc235bf",
+      "objKey": "OFA:85"
+    }
+  },
+  "tcs": {
+    "TC-01": {
+      "id": "5502063e-7993-1100-d13d-0b4a3fc23b30",
+      "objKey": "OFA:86",
+      "steps": true
+    },
+    "TC-02": {
+      "id": "95015b6c-7a93-1100-6085-0b4a3fc23eed",
+      "objKey": "OFA:87",
+      "steps": true
+    },
+    "TC-03": {
+      "id": "62ba8546-7b93-1100-c0af-0b4a3fc244ea",
+      "objKey": "OFA:88",
+      "steps": true
+    },
+    "TC-04": {
+      "id": "b3bdd0b2-7c93-1100-7834-0b4a3fc2487b",
+      "objKey": "OFA:89",
+      "steps": true
+    },
+    "TC-05": {
+      "id": "730ee07a-7e93-1100-16d4-0b4a3fc24ca1",
+      "objKey": "OFA:90",
+      "steps": true
+    },
+    "TC-06": {
+      "id": "bf21bf1a-8093-1100-3c39-0b4a3fc250d5",
+      "objKey": "OFA:91",
+      "steps": true
+    },
+    "TC-07": {
+      "id": "350fb5c9-8193-1100-ee24-0b4a3fc255b1",
+      "objKey": "OFA:92",
+      "steps": true
+    },
+    "TC-08": {
+      "id": "84de8977-8393-1100-1a28-0b4a3fc2593f",
+      "objKey": "OFA:93",
+      "steps": true
+    },
+    "TC-09": {
+      "id": "72a4d49e-8493-1100-cc4b-0b4a3fc25d8f",
+      "objKey": "OFA:94",
+      "steps": true
+    },
+    "TC-10": {
+      "id": "8ba3a63f-8693-1100-3c62-0b4a3fc261d0",
+      "objKey": "OFA:95",
+      "steps": true
+    }
+  },
+  "fields": {
+    "Oracle Application": "d797c834-9362-0200-3247-0b4a3fc21c9f",
+    "Module": "a8794a71-9462-0200-5991-0b4a3fc21d9d",
+    "Business Process": "d3acfa03-9562-0200-9ab2-0b4a3fc21f50",
+    "Oracle Release": "c2bea0c6-9662-0200-bc7f-0b4a3fc22058",
+    "Release Feature": "9cff1847-9762-0200-3c9f-0b4a3fc22153",
+    "Demo Track": "fbdd8d15-9862-0200-8d7a-0b4a3fc2223d",
+    "Automation Status": "72ac9d65-9962-0200-5a57-0b4a3fc2231e",
+    "UI Technology": "04f2055c-9a62-0200-201b-0b4a3fc22402",
+    "Env Constraint": "86197953-9b62-0200-3480-0b4a3fc2252b",
+    "Req Confidence": "c118f341-9c62-0200-1f26-0b4a3fc22613"
+  }
+}

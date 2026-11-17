@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Favorites And Recent Items",
+  "Description": "Favorites and Recent Items link in the Oracle global header",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "F6cCPZwyCEKQJFa5c-5jFA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/F6cCPZwyCEKQJFa5c-5jFA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:35:50.5422209Z",
+  "Updated": "2026-10-16T02:58:24.6720775Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

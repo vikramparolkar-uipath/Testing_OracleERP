@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Line Distribution Combination",
+  "Description": "Invoice line Distribution Combination input (GL account segments) in the Lines table row",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "PyF7TjReMk-6jo3kMKjHYg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/PyF7TjReMk-6jo3kMKjHYg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:06:11.6566066Z",
+  "Updated": "2026-11-17T02:15:03.253038Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

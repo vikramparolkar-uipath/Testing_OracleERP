@@ -1,0 +1,15 @@
+﻿{
+  "Name": "LOV Dialog OK",
+  "Description": "OK button of the Oracle Search and Select dialog",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "T_67Mli1dEeYi7rY1r5ktw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/T_67Mli1dEeYi7rY1r5ktw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:22:36.2738363Z",
+  "Updated": "2026-11-16T22:22:36.2738363Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

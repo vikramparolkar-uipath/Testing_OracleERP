@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Calculate Tax Menu Item",
+  "Description": "Calculate Tax item in the Invoice Actions menu",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "qTnmzkWHtUievsJOxxTKEw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/qTnmzkWHtUievsJOxxTKEw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:29:57.5332377Z",
+  "Updated": "2026-11-16T22:29:57.5332377Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

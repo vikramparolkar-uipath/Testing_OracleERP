@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Match Dialog Schedule Details",
+  "Description": "PO, Line, Schedule details panel (ordered, available, billed, received, match option) in the Match Invoice Lines dialog",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "Efwk4RowvECWL3IoX5v6QQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/Efwk4RowvECWL3IoX5v6QQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T03:04:19.5410024Z",
+  "Updated": "2026-11-17T03:04:19.5410024Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

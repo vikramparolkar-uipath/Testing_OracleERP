@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Favorites And Recent Items",
+  "Description": "Favorites and Recent Items link in the Oracle Fusion global header",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Oc7nrzXVIkSSVPdSg3kNQQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/Oc7nrzXVIkSSVPdSg3kNQQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/JR2-Q2NU-UaMONzNwJlNyA",
+  "Created": "2026-10-25T20:38:07.9811168Z",
+  "Updated": "2026-10-25T20:38:07.9811168Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

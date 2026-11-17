@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Oracle IDCS Sign In",
+  "Description": "Oracle Identity Cloud Service sign-in screen for TC-01",
+  "Type": "Screen",
+  "Id": "8Aoz72eJ7UatyQiw4JQVMA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/8Aoz72eJ7UatyQiw4JQVMA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RH-py2e2SUCEeU-QfBPing",
+  "Created": "2026-10-16T02:27:55.1775104Z",
+  "Updated": "2026-11-16T23:39:04.4392216Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

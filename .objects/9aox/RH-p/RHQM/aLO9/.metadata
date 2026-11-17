@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Purchase Requisitions New",
+  "Description": "Link that opens the Procurement Purchase Requisitions New tile",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "aLO9fWWfn0OFAfwGsOXIOw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/aLO9fWWfn0OFAfwGsOXIOw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:41:22.6521643Z",
+  "Updated": "2026-10-16T02:41:22.6521643Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

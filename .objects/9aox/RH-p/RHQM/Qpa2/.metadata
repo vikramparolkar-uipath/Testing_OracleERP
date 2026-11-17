@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Create Opportunity",
+  "Description": "Sales quick action link that opens Create Opportunity",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Qpa28E60MEeWv_t0KDPv2w",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/Qpa28E60MEeWv_t0KDPv2w",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:42:22.1713132Z",
+  "Updated": "2026-10-16T02:42:22.1713132Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

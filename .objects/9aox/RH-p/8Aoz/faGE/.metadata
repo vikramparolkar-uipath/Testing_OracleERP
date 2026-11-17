@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Username Field",
+  "Description": "Username input on the Oracle IDCS sign-in page",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "faGE_e46JEmUHr0JqWpnCg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/faGE_e46JEmUHr0JqWpnCg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/8Aoz72eJ7UatyQiw4JQVMA",
+  "Created": "2026-10-16T02:29:10.2508137Z",
+  "Updated": "2026-11-16T23:39:11.9989714Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

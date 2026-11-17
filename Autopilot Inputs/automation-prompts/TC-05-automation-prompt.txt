@@ -1,0 +1,52 @@
+Turn the test case below into a UI automation (built with UiPath via the uipcli) for Oracle Fusion Cloud Self Service Procurement (Redwood). Don't build anything yet.
+First, write specs/oracle-tc05-catalog-add-to-cart.md from my steps. In it, infer and list:
+
+* Workflow arguments: every value that should be a parameter, with a type and a default taken from my steps (record names, business units, suppliers, amounts, quantities, etc.).
+* Outputs: a pass/fail Boolean, a message, and any IDs, numbers or totals I'd want back.
+* Assertions: each "expected result" in my steps, written as a check the workflow makes. If I give a calculation (e.g. line + tax = total), assert it.
+* Selectors and risky points: lookups (LOVs), dialogs, loading spinners, popups, anything likely to need a wait.
+* What you're unsure about. Ask me these as questions instead of guessing.
+
+Then reply with your implementation plan (workflow structure and how we'll verify it) and wait for me.
+Rules for the build, when I approve it:
+
+* UI Automation modern activities with the UiPath browser extension.
+* Attach to my already signed-in Edge tab. Never automate login or store credentials.
+* Selectors use stable attributes (id suffix, aria-label, name, title), never position. Use element waits, not fixed Delays.
+* Don't take irreversible actions beyond what my steps say. For example, don't submit, approve, pay, post, cancel or delete records unless a step explicitly says so.
+* Put the workflow in Workflows/, call it from a test case in Tests/ that runs it and asserts the Boolean result.
+
+Oracle Fusion notes from exploratory testing (use these, but verify them):
+
+* Classic (ADF) pages: element ids look like pt1:_FOr1:1:_FONSr2:0:...:<field>::content. The numeric segments change between sessions, so match on the END of the id (e.g. id ends with "ap1:r2:0:i2::content") or on aria-label / label text. ADF pages can scroll horizontally without warning, so never click by coordinates.
+* Redwood pages (Oracle JET, URLs under /fscmUI/redwood/...) expose stable ids and aria-labels. First load can take 15-20 s.
+* Wait on the browser title or a specific element after every navigation; typical ADF transitions take 3-6 s.
+* A yellow "Sandbox Mode: Edit / Refresh Needed" banner is always shown. Ignore it.
+* LOV / combo fields: type the full value and press Tab; a partial value may open a "Search and Select" dialog.
+* The Home page reopens on the last group tab used, so always click the needed group tab (Sales, Procurement, Payables, Receivables) first.
+* Full object repository, picklists and findings: exploration-notes.md (in the Oracle demo folder).
+
+-----------------------------------
+
+TEST CASE: TC-05: Search the catalog and add an item to the cart (Self Service Procurement)
+Objective: Check that a catalog item can be found and added to the cart, and that the cart count and subtotal update.
+
+Org URL: https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?fndThemeName=Vision_Default
+
+Preconditions: Signed in as natalie.salesrep. Note the cart badge count before the run (N).
+
+Test data:
+
+* Search keyword: laptop
+* Item: Laptop Carrycase Black, Hewlett Packard, sold by Midtown Computer Supplies, supplier item LAP-BBAG, $25.00 Ea
+* Expected search result count: 3
+
+Steps and expected results:
+
+1. Go to Home > Procurement > Purchase Requisitions (New). Launch from the tile; a direct URL opens a "Shopping Error" page. Expected: Self Service Procurement opens with subtitle "Supremo US Business Unit | Denver HQ" and the bottom navigation bar shows the cart badge = N.
+2. In "Search for items or services" (input placeholder), type laptop and press Enter. Expected: 3 items, including Laptop Carrycase Black at $25.00.
+3. Select Add to Cart on Laptop Carrycase Black. Expected: the cart badge becomes N+1 (allow up to 15 s; a spinner shows on the card).
+4. Select the cart icon in the bottom navigation bar. Expected: the Cart page lists Laptop Carrycase Black, Sold By Midtown Computer Supplies, $25.00 Ea, and the Subtotal went up by $25.00.
+5. Teardown: delete only the Laptop Carrycase Black line added in step 3 (trash icon on that line). Expected: the cart badge is back to N.
+
+Overall pass condition: all expected results above are met. Out of scope: Submit (it starts approval in a shared demo), editing other cart lines, deleting any line other than the one this test added.

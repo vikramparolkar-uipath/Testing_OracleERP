@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Notifications Bell",
+  "Description": "Global header notifications bell",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "vOEFENAFg0mNn2si305GOw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/vOEFENAFg0mNn2si305GOw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-11-17T08:26:38.6086109Z",
+  "Updated": "2026-11-17T08:26:38.6086109Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

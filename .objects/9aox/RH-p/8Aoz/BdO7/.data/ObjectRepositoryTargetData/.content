@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="K9JCaOpEt0iBLbfULYZE_A" Reference="8LVFhcqBDUWVgtwLn_b78g/BdO7WjkjrE2VI9kgwXIuVA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" ContentHash="x1vEmeEhY02pROuY6EFYZA" DesignTimeRectangle="727, 404, 482, 44" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='idcs-signin-login-text' tag='DIV' /&gt;" Guid="da2b8c6c-0dc6-4f0f-aaf5-66882cc0fe6f" Reference="8LVFhcqBDUWVgtwLn_b78g/BdO7WjkjrE2VI9kgwXIuVA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cloud Sign In' url='https://idcs-*.identity.oraclecloud.com/ui*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="2df99414cd819a850b7329532a5b1ac7.jpg" xmlns="">0RUTtKARntk6pixnm2a4Ebw</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

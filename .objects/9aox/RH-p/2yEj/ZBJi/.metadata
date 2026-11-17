@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Details Approval Menu Item",
+  "Description": "Approval submenu item in the Manage Invoices Invoice Details Actions menu",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "ZBJiWGgcwE64dHS9FJ7RcA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/ZBJiWGgcwE64dHS9FJ7RcA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:57:56.0763338Z",
+  "Updated": "2026-11-16T22:57:56.0763338Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

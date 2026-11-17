@@ -1,0 +1,413 @@
+<Activity mc:Ignorable="sap2010" x:Class="Workflows_AP_AP_EnterInvoiceHeader" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_IdentifyingPO" Type="InArgument(x:String)" />
+    <x:Property Name="in_BusinessUnit" Type="InArgument(x:String)" />
+    <x:Property Name="in_Supplier" Type="InArgument(x:String)" />
+    <x:Property Name="in_InvoiceType" Type="InArgument(x:String)" />
+    <x:Property Name="in_InvoiceNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_HeaderAmount" Type="InArgument(x:Decimal)" />
+    <x:Property Name="in_Description" Type="InArgument(x:String)" />
+    <x:Property Name="out_SupplierSite" Type="OutArgument(x:String)" />
+    <x:Property Name="out_InvoiceDate" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>Testing_OracleERP</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_OracleERP</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AP - Enter invoice header" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="865ed7d6-3c56-4b2d-9123-34bf477143f7" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <If Condition="[Not String.IsNullOrWhiteSpace(in_IdentifyingPO)]" DisplayName="Header from PO or from BU and supplier" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence DisplayName="Header from PO or from BU and supplier - then" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <TryCatch DisplayName="Try Type Identifying PO (defaults BU, supplier, site)" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch.Try>
+                      <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type Identifying PO (defaults BU, supplier, site)" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Type Identifying PO (defaults BU, supplier, site)" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                              <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Identifying PO (defaults BU, supplier, site)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[(in_IdentifyingPO.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable ContentHash="u3mCqAqAmE2g_DK9BCA5cQ" DesignTimeRectangle="345, 280, 180, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic1::content' tag='INPUT' aaname='Identifying PO' /&gt;" Guid="49c3f268-7adb-4831-9389-85b7bf8201c7" InformativeScreenshot="6b43ac479356d224a2c358d337a8f0c9.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/SdB05Au7ikyTUeGuB7zfVQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="256, 287, 82, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic1' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='af_inputListOfValues_label-text' aaname='Identifying PO' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Identifying PO' /&gt;" Guid="28fdcbde-1392-4760-b8e4-5e207d4bdfaf" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                      </ui:RetryScope>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch_1">
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="typeErr" />
+                          </ActivityAction.Argument>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Identifying PO (defaults BU, supplier, site) (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (in_IdentifyingPO.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="u3mCqAqAmE2g_DK9BCA5cQ" DesignTimeRectangle="345, 280, 180, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic1::content' tag='INPUT' aaname='Identifying PO' /&gt;" Guid="49c3f268-7adb-4831-9389-85b7bf8201c7" InformativeScreenshot="6b43ac479356d224a2c358d337a8f0c9.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/SdB05Au7ikyTUeGuB7zfVQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="256, 287, 82, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic1' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='af_inputListOfValues_label-text' aaname='Identifying PO' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Identifying PO' /&gt;" Guid="28fdcbde-1392-4760-b8e4-5e207d4bdfaf" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Header from PO or from BU and supplier - else" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <TryCatch DisplayName="Try Type Business Unit" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch.Try>
+                      <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type Business Unit" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:02">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Type Business Unit" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                              <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Business Unit" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[(in_BusinessUnit.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable ContentHash="Vrtv3dHJlE-Tizm5fx8USA" DesignTimeRectangle="345, 316, 160, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic2::content' tag='INPUT' aaname='Business Unit' /&gt;" Guid="6143eaec-7d0c-42b8-b78e-d319722b1bd9" InformativeScreenshot="83fed5427c2247e33f8a08886d95cef1.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/U5LaEqKk-kOCc0ge2rkJeA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="258, 323, 80, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2t1' aaname='Business Unit' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Business Unit' /&gt;" Guid="27b3abbc-c4f8-4ec5-aa26-c33a359feafe" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                      </ui:RetryScope>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch_2">
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="typeErr" />
+                          </ActivityAction.Argument>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Business Unit (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (in_BusinessUnit.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="Vrtv3dHJlE-Tizm5fx8USA" DesignTimeRectangle="345, 316, 160, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic2::content' tag='INPUT' aaname='Business Unit' /&gt;" Guid="6143eaec-7d0c-42b8-b78e-d319722b1bd9" InformativeScreenshot="83fed5427c2247e33f8a08886d95cef1.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/U5LaEqKk-kOCc0ge2rkJeA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="258, 323, 80, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2t1' aaname='Business Unit' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Business Unit' /&gt;" Guid="27b3abbc-c4f8-4ec5-aa26-c33a359feafe" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <TryCatch DisplayName="Try Type Supplier" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                    <TryCatch.Try>
+                      <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type Supplier" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:02">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Type Supplier" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Supplier" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="DebuggerApi" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[(in_Supplier.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable ContentHash="So6Dypsloky_vt8E8vsK0g" DesignTimeRectangle="345, 352, 180, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic3::content' tag='INPUT' aaname='Supplier' /&gt;" Guid="2dfb9576-e806-4719-8675-d3013169656b" InformativeScreenshot="78e52939278a43548243bb8bc7f95ba6.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/e7cY033LEEqwZnOYo7JQdg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="290, 359, 48, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic3' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='af_inputListOfValues_label-text' aaname='Supplier' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Supplier' /&gt;" Guid="18c053e3-6034-44aa-b4ab-8aeddf9dfbf3" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                      </ui:RetryScope>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch_3">
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="typeErr" />
+                          </ActivityAction.Argument>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Supplier (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="HardwareEvents" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (in_Supplier.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="So6Dypsloky_vt8E8vsK0g" DesignTimeRectangle="345, 352, 180, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic3::content' tag='INPUT' aaname='Supplier' /&gt;" Guid="2dfb9576-e806-4719-8675-d3013169656b" InformativeScreenshot="78e52939278a43548243bb8bc7f95ba6.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/e7cY033LEEqwZnOYo7JQdg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="290, 359, 48, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic3' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='af_inputListOfValues_label-text' aaname='Supplier' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Supplier' /&gt;" Guid="18c053e3-6034-44aa-b4ab-8aeddf9dfbf3" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[Not String.IsNullOrWhiteSpace(in_InvoiceType) AndAlso Not in_InvoiceType.Trim.Equals(&quot;Standard&quot;, StringComparison.OrdinalIgnoreCase)]" DisplayName="Non-standard type" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Non-standard type - then" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type the invoice Type into the select (type-ahead)" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:02">
+                    <ui:RetryScope.ActivityBody>
+                      <ActivityAction>
+                        <Sequence DisplayName="Type the invoice Type into the select (type-ahead)" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type the invoice Type into the select (type-ahead)" EmptyFieldMode="None" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="HardwareEvents" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[(in_InvoiceType.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="fr2uNWhxUk-gJuH6G2p6xA" DesignTimeRectangle="981, 352, 174, 28" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:so1::content' tag='SELECT' aaname='Type' /&gt;" Guid="327c5eb0-63c1-4326-bc35-c0c5f77acea0" InformativeScreenshot="a9c4091f4b88cce2318df84c61359d9d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/KPf8rSIGPU2C2QF4rnBniw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="946, 359, 28, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='so1' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2t0' aaname='Type' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Type' /&gt;" Guid="2a1a6cf9-d048-4741-9a9b-78ab443b2780" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:RetryScope.ActivityBody>
+                    <ui:RetryScope.Condition>
+                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                    </ui:RetryScope.Condition>
+                  </ui:RetryScope>
+                </Sequence>
+              </If.Then>
+            </If>
+            <TryCatch DisplayName="Try Type invoice Number" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+              <TryCatch.Try>
+                <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type invoice Number" sap2010:WorkflowViewState.IdRef="RetryScope_5" NumberOfRetries="3" RetryInterval="00:00:02">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Type invoice Number" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="DebuggerApi" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[(in_InvoiceNumber.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable ContentHash="JhOaqNtarEOJQMLaqbO1_A" DesignTimeRectangle="981, 280, 176, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i2::content' tag='INPUT' aaname='Number' /&gt;" Guid="80f44605-c949-4f05-b29f-c1ae916fb41a" InformativeScreenshot="dc6e94e1047db5453899fcb2664c4498.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/68yP1XdTmUiivbsoBrK5UA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="928, 287, 46, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='i2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sz' aaname='Number' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Number' /&gt;" Guid="ad7db021-46a2-4af8-bc36-9ec7887619e0" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch_4">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="typeErr" />
+                    </ActivityAction.Argument>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice Number (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="HardwareEvents" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (in_InvoiceNumber.Trim) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable ContentHash="JhOaqNtarEOJQMLaqbO1_A" DesignTimeRectangle="981, 280, 176, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i2::content' tag='INPUT' aaname='Number' /&gt;" Guid="80f44605-c949-4f05-b29f-c1ae916fb41a" InformativeScreenshot="dc6e94e1047db5453899fcb2664c4498.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/68yP1XdTmUiivbsoBrK5UA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="928, 287, 46, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='i2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sz' aaname='Number' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Number' /&gt;" Guid="ad7db021-46a2-4af8-bc36-9ec7887619e0" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <TryCatch DisplayName="Try Type invoice Amount" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <TryCatch.Try>
+                <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type invoice Amount" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="3" RetryInterval="00:00:02">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Type invoice Amount" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice Amount" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_10" InteractionMode="DebuggerApi" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[(in_HeaderAmount.ToString(&quot;F2&quot;, System.Globalization.CultureInfo.InvariantCulture)) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable ContentHash="2tV8jmfpDk6u7BE6nIr8YQ" DesignTimeRectangle="1041, 316, 115, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i3::content' tag='INPUT' aria-label='Amount' /&gt;" Guid="408aa60f-9111-4f90-88fb-7305725f3676" InformativeScreenshot="74055499e30ce5cbec9e80ed308ea4f5.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Z2wSiAqDjkaQLw2o4fjeSQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                </ui:RetryScope>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch_5">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="typeErr" />
+                    </ActivityAction.Argument>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice Amount (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_11" InteractionMode="HardwareEvents" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (in_HeaderAmount.ToString(&quot;F2&quot;, System.Globalization.CultureInfo.InvariantCulture)) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable ContentHash="2tV8jmfpDk6u7BE6nIr8YQ" DesignTimeRectangle="1041, 316, 115, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i3::content' tag='INPUT' aria-label='Amount' /&gt;" Guid="408aa60f-9111-4f90-88fb-7305725f3676" InformativeScreenshot="74055499e30ce5cbec9e80ed308ea4f5.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Z2wSiAqDjkaQLw2o4fjeSQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <If Condition="[Not String.IsNullOrWhiteSpace(in_Description)]" DisplayName="Description given" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence DisplayName="Description given - then" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <TryCatch DisplayName="Try Type Description" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                    <TryCatch.Try>
+                      <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type Description" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="3" RetryInterval="00:00:02">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Type Description" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Description" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_12" InteractionMode="DebuggerApi" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[(in_Description) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable ContentHash="QUgUKzuSa0emUkqKmdELBA" DesignTimeRectangle="981, 388, 174, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i4::content' tag='TEXTAREA' aaname='Description' /&gt;" Guid="48443999-4ad0-467b-93aa-a715852f3a41" InformativeScreenshot="586dddbd004d60e288f1c2af444a3851.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/dPyAyXOUZEGGdTEmjNwBCQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="908, 395, 66, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='i4' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sz' aaname='Description' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Description' /&gt;" Guid="5bf0a561-d82d-40a1-aa6b-07b805e79d1d" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                      </ui:RetryScope>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch_6">
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="typeErr" />
+                          </ActivityAction.Argument>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Description (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_13" InteractionMode="HardwareEvents" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (in_Description) &amp; &quot;[k(tab)]&quot;]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="QUgUKzuSa0emUkqKmdELBA" DesignTimeRectangle="981, 388, 174, 50" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:i4::content' tag='TEXTAREA' aaname='Description' /&gt;" Guid="48443999-4ad0-467b-93aa-a715852f3a41" InformativeScreenshot="586dddbd004d60e288f1c2af444a3851.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/dPyAyXOUZEGGdTEmjNwBCQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="908, 395, 66, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='i4' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sz' aaname='Description' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Description' /&gt;" Guid="5bf0a561-d82d-40a1-aa6b-07b805e79d1d" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+              </If.Then>
+            </If>
+            <uix:NGetText DisplayName="Read Supplier Site" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" TextString="[out_SupplierSite]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="wtYiHMVoJES5ZNpetFvrgQ" DesignTimeRectangle="345, 416, 160, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ic4::content' tag='INPUT' aaname='Supplier Site' /&gt;" Guid="bc31e748-7868-4c93-9b90-af3d70778978" InformativeScreenshot="f08e0f266da2cbb722cb92eff2ff901f.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/cli4qijeY0CXnhoBPfytPA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="264, 423, 74, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='ic4' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2t1' aaname='Supplier Site' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Supplier Site' /&gt;" Guid="156e7a5a-1fc3-40f3-bdd5-7a5e942bfa5c" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Read Invoice Date" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="865ed7d6-3c56-4b2d-9123-34bf477143f7" TextString="[out_InvoiceDate]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="IzO0qtbcPEyf7rjSsTtFXw" DesignTimeRectangle="1611, 298, 161, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:id2::content' tag='INPUT' aria-label='Date' /&gt;" Guid="02ca8e07-94b7-46b6-99ee-bebe16b9439d" InformativeScreenshot="91edd0987a049d1b89d85bd8bd4c88be.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/b3HTqUUbe027PV5l7sRtWw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="1578, 305, 26, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/GeneralTabFlow/GeneralTab' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='id2' tag='TR' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='LABEL' type='' class='x2sy' aaname='Date' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Date' /&gt;" Guid="50cc72df-ad2f-45d6-9101-3d7ac67f12d5" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Edge" ContentHash="tDYOlPG-HkGNhvURk3xUww" InformativeScreenshot="9486c0e63510514ec4fcb5f71b4ace81.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ" Selector="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" Url="https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?_afrLoop=2586559024738337&amp;_afrWindowMode=0&amp;_afrWindowId=null&amp;_adf.ctrl-state=mu593lduou6wrw_1&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1912&amp;_afrMFH=994&amp;_afrMFDW=1920&amp;_afrMFDH=1080&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=96&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" Version="V3" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

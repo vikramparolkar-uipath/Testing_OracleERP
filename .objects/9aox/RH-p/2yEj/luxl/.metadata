@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Match Dialog First Row Quantity",
+  "Description": "Quantity on the first PO schedule row",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "luxlt4DnPEiMEon2QftOEg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/luxlt4DnPEiMEon2QftOEg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T10:02:35.1454534Z",
+  "Updated": "2026-11-17T10:02:35.1454534Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

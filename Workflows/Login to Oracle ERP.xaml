@@ -1,0 +1,187 @@
+﻿<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_OracleTc01LoginAndNavigation" this:Workflows_OracleTc01LoginAndNavigation.in_ExpectedDisplayName="Natalie Sales Rep" this:Workflows_OracleTc01LoginAndNavigation.in_HumanHandoffTimeoutSeconds="300" this:Workflows_OracleTc01LoginAndNavigation.in_ExpectedPayablesTiles="Payables Dashboard|Invoices|Payments" this:Workflows_OracleTc01LoginAndNavigation.in_ExpectedProcurementTile="Purchase Requisitions (New)" this:Workflows_OracleTc01LoginAndNavigation.in_ExpectedSalesQuickAction="Create Opportunity" this:Workflows_OracleTc01LoginAndNavigation.in_ExpectedSandboxBannerText="Sandbox Mode: Edit" this:Workflows_OracleTc01LoginAndNavigation.in_ExpectedSignInTitle="Cloud Sign In" this:Workflows_OracleTc01LoginAndNavigation.in_ExpectedHomeTitle="Oracle Fusion Cloud Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Username" Type="InArgument(x:String)" />
+    <x:Property Name="in_Browser" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpectedDisplayName" Type="InArgument(x:String)" />
+    <x:Property Name="in_HumanHandoffTimeoutSeconds" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_ExpectedPayablesTiles" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpectedProcurementTile" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpectedSalesQuickAction" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpectedSandboxBannerText" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpectedSignInTitle" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpectedHomeTitle" Type="InArgument(x:String)" />
+    <x:Property Name="out_Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_Message" Type="OutArgument(x:String)" />
+    <x:Property Name="out_FailedStep" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ObservedGreeting" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ObservedHomeTitle" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ObservedHomePath" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ObservedPayablesTiles" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ObservedProcurementTilePresent" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_ObservedSalesQuickActionPresent" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Drawing</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Windows.GdiPlus</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Oracle TC-01 Login and Navigation" sap:VirtualizedContainerService.HintSize="925,1600" sap2010:WorkflowViewState.IdRef="Sequence_38">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="signInPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="homeAlreadyPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="homeReady" />
+      <Variable x:TypeArguments="x:String" Name="observedGreeting" />
+      <Variable x:TypeArguments="x:String" Name="currentUrl" />
+      <Variable x:TypeArguments="x:Boolean" Name="sandboxPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="navigatorPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="homeHeaderPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="favoritesPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="notificationsPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="payablesDashboardPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="invoicesPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="paymentsPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="procurementPresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="salesQuickActionPresent" />
+      <Variable x:TypeArguments="x:String" Name="erpUrl" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NSetRuntimeBrowser BrowserType="[NBrowserTypeFactory.From(If(String.IsNullOrWhiteSpace(in_Browser), &quot;Edge&quot;, in_Browser.Trim))]" DisplayName="Set Runtime Browser - in_Browser (default Edge)" sap:VirtualizedContainerService.HintSize="452,170" sap2010:WorkflowViewState.IdRef="NSetRuntimeBrowser_1" Version="V5" />
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Oracle Fusion ERP URL" CacheStrategy="None" DisplayName="Get Asset - Oracle ERP URL" FolderPath="Oracle Applications" sap:VirtualizedContainerService.HintSize="452,176" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[erpUrl]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle IDCS Sign In" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1231" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" IsIncognito="True" OpenMode="Always" ScopeGuid="55496ff6-f07c-479c-91bf-33e867a5dfb8" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1036" sap2010:WorkflowViewState.IdRef="Sequence_39">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="erpUsername" />
+              <Variable x:TypeArguments="ss:SecureString" Name="erpPassword" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go To URL - current pod from Oracle Fusion ERP URL asset (InPrivate, fresh session)" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="55496ff6-f07c-479c-91bf-33e867a5dfb8" Url="[erpUrl]" Version="V5" />
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Oracle Fusion ERP Credentials" CacheStrategy="None" DisplayName="Get Credential - Oracle ERP Credentials" FolderPath="Oracle Applications" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[erpPassword]" Username="[erpUsername]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Into - Username (in_Username, else credential asset)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="55496ff6-f07c-479c-91bf-33e867a5dfb8" Text="[If(String.IsNullOrWhiteSpace(in_Username), erpUsername, in_Username).Trim &amp; &quot;[k(tab)]&quot;]" Timeout="[90]" DelayBefore="3" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="0cHM3fqTI0qHXle2fBdVjw" DesignTimeRectangle="716, 401, 480, 52" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='idcs-signin-basic-signin-form-username|input' tag='INPUT' /&gt;" Guid="82984412-9500-4c97-aa4c-5c9f882e4cbc" InformativeScreenshot="81f9f20caff3ce94e1f2cf98e75623ca.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/faGE_e46JEmUHr0JqWpnCg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Cloud Sign In' url='https://idcs-*.identity.oraclecloud.com/ui*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - Password" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="55496ff6-f07c-479c-91bf-33e867a5dfb8" SecureText="[erpPassword]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="lcFPHPE2B0K5rXY1c5jlag" DesignTimeRectangle="716, 477, 480, 52" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='idcs-signin-basic-signin-form-password|input' tag='INPUT' /&gt;" Guid="85aec9ea-406f-4b52-9efc-dda9a451dfd6" InformativeScreenshot="81f9f20caff3ce94e1f2cf98e75623ca.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/LHwuZ26IjkKgwQj1wa07Mg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Cloud Sign In' url='https://idcs-*.identity.oraclecloud.com/ui*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Next" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="55496ff6-f07c-479c-91bf-33e867a5dfb8" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="bKbho0hQPUC9u2jyuSQOBQ" DesignTimeRectangle="715, 588, 482, 44" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='idcs-signin-basic-signin-form-submit' tag='OJ-BUTTON' /&gt;&lt;webctrl tag='BUTTON' /&gt;" Guid="493fdfb7-8545-446e-9d3f-47e399f55e98" InformativeScreenshot="be1ad38c2723ffe6f6b9ee1e0cc85a5e.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/GTBshEjeZU-zzYeJDK2MDw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Cloud Sign In' url='https://idcs-*.identity.oraclecloud.com/ui*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Edge" ContentHash="6iP45Is7IEyD0l1LHCt-1Q" InformativeScreenshot="232948ef52550ca7f1b267ce4da3d24c.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/8Aoz72eJ7UatyQiw4JQVMA" Selector="&lt;html app='msedge.exe' title='Cloud Sign In' url='https://idcs-*.identity.oraclecloud.com/ui*' /&gt;" Url="https://idcs-49f100028ea84d04b8c55bfc972a9c66.identity.oraclecloud.com/ui/v1/signin" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

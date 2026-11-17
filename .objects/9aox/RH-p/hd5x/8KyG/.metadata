@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Expand Lines",
+  "Description": "Invoice Lines section expand button",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "8KyGiGY_zkWZaCft8H0Alg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/8KyGiGY_zkWZaCft8H0Alg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:06:01.9581853Z",
+  "Updated": "2026-10-25T21:06:01.9581853Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

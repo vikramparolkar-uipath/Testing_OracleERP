@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="XtKVjdmfA0CQ4f4EljT1mQ" Reference="8LVFhcqBDUWVgtwLn_b78g/gITmOTTdkUKM9xws-2KW3w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome" CVScreenId="9a044957-8520-4da2-b5a2-d802bc3f418f" CvElementArea="718, 460, 156, 158" CvType="Button" DesignTimeRectangle="721, 464, 150, 143" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl adf-view='/AtkFlatHomeTF/AtkFlatHomePage' tag='DIV' /&gt;&lt;webctrl adf-relative-id='0:atkFlatPgl' tag='DIV' /&gt;&lt;webctrl id='yourapps_groupNode_payables' tag='DIV' /&gt;&lt;webctrl id='itemNode_payables_payables_dashboard' tag='DIV' /&gt;" Guid="e1a0fe43-a78b-4e35-b1f4-231d39bb2943" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9a044957-8520-4da2-b5a2-d802bc3f418f" CvElementArea="718, 460, 156, 158" CvType="Button" DesignTimeRectangle="741, 553, 110, 54" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/AtkFlatHomeTF/AtkFlatHomePage' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='0:atkFlatPgl' tag='DIV' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl id='itemNode_payables_payables_dashboard' tag='DIV' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='itemNode_payables_payables_dashboard_0' tag='A' type='' class='app-nav-label flat-grid-nav-label' aaname='Payables Dashboard' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Payables Dashboard' /&gt;" Guid="5b66f433-45c2-42f2-8254-0a9141d3b9c8" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7456fd2a0324f7c0450a57354aeffa1b.jpg" xmlns="">070WSHTDJUUSNoy4TPLX6zw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

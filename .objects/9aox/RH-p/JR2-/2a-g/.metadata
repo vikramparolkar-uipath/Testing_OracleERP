@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Oracle Logo Home",
+  "Description": "Oracle Logo Home link in the Oracle Fusion global header",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "2a-g6MgcTUCxhdB5Xthvzg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/2a-g6MgcTUCxhdB5Xthvzg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/JR2-Q2NU-UaMONzNwJlNyA",
+  "Created": "2026-10-25T20:38:07.8172027Z",
+  "Updated": "2026-10-25T20:38:07.8172027Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

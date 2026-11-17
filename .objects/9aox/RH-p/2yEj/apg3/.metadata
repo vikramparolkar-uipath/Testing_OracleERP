@@ -1,0 +1,15 @@
+﻿{
+  "Name": "LOV Dialog Result Value",
+  "Description": "Result row value in the Oracle Search and Select dialog, selected by exact text",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "apg39SDhAEWz4CQ7QbWY-g",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/apg39SDhAEWz4CQ7QbWY-g",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:22:36.1683702Z",
+  "Updated": "2026-11-16T22:22:36.1683702Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

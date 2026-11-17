@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Notifications",
+  "Description": "Notifications link in the Oracle Fusion global header",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "NJdFINUB7kSRHvBULQq-ow",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/NJdFINUB7kSRHvBULQq-ow",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/JR2-Q2NU-UaMONzNwJlNyA",
+  "Created": "2026-10-25T20:38:08.1411918Z",
+  "Updated": "2026-10-25T20:38:08.1411918Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Type",
+  "Description": "Invoice Type select (Standard, Prepayment, Credit memo)",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "KPf8rSIGPU2C2QF4rnBniw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/KPf8rSIGPU2C2QF4rnBniw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:31.850912Z",
+  "Updated": "2026-11-16T21:57:31.850912Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

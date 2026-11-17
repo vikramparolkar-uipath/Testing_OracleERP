@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Details Validation Status",
+  "Description": "Validation status link in the Manage Invoices Invoice Details header",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "gbuwgA4vIEavhf8lnYGhaQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/gbuwgA4vIEavhf8lnYGhaQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:55:50.4042583Z",
+  "Updated": "2026-11-16T22:55:50.4042583Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

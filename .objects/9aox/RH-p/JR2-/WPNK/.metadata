@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Home Greeting",
+  "Description": "Oracle Fusion Home greeting text for the signed-in user",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "WPNKk9L_qkeMoJKVQwE5CQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/WPNKk9L_qkeMoJKVQwE5CQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/JR2-Q2NU-UaMONzNwJlNyA",
+  "Created": "2026-10-25T20:38:08.3107798Z",
+  "Updated": "2026-10-25T20:38:08.3107798Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

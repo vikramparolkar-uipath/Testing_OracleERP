@@ -1,0 +1,8 @@
+# Studio machine-local state
+.local/
+.storage/.runtime/
+# Activity project settings hold an encrypted Computer Vision API key
+.settings/
+# Build output
+*.nupkg
+Output/

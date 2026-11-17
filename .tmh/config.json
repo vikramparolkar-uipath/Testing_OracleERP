@@ -1,0 +1,9 @@
+{
+  "issueKeyTestcaseValues": {},
+  "testManagerBasePath": "https://staging.uipath.com/uipathlabstestcloud/Demos/testmanager_",
+  "defaultProject": {
+    "id": "d762a0e6-874f-0500-0972-0b4a3e53323a",
+    "name": "Oracle",
+    "key": "OFA"
+  }
+}

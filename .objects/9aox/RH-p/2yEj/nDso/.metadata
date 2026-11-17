@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Manage Invoices Search",
+  "Description": "Search button on Manage Invoices",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "nDsoBxgH70qVtHMNuL_FXg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/nDsoBxgH70qVtHMNuL_FXg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:43:10.9545143Z",
+  "Updated": "2026-11-16T22:43:10.9545143Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

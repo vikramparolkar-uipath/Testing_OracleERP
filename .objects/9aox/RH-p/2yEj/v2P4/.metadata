@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Lines Add Row",
+  "Description": "Add Row icon in the invoice Lines toolbar",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "v2P4cbU-FkKg7-rnKntsQQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/v2P4cbU-FkKg7-rnKntsQQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T03:32:41.6999032Z",
+  "Updated": "2026-11-17T03:32:41.6999032Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

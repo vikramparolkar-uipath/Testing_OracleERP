@@ -1,0 +1,35 @@
+﻿<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_DataFabric_DF_GetApDataProfile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:t="clr-namespace:Testing_OracleERP;assembly=DataService.Testing_OracleERP"><x:Members><x:Property Name="in_ProfileKey" Type="InArgument(x:String)" /><x:Property Name="out_Profile" Type="OutArgument(t:OracleApDataProfile)" /></x:Members><VisualBasic.Settings><x:Null /></VisualBasic.Settings><sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef><TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    <x:String>Testing_OracleERP</x:String><x:String>UiPath.Testing.Activities</x:String><x:String>UiPath.DataService.Activities</x:String><x:String>System.Text.RegularExpressions</x:String></sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    <AssemblyReference>UiPath.Testing.Activities</AssemblyReference><AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference><AssemblyReference>DataService.Testing_OracleERP</AssemblyReference><AssemblyReference>System.Text.RegularExpressions</AssemblyReference></sco:Collection>
+  </TextExpression.ReferencesForImplementation><Sequence DisplayName="Get Oracle AP data profile" sap2010:WorkflowViewState.IdRef="Sequence_4"><Sequence DisplayName="Get profile" sap2010:WorkflowViewState.IdRef="Sequence_3"><Sequence.Variables><Variable x:TypeArguments="scg:IList(t:OracleApDataProfile)" Name="records" /><Variable x:TypeArguments="x:Int64" Name="total" /></Sequence.Variables><uda:QueryEntityRecords x:TypeArguments="t:OracleApDataProfile" RequiredForReadInput="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" SortByField="{x:Null}" SortAscending="True" ContinueOnError="False" DisplayName="Query OracleApDataProfile by ProfileKey" EntityId="f8f3fe1c-fde1-f111-91f2-002248a179ce" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[records]" QueriedEntityId="f8f3fe1c-fde1-f111-91f2-002248a179ce" ScopeValue="Tenant" Skip="0" TimeoutInMs="30000" Top="1" TotalRecords="[total]"><uda:QueryEntityRecords.FilterArguments><uda:FilterArgument FilterActivityType="{x:Null}"><uda:FilterArgument.Filter><uda:GroupFilter Index="0" Operator="AND"><uda:GroupFilter.Filters><scg:List x:TypeArguments="uda:SimpleFilter" Capacity="1"><uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="ProfileKey" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" /></scg:List></uda:GroupFilter.Filters><uda:GroupFilter.Groups><scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" /></uda:GroupFilter.Groups></uda:GroupFilter></uda:FilterArgument.Filter></uda:FilterArgument></uda:QueryEntityRecords.FilterArguments><uda:QueryEntityRecords.FilterValues><scg:List x:TypeArguments="InArgument" Capacity="1"><InArgument x:TypeArguments="x:String">[in_ProfileKey]</InArgument></scg:List></uda:QueryEntityRecords.FilterValues><uda:QueryEntityRecords.RequiredForReadFieldNames><scg:List x:TypeArguments="x:String" Capacity="0" /></uda:QueryEntityRecords.RequiredForReadFieldNames></uda:QueryEntityRecords><If Condition="[total &lt; 1]" DisplayName="Profile exists" sap2010:WorkflowViewState.IdRef="If_1"><If.Then><Sequence DisplayName="Profile exists - then" sap2010:WorkflowViewState.IdRef="Sequence_1"><Throw DisplayName="Throw profile not found" Exception="[New UiPath.Core.BusinessRuleException(&quot;Data profile not found in Data Fabric: &quot; &amp; in_ProfileKey)]" sap2010:WorkflowViewState.IdRef="Throw_1" /></Sequence></If.Then></If><Assign DisplayName="Return profile" sap2010:WorkflowViewState.IdRef="Assign_1"><Assign.To><OutArgument x:TypeArguments="t:OracleApDataProfile">[out_Profile]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="t:OracleApDataProfile">[records(0)]</InArgument></Assign.Value></Assign><If Condition="[Not Convert.ToBoolean(CObj(out_Profile.IsActive))]" DisplayName="Profile is active" sap2010:WorkflowViewState.IdRef="If_2"><If.Then><Sequence DisplayName="Profile is active - then" sap2010:WorkflowViewState.IdRef="Sequence_2"><Throw DisplayName="Throw profile inactive" Exception="[New UiPath.Core.BusinessRuleException(&quot;Data profile is inactive: &quot; &amp; in_ProfileKey)]" sap2010:WorkflowViewState.IdRef="Throw_2" /></Sequence></If.Then></If></Sequence></Sequence></Activity>

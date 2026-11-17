@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Oracle Message Dialog OK",
+  "Description": "OK button of the Oracle Fusion message dialog",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "vC0IdWLFvkOqhj4AtnwpSQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/vC0IdWLFvkOqhj4AtnwpSQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:16:01.1978622Z",
+  "Updated": "2026-11-16T22:16:01.1978622Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

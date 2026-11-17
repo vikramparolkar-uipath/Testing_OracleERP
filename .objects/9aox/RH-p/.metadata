@@ -1,0 +1,13 @@
+﻿{
+  "Name": "1.0.0",
+  "Type": "AppVersion",
+  "Id": "RH-py2e2SUCEeU-QfBPing",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/RH-py2e2SUCEeU-QfBPing",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/9aoxvwwtFEOIG3rgXj4BZQ",
+  "Created": "2026-10-16T02:27:44.1411635Z",
+  "Updated": "2026-10-16T02:27:44.1411635Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

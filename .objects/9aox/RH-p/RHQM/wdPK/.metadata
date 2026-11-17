@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Notification Approve Button",
+  "Description": "Approve button on the notification for {{invoiceNumber}}",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "wdPKW5VDxU6Z7Oyl56ZqsQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/wdPKW5VDxU6Z7Oyl56ZqsQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-11-17T08:26:38.6888398Z",
+  "Updated": "2026-11-17T08:26:38.6888398Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

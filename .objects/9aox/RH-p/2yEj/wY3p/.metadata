@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Page Title",
+  "Description": "Page title heading of the Create or Edit Invoice page, e.g. Create Invoice: NUMBER",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "wY3pHaTZ00SzmaZLZiVVNQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/wY3pHaTZ00SzmaZLZiVVNQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:25:43.237045Z",
+  "Updated": "2026-11-16T22:25:43.237045Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

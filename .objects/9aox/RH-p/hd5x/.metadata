@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Create Invoice Screen",
+  "Description": "Create Invoice form state of the Oracle Fusion Payables application",
+  "Type": "Screen",
+  "Id": "hd5xhh3_f0Srt3qmWHmDwQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RH-py2e2SUCEeU-QfBPing",
+  "Created": "2026-10-25T21:05:46.0919319Z",
+  "Updated": "2026-10-26T01:36:52.9705005Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

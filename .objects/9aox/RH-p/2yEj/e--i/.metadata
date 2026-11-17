@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Duplicate Warning Continue",
+  "Description": "Continue button on the possible-duplicate invoice warning shown on save",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "e--i3pCeJ0e47K-C9CAaPw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/e--i3pCeJ0e47K-C9CAaPw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T01:48:48.9738423Z",
+  "Updated": "2026-11-17T01:48:48.9738423Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

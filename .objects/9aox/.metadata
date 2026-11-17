@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Oracle Fusion Cloud",
+  "Description": "Oracle Fusion Cloud ERP and IDCS web application",
+  "Type": "App",
+  "Id": "9aoxvwwtFEOIG3rgXj4BZQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/9aoxvwwtFEOIG3rgXj4BZQ",
+  "Created": "2026-10-16T02:27:44.112004Z",
+  "Updated": "2026-10-16T02:27:44.112004Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

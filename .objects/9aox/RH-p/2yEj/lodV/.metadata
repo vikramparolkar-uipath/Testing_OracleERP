@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Oracle Banner Message",
+  "Description": "Error or confirmation message banner at the top of an Oracle Fusion page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "lodVP9SduU6-1Tq3_CHixA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/lodVP9SduU6-1Tq3_CHixA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T03:32:41.7667528Z",
+  "Updated": "2026-11-17T03:32:41.7667528Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

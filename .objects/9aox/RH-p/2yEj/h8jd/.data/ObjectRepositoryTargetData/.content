@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YwONSHVdgkOsy08H2BKHtg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1302, 604, 35, 28" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:r11:*:at1:_ATp:ta1:*:cb3' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' colName='Warning' role='element' tag='TABLE' matching:aria-role='fuzzy' fuzzylevel:aria-role='0.0' matching:colName='fuzzy' fuzzylevel:colName='0.0' /&gt;&lt;webctrl tag='TR' visibleinnertext='OK&amp;#x9;' matching:visibleinnertext='fuzzy' fuzzylevel:visibleinnertext='0.0' /&gt;&lt;webctrl class='*AFTextOnly*' colName='OK' tag='BUTTON' type='' aaname='OK' fuzzylevel:class='0.0' matching:colName='fuzzy' fuzzylevel:colName='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='OK' /&gt;" Guid="7f5fb12a-cc66-4343-aa7f-ad1281bd5b95" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="1320, 611, 9, 14" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-relative-id='pt1:_FOr1:_FONSr2:MAnt2:pm1:r1:ap1:r11:at1:_ATp:ta1:cb3' tag='BUTTON' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl tag='SPAN' type='' class='xvc' aaname='K' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='K' /&gt;" Guid="ce13cee7-f7f2-4f16-bbe6-45f3b1a98df1" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6323bbb50aa323f150cafe3d676cd7ae.jpg" xmlns="">0cLb_8mwhZUqvuLP9hNpRWQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Validation Status",
+  "Description": "Validation status link in the invoice page toolbar (Not validated, Validated, Needs revalidation)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "OHbk2qgSukOdFeJcNPLk3g",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/OHbk2qgSukOdFeJcNPLk3g",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:25:43.2916955Z",
+  "Updated": "2026-11-16T22:25:43.2916955Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

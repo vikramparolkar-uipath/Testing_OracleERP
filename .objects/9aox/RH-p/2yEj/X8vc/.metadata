@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Lines Go",
+  "Description": "Go button next to the Lines Action select",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "X8vcpBqY6k61Dhk40gmp1Q",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/X8vcpBqY6k61Dhk40gmp1Q",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:06:11.941075Z",
+  "Updated": "2026-11-16T22:06:11.941075Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

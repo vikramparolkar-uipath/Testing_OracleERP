@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Save Invoice",
+  "Description": "Save button in the invoice page toolbar",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "9EglqzHKHUuofw3CYKvATw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/9EglqzHKHUuofw3CYKvATw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:32.1907825Z",
+  "Updated": "2026-11-16T21:57:32.1907825Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

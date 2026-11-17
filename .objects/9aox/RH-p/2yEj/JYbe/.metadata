@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Validate Menu Item",
+  "Description": "Validate item in the Invoice Actions menu",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "JYbeuL5JsUafL6XP5qDaXg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/JYbeuL5JsUafL6XP5qDaXg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:29:57.4604358Z",
+  "Updated": "2026-11-16T22:29:57.4604358Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

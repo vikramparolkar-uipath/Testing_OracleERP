@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="SsK-Qd_SKkGovZrWo28ceQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="2264, 791, 945, 1060" FilePath="C:\Program Files\Google\Chrome\Application\chrome.exe" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Invoice Workbench - Invoices - Oracle Fusion Cloud Applications *' /&gt;" Version="V3">
+      <TargetApp.SapInfo>
+        <SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="None" />
+      </TargetApp.SapInfo>
+      <imageRef attrName="InformativeScreenshot" originalValue="9e4775e804f685b8227b22043f467de7.jpg" xmlns="">04cV_QriDbEesGQCQYBIhLQ</imageRef>
+    </TargetApp>
+    <NInteractionMode x:Key="InteractionMode">HardwareEvents</NInteractionMode>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

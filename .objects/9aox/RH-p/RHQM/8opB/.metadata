@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Sales Group Tab",
+  "Description": "Sales group tab in the Oracle Home navigation strip",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "8opBN0ojiE-PfbS6Fd4Mag",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/8opBN0ojiE-PfbS6Fd4Mag",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:35:50.8154661Z",
+  "Updated": "2026-10-16T02:35:50.8154661Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

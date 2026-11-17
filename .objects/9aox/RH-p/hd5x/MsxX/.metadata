@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Total Amount",
+  "Description": "Total amount value in the Totals section of the Create Invoice form",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "MsxXjee7mkOJCXySBm2GdQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/MsxXjee7mkOJCXySBm2GdQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T22:52:12.1096456Z",
+  "Updated": "2026-10-25T22:52:12.1096456Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

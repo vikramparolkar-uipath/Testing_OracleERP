@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Line Amount",
+  "Description": "Editable amount field in the first invoice line row used to enter the standard invoice line amount",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "sfaa9NB-d0y3IWsdqXIioQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/sfaa9NB-d0y3IWsdqXIioQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:54:21.311796Z",
+  "Updated": "2026-10-25T21:54:21.311796Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

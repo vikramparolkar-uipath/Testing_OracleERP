@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Business Unit",
+  "Description": "Business Unit autocomplete in the invoice header",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "U5LaEqKk-kOCc0ge2rkJeA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/U5LaEqKk-kOCc0ge2rkJeA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:31.4335089Z",
+  "Updated": "2026-11-16T21:57:31.4335089Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

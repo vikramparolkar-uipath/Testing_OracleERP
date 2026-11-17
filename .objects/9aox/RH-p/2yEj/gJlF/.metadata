@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Match Dialog First Row Match Checkbox",
+  "Description": "Match checkbox label on the first PO schedule row",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Id": "gJlFzjIdyE2FE3X0Jmp_5g",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/gJlFzjIdyE2FE3X0Jmp_5g",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T03:04:19.4833789Z",
+  "Updated": "2026-11-17T10:00:57.2481351Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

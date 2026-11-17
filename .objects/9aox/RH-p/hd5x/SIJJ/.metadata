@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Type",
+  "Description": "Invoice header Type dropdown",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "SIJJxuLQ2kyqrtiKh0PkQA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/SIJJxuLQ2kyqrtiKh0PkQA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:06:01.8889878Z",
+  "Updated": "2026-10-25T21:06:01.8889878Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

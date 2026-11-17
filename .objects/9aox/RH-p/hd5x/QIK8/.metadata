@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Line Distribution Set",
+  "Description": "Distribution Set value in the first invoice line row used for verify-only validation",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "QIK8zvX1bkGhjACQCTSx-Q",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/QIK8zvX1bkGhjACQCTSx-Q",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:54:21.7630059Z",
+  "Updated": "2026-10-25T21:54:21.7630059Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

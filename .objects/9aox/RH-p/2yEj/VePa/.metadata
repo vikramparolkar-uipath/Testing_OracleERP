@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Match Dialog OK",
+  "Description": "OK button of the Match Invoice Lines dialog",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "VePaA-dvL0m3vQLO1FbiGA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/VePaA-dvL0m3vQLO1FbiGA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T02:56:06.1027058Z",
+  "Updated": "2026-11-17T02:56:06.1027058Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

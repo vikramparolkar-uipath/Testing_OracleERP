@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Match Dialog Purchase Order",
+  "Description": "Purchase Order search field in the Match Invoice Lines dialog",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "k5QI5ngorkqHFcIQUOpBcw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/k5QI5ngorkqHFcIQUOpBcw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T02:56:05.9608922Z",
+  "Updated": "2026-11-17T02:56:05.9608922Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

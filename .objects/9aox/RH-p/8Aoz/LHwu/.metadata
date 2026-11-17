@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Password",
+  "Description": "Password input on the Oracle IDCS sign-in page",
+  "Type": "Element",
+  "TaxonomyType": "Password",
+  "Id": "LHwuZ26IjkKgwQj1wa07Mg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/LHwuZ26IjkKgwQj1wa07Mg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/8Aoz72eJ7UatyQiw4JQVMA",
+  "Created": "2026-10-16T03:13:23.3393273Z",
+  "Updated": "2026-11-16T23:39:12.0849368Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

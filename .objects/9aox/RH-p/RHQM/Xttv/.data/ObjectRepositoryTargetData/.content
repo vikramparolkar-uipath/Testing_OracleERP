@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fgLv90c9dEaBTHDSwQ2ilQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome" CVScreenId="9a044957-8520-4da2-b5a2-d802bc3f418f" CvElementArea="1039, 461, 155, 156" CvTextArea="1087, 554, 58, 18" CvTextArgument="Payments" CvType="Button" DesignTimeRectangle="1041, 464, 150, 143" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl adf-view='/AtkFlatHomeTF/AtkFlatHomePage' tag='DIV' /&gt;&lt;webctrl adf-relative-id='0:atkFlatPgl' tag='DIV' /&gt;&lt;webctrl id='yourapps_groupNode_payables' tag='DIV' /&gt;&lt;webctrl id='itemNode_payables_payables_payments' tag='DIV' /&gt;" Guid="b622095a-d2ad-4ff8-bbac-ad875e2b350d" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="9a044957-8520-4da2-b5a2-d802bc3f418f" CvElementArea="1039, 461, 155, 156" CvTextArea="1087, 554, 58, 18" CvTextArgument="Payments" CvType="Button" DesignTimeRectangle="1088, 553, 55, 54" ElementType="Text" FuzzySelectorArgument="&lt;webctrl adf-view='/AtkFlatHomeTF/AtkFlatHomePage' tag='DIV' matching:adf-view='fuzzy' fuzzylevel:adf-view='0.0' /&gt;&lt;webctrl adf-relative-id='0:atkFlatPgl' tag='DIV' matching:adf-relative-id='fuzzy' fuzzylevel:adf-relative-id='0.0' /&gt;&lt;webctrl id='itemNode_payables_payables_payments' tag='DIV' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='itemNode_payables_payables_payments_0' tag='A' type='' class='app-nav-label flat-grid-nav-label' aaname='Payments' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Payments' /&gt;" Guid="235c7046-2bf2-4309-91ea-39fa06c23a00" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="cafa653386a9f7c3f72f9f9e30249112.jpg" xmlns="">0IbffaMVJXkSlUSOX26hiDg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

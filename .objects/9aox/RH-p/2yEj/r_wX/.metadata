@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Details Validate Menu Item",
+  "Description": "Validate item in the Manage Invoices Invoice Details Actions menu",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "r_wX00oNjkCUXUhAqbmmVA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/r_wX00oNjkCUXUhAqbmmVA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:57:55.9809074Z",
+  "Updated": "2026-11-16T22:57:55.9809074Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

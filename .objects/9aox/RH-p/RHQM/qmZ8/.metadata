@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Create Opportunity Quick Action",
+  "Description": "Create Opportunity Quick Action in the Sales Quick Actions region",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "qmZ8QRf7tE66_T1raYR6OQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/qmZ8QRf7tE66_T1raYR6OQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:35:51.0605418Z",
+  "Updated": "2026-10-16T02:35:51.0605418Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

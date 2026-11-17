@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Save And Close Invoice",
+  "Description": "Save and Close button in the invoice page toolbar",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "9y0pNpds80OOf2H3oi5rtA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/9y0pNpds80OOf2H3oi5rtA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:32.2376965Z",
+  "Updated": "2026-11-16T21:57:32.2376965Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Account Selector Dialog Title",
+  "Description": "Title of the Distribution Combination account selector dialog on an invoice line",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "jA08vWOCb0Ke2GoNPhRHFA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/jA08vWOCb0Ke2GoNPhRHFA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T00:15:20.8888384Z",
+  "Updated": "2026-11-17T02:15:03.9170885Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

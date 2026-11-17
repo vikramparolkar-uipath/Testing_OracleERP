@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Match Dialog Search",
+  "Description": "Search button in the Match Invoice Lines dialog",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "0GS-HCYBM0CpuhrXVoz5vQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/0GS-HCYBM0CpuhrXVoz5vQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T02:56:06.0315131Z",
+  "Updated": "2026-11-17T02:56:06.0315131Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

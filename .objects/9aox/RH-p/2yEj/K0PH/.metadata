@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Manage Invoices First Result Row",
+  "Description": "First row of the Manage Invoices results table; text holds number, dates, supplier, amounts, type, validation status, approval status and holds",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "K0PHXRXVJUu5VHiqSao7Hg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/K0PHXRXVJUu5VHiqSao7Hg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:49:11.8333587Z",
+  "Updated": "2026-11-16T22:49:11.8333587Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

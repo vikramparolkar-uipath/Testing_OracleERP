@@ -1,0 +1,35 @@
+﻿<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Common_NewRunContext" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:t="clr-namespace:Testing_OracleERP;assembly=DataService.Testing_OracleERP"><x:Members><x:Property Name="in_TestCaseId" Type="InArgument(x:String)" /><x:Property Name="out_RunId" Type="OutArgument(x:String)" /><x:Property Name="out_PodHost" Type="OutArgument(x:String)" /><x:Property Name="out_Stamp" Type="OutArgument(x:String)" /></x:Members><VisualBasic.Settings><x:Null /></VisualBasic.Settings><sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef><TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    <x:String>Testing_OracleERP</x:String><x:String>UiPath.Testing.Activities</x:String><x:String>UiPath.DataService.Activities</x:String><x:String>System.Text.RegularExpressions</x:String></sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    <AssemblyReference>UiPath.Testing.Activities</AssemblyReference><AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference><AssemblyReference>DataService.Testing_OracleERP</AssemblyReference><AssemblyReference>System.Text.RegularExpressions</AssemblyReference></sco:Collection>
+  </TextExpression.ReferencesForImplementation><Sequence DisplayName="New run context" sap2010:WorkflowViewState.IdRef="Sequence_2"><Sequence DisplayName="Run context" sap2010:WorkflowViewState.IdRef="Sequence_1"><Sequence.Variables><Variable x:TypeArguments="x:String" Name="erpUrl" /></Sequence.Variables><ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Oracle Fusion ERP URL" CacheStrategy="None" DisplayName="Get Asset - Oracle Fusion ERP URL" FolderPath="Oracle Applications" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1"><ui:GetRobotAsset.Value><OutArgument x:TypeArguments="x:String">[erpUrl]</OutArgument></ui:GetRobotAsset.Value></ui:GetRobotAsset><Assign DisplayName="Build timestamp yyMMddHHmmss" sap2010:WorkflowViewState.IdRef="Assign_1"><Assign.To><OutArgument x:TypeArguments="x:String">[out_Stamp]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[DateTime.Now.ToString(&quot;yyMMddHHmmss&quot;)]</InArgument></Assign.Value></Assign><Assign DisplayName="Pod host from the URL asset" sap2010:WorkflowViewState.IdRef="Assign_2"><Assign.To><OutArgument x:TypeArguments="x:String">[out_PodHost]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[New Uri(erpUrl).Host]</InArgument></Assign.Value></Assign><Assign DisplayName="RunId = TestCase-stamp-machine" sap2010:WorkflowViewState.IdRef="Assign_3"><Assign.To><OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[in_TestCaseId &amp; &quot;-&quot; &amp; out_Stamp &amp; &quot;-&quot; &amp; Environment.MachineName]</InArgument></Assign.Value></Assign><ui:LogMessage DisplayName="Log run context" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Run context: &quot; &amp; out_RunId &amp; &quot; on &quot; &amp; out_PodHost]" /></Sequence></Sequence></Activity>

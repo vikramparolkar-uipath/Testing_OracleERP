@@ -1,0 +1,52 @@
+Turn the test case below into a UI automation (built with UiPath via the uipcli) for Oracle Fusion Cloud Sales (CX). Don't build anything yet.
+First, write specs/oracle-tc09-create-opportunity.md from my steps. In it, infer and list:
+
+* Workflow arguments: every value that should be a parameter, with a type and a default taken from my steps (record names, business units, suppliers, amounts, quantities, etc.).
+* Outputs: a pass/fail Boolean, a message, and any IDs, numbers or totals I'd want back.
+* Assertions: each "expected result" in my steps, written as a check the workflow makes. If I give a calculation (e.g. line + tax = total), assert it.
+* Selectors and risky points: lookups (LOVs), dialogs, loading spinners, popups, anything likely to need a wait.
+* What you're unsure about. Ask me these as questions instead of guessing.
+
+Then reply with your implementation plan (workflow structure and how we'll verify it) and wait for me.
+Rules for the build, when I approve it:
+
+* UI Automation modern activities with the UiPath browser extension.
+* Attach to my already signed-in Edge tab. Never automate login or store credentials.
+* Selectors use stable attributes (id suffix, aria-label, name, title), never position. Use element waits, not fixed Delays.
+* Don't take irreversible actions beyond what my steps say. For example, don't submit, approve, pay, post, cancel or delete records unless a step explicitly says so.
+* Put the workflow in Workflows/, call it from a test case in Tests/ that runs it and asserts the Boolean result.
+
+Oracle Fusion notes from exploratory testing (use these, but verify them):
+
+* Classic (ADF) pages: element ids look like pt1:_FOr1:1:_FONSr2:0:...:<field>::content. The numeric segments change between sessions, so match on the END of the id (e.g. id ends with "ap1:r2:0:i2::content") or on aria-label / label text. ADF pages can scroll horizontally without warning, so never click by coordinates.
+* Redwood pages (Oracle JET, URLs under /fscmUI/redwood/...) expose stable ids and aria-labels. First load can take 15-20 s.
+* Wait on the browser title or a specific element after every navigation; typical ADF transitions take 3-6 s.
+* A yellow "Sandbox Mode: Edit / Refresh Needed" banner is always shown. Ignore it.
+* LOV / combo fields: type the full value and press Tab; a partial value may open a "Search and Select" dialog.
+* The Home page reopens on the last group tab used, so always click the needed group tab (Sales, Procurement, Payables, Receivables) first.
+* Full object repository, picklists and findings: exploration-notes.md (in the Oracle demo folder).
+
+-----------------------------------
+
+TEST CASE: TC-09: Create a sales opportunity (Sales)
+Objective: Check that a sales rep can create an opportunity and that the defaults are applied.
+
+Org URL: https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?fndThemeName=Vision_Default
+
+Preconditions: Signed in as natalie.salesrep. Account "Sykes Gym" exists.
+
+Test data:
+
+* Opportunity name: "UIP Demo - Sykes Gym Equipment Refresh " + today's date (yyyy-MM-dd) + " " + time (HHmmss)
+* Account: Sykes Gym
+* Expected defaults: Win Probability 10, Close Date = today + 30 days (dd/mm/yy), Sales Stage "01 - Qualified", Currency EGP
+
+Steps and expected results:
+
+1. Go to Home, select the Sales group tab, then Quick Action Create Opportunity. Expected: the Create Opportunity form opens (URL under /crmUI/) with Win Probability 10, Close Date = today + 30, Sales Stage 01 - Qualified and Currency EGP.
+2. Enter the Name and select Sykes Gym from the Account dropdown. Expected: the Account shows Sykes Gym.
+3. Select Save and Continue. Expected: "Edit Opportunity: <name> : Summary" opens with Owner Natalie Sales Rep, Status Open, Sales Channel Direct, Price List Corporate, Include in Forecast "When matches forecast criteria" and Amount 0.00.
+4. Select Save and Close. Expected: the Home page opens with no error.
+5. Go to Sales > Opportunities and search for the name. Expected: exactly 1 opportunity is listed, with Status Open.
+
+Overall pass condition: all expected results above are met; return the opportunity name. Out of scope: products, quotes, changing the stage, closing or deleting the opportunity.

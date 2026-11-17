@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Payables Dashboard Tile",
+  "Description": "Payables Dashboard tile in the Payables group Apps region",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "gITmOTTdkUKM9xws-2KW3w",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/gITmOTTdkUKM9xws-2KW3w",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:37:54.3509027Z",
+  "Updated": "2026-10-16T02:37:54.3509027Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

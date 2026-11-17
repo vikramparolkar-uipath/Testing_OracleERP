@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Number",
+  "Description": "Invoice header Number input",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "UyHFQtPlu0a79H1G5aQ0dQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/UyHFQtPlu0a79H1G5aQ0dQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:06:01.5634666Z",
+  "Updated": "2026-10-25T21:06:01.5634666Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

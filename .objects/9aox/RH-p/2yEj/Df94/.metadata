@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Totals Items Block",
+  "Description": "Items block (label and amount) in the invoice Totals section",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "Df94P6-hhUKB9vy9JUci6Q",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/Df94P6-hhUKB9vy9JUci6Q",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:39:39.4431687Z",
+  "Updated": "2026-11-16T22:39:39.4431687Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Invoice Date",
+  "Description": "Invoice header Date input",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "FGfKUi3ZlESdHJEuRdXjDA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/FGfKUi3ZlESdHJEuRdXjDA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:06:01.2080468Z",
+  "Updated": "2026-10-25T21:06:01.2080468Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

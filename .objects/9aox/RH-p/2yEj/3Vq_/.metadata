@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Line Project Number",
+  "Description": "Project Number input in the Lines table project columns",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "3Vq_r26mJE-b8HbUTykVfg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/3Vq_r26mJE-b8HbUTykVfg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:12:02.5953831Z",
+  "Updated": "2026-11-17T02:15:03.4469873Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

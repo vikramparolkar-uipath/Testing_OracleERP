@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Save and Close Invoice",
+  "Description": "Toolbar button that saves the invoice and closes the Create Invoice form",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "dqmKb23wnUyGlvRLo-SY-g",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/dqmKb23wnUyGlvRLo-SY-g",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:56:26.4702485Z",
+  "Updated": "2026-10-25T21:56:26.4702485Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

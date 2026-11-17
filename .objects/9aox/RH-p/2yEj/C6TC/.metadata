@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Oracle Message Dialog Title",
+  "Description": "Title (Error, Warning) of the Oracle Fusion message dialog",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "C6TCMWvtEkOvN6BkdzWPLw",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/C6TCMWvtEkOvN6BkdzWPLw",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T22:16:01.0533501Z",
+  "Updated": "2026-11-16T22:16:01.0533501Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

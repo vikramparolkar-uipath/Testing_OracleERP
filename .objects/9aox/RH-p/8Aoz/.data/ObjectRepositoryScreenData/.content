@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="6iP45Is7IEyD0l1LHCt-1Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="-8, -8, 1936, 1096" BrowserType="Edge" Selector="&lt;html app='msedge.exe' title='Cloud Sign In' url='https://idcs-*.identity.oraclecloud.com/ui*' /&gt;" Url="https://idcs-49f100028ea84d04b8c55bfc972a9c66.identity.oraclecloud.com/ui/v1/signin" Version="V3">
+      <TargetApp.SapInfo>
+        <SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+      </TargetApp.SapInfo>
+      <imageRef attrName="InformativeScreenshot" originalValue="232948ef52550ca7f1b267ce4da3d24c.jpg" xmlns="">0vQ4h3GR_v02dCer90ds94g</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

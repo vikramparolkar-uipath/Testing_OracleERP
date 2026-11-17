@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Tasks Panel Link",
+  "Description": "Link on the right edge of the Invoices work area that opens the Tasks panel",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "boAMkHcrjkWaiL6BcsPohQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/boAMkHcrjkWaiL6BcsPohQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:48:51.4344153Z",
+  "Updated": "2026-11-16T21:48:51.4344153Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

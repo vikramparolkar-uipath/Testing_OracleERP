@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Account Selector OK",
+  "Description": "OK button of the Distribution Combination account selector dialog",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "CkC3zQ7AiEGebwHBq0p91w",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/CkC3zQ7AiEGebwHBq0p91w",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-17T00:15:21.0723767Z",
+  "Updated": "2026-11-17T02:15:03.9911011Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Header Amount",
+  "Description": "Invoice header Amount input",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "mgHZdEGARUuUE8cYkmHZWg",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/mgHZdEGARUuUE8cYkmHZWg",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:06:01.630979Z",
+  "Updated": "2026-10-25T21:06:01.630979Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Expand Lines",
+  "Description": "Disclosure button that expands the Lines section",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "AL5gR4RWtEK68beGqCRx2w",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/AL5gR4RWtEK68beGqCRx2w",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/2yEjMBnbuUWhk2E-UgtXgQ",
+  "Created": "2026-11-16T21:57:32.2836653Z",
+  "Updated": "2026-11-16T21:57:32.2836653Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

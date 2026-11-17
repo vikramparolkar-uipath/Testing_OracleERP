@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Home Header Link",
+  "Description": "Home link in the Oracle global header",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Lm_S0Ui7WUuZ2V_al7717w",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/Lm_S0Ui7WUuZ2V_al7717w",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA",
+  "Created": "2026-10-16T02:35:50.4521823Z",
+  "Updated": "2026-10-16T02:58:24.6384162Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.5.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

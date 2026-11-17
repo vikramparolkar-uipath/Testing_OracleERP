@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Supplier Site",
+  "Description": "Invoice header Supplier Site autocomplete",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "sWIn9IyJwEOktIt4tTZ0wA",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/sWIn9IyJwEOktIt4tTZ0wA",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/hd5xhh3_f0Srt3qmWHmDwQ",
+  "Created": "2026-10-25T21:06:01.4981424Z",
+  "Updated": "2026-10-25T21:06:01.4981424Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

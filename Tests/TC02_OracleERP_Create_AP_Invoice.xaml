@@ -1,0 +1,113 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Tests_TC02_OracleERP_Create_AP_Invoice" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Generic</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Oracle TC-02 Given When Then" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="invoicePassed" />
+      <Variable x:TypeArguments="x:String" Name="invoiceMessage" />
+      <Variable x:TypeArguments="x:String" Name="invoiceNumber" />
+      <Variable x:TypeArguments="x:String" Name="finalInvoiceStatus" />
+      <Variable x:TypeArguments="x:Decimal" Name="taxAmount" />
+      <Variable x:TypeArguments="x:Decimal" Name="totalAmount" />
+      <Variable x:TypeArguments="x:Boolean" Name="loginPassed" />
+      <Variable x:TypeArguments="x:String" Name="loginMessage" />
+      <Variable x:TypeArguments="x:String" Name="loginFailedStep" />
+      <Variable x:TypeArguments="x:String" Name="loginObservedGreeting" />
+      <Variable x:TypeArguments="x:String" Name="loginObservedHomeTitle" />
+      <Variable x:TypeArguments="x:String" Name="loginObservedHomePath" />
+      <Variable x:TypeArguments="x:String" Name="loginObservedPayablesTiles" />
+      <Variable x:TypeArguments="x:Boolean" Name="loginObservedProcurementTilePresent" />
+      <Variable x:TypeArguments="x:Boolean" Name="loginObservedSalesQuickActionPresent" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="... Given" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <ui:LogMessage DisplayName="Given - establish authenticated Oracle session" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;TC-02 Given: invoke the unchanged Oracle login workflow before invoice processing.&quot;]" />
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Given - invoke unchanged Oracle login workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Login to Oracle ERP.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument">
+            <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedDisplayName">[&quot;Natalie Sales Rep&quot;]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="in_HumanHandoffTimeoutSeconds">[300]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedPayablesTiles">[&quot;Payables Dashboard|Invoices|Payments&quot;]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedProcurementTile">[&quot;Purchase Requisitions (New)&quot;]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedSalesQuickAction">[&quot;Create Opportunity&quot;]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedSandboxBannerText">[&quot;Sandbox Mode: Edit&quot;]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedSignInTitle">[&quot;Cloud Sign In&quot;]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedHomeTitle">[&quot;Oracle Fusion Cloud Applications&quot;]</InArgument>
+            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Passed">[loginPassed]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="out_Message">[loginMessage]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="out_FailedStep">[loginFailedStep]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedGreeting">[loginObservedGreeting]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedHomeTitle">[loginObservedHomeTitle]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedHomePath">[loginObservedHomePath]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="out_ObservedPayablesTiles">[loginObservedPayablesTiles]</OutArgument>
+            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ObservedProcurementTilePresent">[loginObservedProcurementTilePresent]</OutArgument>
+            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ObservedSalesQuickActionPresent">[loginObservedSalesQuickActionPresent]</OutArgument>
+          </scg:Dictionary>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="... When" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <ui:LogMessage DisplayName="When - create and validate one standard AP invoice" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;TC-02 When: create one standard AP invoice, validate it, and save and close it.&quot;]" />
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="When - invoke AP invoice workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\OracleERP_Create_AP_Invoice.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BusinessUnit">["US1 Business Unit"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SupplierName">["ABC Consulting"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumberPattern">["UIP-AP-&lt;ddMMyy&gt;-&lt;HHmmss&gt;"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceDescription">["This is a UiPath Test"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceType">["Standard"]</InArgument>
+          <InArgument x:TypeArguments="x:Decimal" x:Key="in_HeaderAmount">[1362.50D]</InArgument>
+          <InArgument x:TypeArguments="x:Decimal" x:Key="in_LineAmount">[1250.00D]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Currency">["USD"]</InArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Passed">[invoicePassed]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_Message">[invoiceMessage]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_InvoiceNumber">[invoiceNumber]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_FinalInvoiceStatus">[finalInvoiceStatus]</OutArgument>
+          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_TaxAmount">[taxAmount]</OutArgument>
+          <OutArgument x:TypeArguments="x:Decimal" x:Key="out_TotalAmount">[totalAmount]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="... Then" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <ui:LogMessage DisplayName="Then - report safe invoice result" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;TC-02 result: &quot; &amp; invoiceMessage &amp; &quot; | Invoice number: &quot; &amp; invoiceNumber &amp; &quot; | Status: &quot; &amp; finalInvoiceStatus &amp; &quot; | Tax: &quot; &amp; taxAmount.ToString(&quot;F2&quot;) &amp; &quot; | Total: &quot; &amp; totalAmount.ToString(&quot;F2&quot;)]" />
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TC-02 overall pass assertion" ContinueOnFailure="False" DisplayName="Then - verify TC-02 passed" Expression="[invoicePassed]" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TC-02 final status assertion" ContinueOnFailure="False" DisplayName="Then - verify final status is Validated" Expression="[finalInvoiceStatus.Trim.Equals(&quot;Validated&quot;, StringComparison.OrdinalIgnoreCase)]" sap2010:WorkflowViewState.IdRef="VerifyExpression_2" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TC-02 tax amount assertion" ContinueOnFailure="False" DisplayName="Then - verify tax amount" Expression="[Math.Abs(taxAmount - 112.50D) &lt;= 0.01D]" sap2010:WorkflowViewState.IdRef="VerifyExpression_3" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TC-02 total amount assertion" ContinueOnFailure="False" DisplayName="Then - verify total amount" Expression="[Math.Abs(totalAmount - 1362.50D) &lt;= 0.01D]" sap2010:WorkflowViewState.IdRef="VerifyExpression_4" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False" />
+    </Sequence>
+  </Sequence>
+</Activity>

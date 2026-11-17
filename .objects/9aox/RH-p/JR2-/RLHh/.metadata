@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Navigator",
+  "Description": "Navigator link in the Oracle Fusion global header",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "RLHhqBFnJE2QtlIFhjVvzQ",
+  "Reference": "8LVFhcqBDUWVgtwLn_b78g/RLHhqBFnJE2QtlIFhjVvzQ",
+  "ParentRef": "8LVFhcqBDUWVgtwLn_b78g/JR2-Q2NU-UaMONzNwJlNyA",
+  "Created": "2026-10-25T20:38:07.6431225Z",
+  "Updated": "2026-10-25T20:38:07.6431225Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
