@@ -89,7 +89,7 @@ One record per invoice, prepayment or credit memo the suite creates. This is the
 | HasProjectCoding | Yes/No | | Project-coded lines can't feed some tests |
 | PoNumber / PoLine / PoSchedule | Text / Whole / Whole | | Set when matched; also links to `OraclePoSchedule` |
 | HoldReason | Text | | Set when Stage = OnHold |
-| CreatedByTestCase | Text | | `UNIT-PTP-080-010-010-001` |
+| CreatedByTestCase | Text | | `UNIT-P2P-080-010-010-001` |
 | CreatedRunId | Text | | Run that created it |
 | LastTestCase | Text | | Last test that changed it |
 | LastRunId | Text | | |
@@ -177,4 +177,4 @@ Provisioning workflows (one per "needs" shape, reused by producers): `Provision_
 2. **Supplier per profile:** 2-way match uses CDW, others use Advanced Corp in the same BU. Proposal: two profiles (`US1-NoApproval`, `US1-TwoWay`) rather than a second supplier column.
 3. **PO pool refill:** seed by hand, or add a `Harvest_PoSchedules` workflow that searches Fusion for received, unbilled schedules with no project coding and adds them as Available.
 4. **Run log entity:** Workday keeps one `HireRun` per chain. Proposal: no separate run entity; Test Manager holds execution results and the invoice record carries `CreatedRunId` / `LastRunId`.
-5. **STR-PTP-080-010-005** (approval workflow) is referenced by Review Invoices but not in the docs folder. `Provision_ApprovalInitiatedInvoice` covers its setup either way.
+5. **STR-P2P-080-010-005** (approval workflow) is referenced by Review Invoices but not in the docs folder. `Provision_ApprovalInitiatedInvoice` covers its setup either way.

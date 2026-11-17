@@ -42,18 +42,18 @@ All UI targets are in the Object Repository: screens **Oracle Fusion Home** (Edg
 
 | Test case | Profile | Reads from Data Fabric | Writes to Data Fabric | Status |
 |---|---|---|---|---|
-| UNIT-PTP-080-010-010-001 Enter Invoice Manually | US1-NoApproval | profile | Standard, NotValidated | **Passing** |
-| UNIT-PTP-080-010-030-001 Enter Prepaid Invoice | US1-NoApproval | profile | Prepayment, Validated | **Passing** |
-| UNIT-PTP-080-010-130-001 Enter Pre-Paid Advance Invoice | US1-NoApproval | profile | Prepayment, Validated | **Passing** |
-| UNIT-PTP-080-010-060-001 Invoice Lines and Projects | US1-Projects | profile | Standard, NotValidated, project coded | **Passing** |
-| UNIT-PTP-080-010-160-001 Enter Invoice and Credit Memo | US1-NoApproval | profile | Standard + CreditMemo, NotValidated | **Passing** |
-| UNIT-PTP-080-010-080-001 Validate Invoice | US1-NoApproval | claims NotValidated (else creates) | → Validated | **Passing** (both claim and create paths) |
-| STR-PTP-080-010-006 Manual Invoices Auto-Approval | US1-NoApproval | claims NotValidated (else creates) | → Validated, approval Not required | **Passing** |
-| UNIT-PTP-080-010-040-001 Match Invoice with PO and Receipt | ProgressUS-3Way | claims ThreeWay PO schedule | invoice Validated; PO unit billed | **Blocked by data**: no received, unbilled schedule for Lee Supplies in Progress US (receipt lookup is empty); stops with "PO pool exhausted" |
-| UNIT-PTP-080-010-050-001 Match Invoice with PO 2-Way | ProgressUS-3Way | claims TwoWay PO schedule | invoice Validated; one unit billed | **Passing** (17 Nov) |
-| UNIT-PTP-080-010-150-001 Match Invoice to PO 2-Way | ProgressUS-3Way | claims TwoWay PO schedule; header saved first | invoice Validated; one unit billed | **Passing** (17 Nov) |
-| UNIT-PTP-080-010-090-001 Review Invoices | HealthcareUS-Approval | claims Validated + Initiated (rechecked in Oracle; else creates + initiates) | read-only | **Passing** (17 Nov) |
-| STR-PTP-080-010-005 Manual Invoices Approval Workflow | HealthcareUS-Approval | profile | Validated, approval Approved (Anastasia Ortega) | **Passing** (17 Nov) |
+| UNIT-P2P-080-010-010-001 Enter Invoice Manually | US1-NoApproval | profile | Standard, NotValidated | **Passing** |
+| UNIT-P2P-080-010-030-001 Enter Prepaid Invoice | US1-NoApproval | profile | Prepayment, Validated | **Passing** |
+| UNIT-P2P-080-010-130-001 Enter Pre-Paid Advance Invoice | US1-NoApproval | profile | Prepayment, Validated | **Passing** |
+| UNIT-P2P-080-010-060-001 Invoice Lines and Projects | US1-Projects | profile | Standard, NotValidated, project coded | **Passing** |
+| UNIT-P2P-080-010-160-001 Enter Invoice and Credit Memo | US1-NoApproval | profile | Standard + CreditMemo, NotValidated | **Passing** |
+| UNIT-P2P-080-010-080-001 Validate Invoice | US1-NoApproval | claims NotValidated (else creates) | → Validated | **Passing** (both claim and create paths) |
+| STR-P2P-080-010-006 Manual Invoices Auto-Approval | US1-NoApproval | claims NotValidated (else creates) | → Validated, approval Not required | **Passing** |
+| UNIT-P2P-080-010-040-001 Match Invoice with PO and Receipt | ProgressUS-3Way | claims ThreeWay PO schedule | invoice Validated; PO unit billed | **Blocked by data**: no received, unbilled schedule for Lee Supplies in Progress US (receipt lookup is empty); stops with "PO pool exhausted" |
+| UNIT-P2P-080-010-050-001 Match Invoice with PO 2-Way | ProgressUS-3Way | claims TwoWay PO schedule | invoice Validated; one unit billed | **Passing** (17 Nov) |
+| UNIT-P2P-080-010-150-001 Match Invoice to PO 2-Way | ProgressUS-3Way | claims TwoWay PO schedule; header saved first | invoice Validated; one unit billed | **Passing** (17 Nov) |
+| UNIT-P2P-080-010-090-001 Review Invoices | HealthcareUS-Approval | claims Validated + Initiated (rechecked in Oracle; else creates + initiates) | read-only | **Passing** (17 Nov) |
+| STR-P2P-080-010-005 Manual Invoices Approval Workflow | HealthcareUS-Approval | profile | Validated, approval Approved (Anastasia Ortega) | **Passing** (17 Nov) |
 
 ## Known behaviour
 
