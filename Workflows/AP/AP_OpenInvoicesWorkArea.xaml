@@ -48,18 +48,18 @@
         <Variable x:TypeArguments="x:Boolean" Name="ready" />
         <Variable x:TypeArguments="x:Boolean" Name="home" />
       </Sequence.Variables>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Home (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="66e3a80b-ed40-4a6d-9147-0c5a6d371b4e" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Home (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="af34dc44-3ef3-4e31-ab92-6114ec78e198" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <ui:RetryScope DisplayName="Retry - Click Payables group tab (waits up to 90 s for home)" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
+              <ui:RetryScope DisplayName="Retry - Click Payables group tab (waits up to 90 s for home)" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:01">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Click Payables group tab (waits up to 90 s for home)" sap2010:WorkflowViewState.IdRef="Sequence_1">
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Payables group tab (waits up to 90 s for home)" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66e3a80b-ed40-4a6d-9147-0c5a6d371b4e" Timeout="90" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Payables group tab (waits up to 90 s for home)" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af34dc44-3ef3-4e31-ab92-6114ec78e198" Timeout="90" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="qWOXUeUfKU2gXRvwkxxcRg" DesignTimeRectangle="1456, 304, 64, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='groupNode_payables' tag='A' /&gt;" Guid="9c2aa136-b383-410f-a784-f127e10ae7b7" InformativeScreenshot="f525133fa6efe1f86e7d50e961e3a6d6.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/qNLoNVhJP0iG7PMNMBgCkA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -71,11 +71,11 @@
                   <ActivityFunc x:TypeArguments="x:Boolean" />
                 </ui:RetryScope.Condition>
               </ui:RetryScope>
-              <ui:RetryScope DisplayName="Retry - Click Invoices tile" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
+              <ui:RetryScope DisplayName="Retry - Click Invoices tile" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:01">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Click Invoices tile" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Invoices tile" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="66e3a80b-ed40-4a6d-9147-0c5a6d371b4e" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Invoices tile" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af34dc44-3ef3-4e31-ab92-6114ec78e198" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="TB0qV1Cnok2vTjt9c2sgMw" DesignTimeRectangle="932, 509, 47, 54" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='itemNode_payables_payables_invoices*' tag='A' /&gt;" Guid="36fcc042-4021-45a8-ae06-128d80cd5218" InformativeScreenshot="18f21fa9d88e1eb0470cadde0e1a5e91.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/VwRxazyM-kG-VzN0xj8FCw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -101,14 +101,14 @@
           <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Edge" ContentHash="oGBr4qRlLkms5bnf1hXwXQ" InformativeScreenshot="9486c0e63510514ec4fcb5f71b4ace81.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/RHQMhyGd8EaK4rqDPSh1cA" Selector="&lt;html app='msedge.exe' title='Oracle Fusion Cloud Applications' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" Url="https://eqjz.ds-fa.oraclepdemos.com/fscmUI/faces/FuseWelcome?_afrLoop=2586559024738337&amp;_afrWindowMode=0&amp;_afrWindowId=null&amp;_adf.ctrl-state=mu593lduou6wrw_1&amp;_afrFS=16&amp;_afrMT=screen&amp;_afrMFW=1912&amp;_afrMFH=994&amp;_afrMFDW=1920&amp;_afrMFDH=1080&amp;_afrMFC=8&amp;_afrMFCI=0&amp;_afrMFM=0&amp;_afrMFR=96&amp;_afrMFG=0&amp;_afrMFS=0&amp;_afrMFO=0" Version="V3" />
         </uix:NApplicationCard.TargetApp>
       </uix:NApplicationCard>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="be9e4ae1-8c11-4420-9353-e3788f524bba" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="9c0f9ba9-b31b-4c67-86af-9e45a5c2c2c8" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
-              <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Invoices work area" Exists="[ready]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="be9e4ae1-8c11-4420-9353-e3788f524bba" Timeout="60" Version="V5">
+              <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Invoices work area" Exists="[ready]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="9c0f9ba9-b31b-4c67-86af-9e45a5c2c2c8" Timeout="60" Version="V5">
                 <uix:NCheckState.Target>
                   <uix:TargetAnchorable ContentHash="8-Qfe0q3uUK7SuOHTqQldg" DesignTimeRectangle="1881, 302, 42, 14" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTsdiitemNode_InvoiceWorkbench_FndTasksList::disAcr' tag='A' /&gt;" Guid="b10988f4-96a2-4384-91c5-40bfd7efe53d" InformativeScreenshot="1f5d4139174257932bf4df9ab00b1f60.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/boAMkHcrjkWaiL6BcsPohQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NCheckState.Target>

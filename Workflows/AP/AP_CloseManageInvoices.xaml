@@ -47,18 +47,18 @@
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="back" />
       </Sequence.Variables>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="1b927393-7fb5-4d20-b6c2-526096f8206e" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="4ad40f54-51fd-4711-8e02-58b462e7836b" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <ui:RetryScope DisplayName="Retry - Click Done" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
+              <ui:RetryScope DisplayName="Retry - Click Done" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:01">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Click Done" sap2010:WorkflowViewState.IdRef="Sequence_1">
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Done" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1b927393-7fb5-4d20-b6c2-526096f8206e" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Done" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ad40f54-51fd-4711-8e02-58b462e7836b" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="ot2UDQaY_ES2XbUED0EOdw" DesignTimeRectangle="1843, 154, 45, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' aaname='Done' /&gt;" Guid="769db0d0-4356-4a2c-9991-ebfbba792549" InformativeScreenshot="fac1bb717851e9453c36d12d5112a7ae.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/SfrhDsxiBEqudyYPzqjYFw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -70,7 +70,7 @@
                   <ActivityFunc x:TypeArguments="x:Boolean" />
                 </ui:RetryScope.Condition>
               </ui:RetryScope>
-              <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Invoices work area" Exists="[back]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="1b927393-7fb5-4d20-b6c2-526096f8206e" Timeout="60" Version="V5">
+              <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Invoices work area" Exists="[back]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="4ad40f54-51fd-4711-8e02-58b462e7836b" Timeout="60" Version="V5">
                 <uix:NCheckState.Target>
                   <uix:TargetAnchorable ContentHash="8-Qfe0q3uUK7SuOHTqQldg" DesignTimeRectangle="1881, 302, 42, 14" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_FOTsdiitemNode_InvoiceWorkbench_FndTasksList::disAcr' tag='A' /&gt;" Guid="b10988f4-96a2-4384-91c5-40bfd7efe53d" InformativeScreenshot="1f5d4139174257932bf4df9ab00b1f60.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/boAMkHcrjkWaiL6BcsPohQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NCheckState.Target>
