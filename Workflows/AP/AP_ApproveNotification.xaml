@@ -83,7 +83,7 @@
           <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
         </Assign.Value>
       </Assign>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Home (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="d3225ae7-8ea2-4784-90d1-556ba5ed861c" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Home (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="e77a42be-3aa3-456f-a4fe-528dacd0b0d6" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -92,11 +92,11 @@
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <While DisplayName="Wait for the approval notification" sap2010:WorkflowViewState.IdRef="While_1" Condition="[Not found AndAlso tries &lt; If(in_MaxTries &gt; 0, in_MaxTries, 12)]">
                 <Sequence DisplayName="Wait for the approval notification - body" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                  <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Open notifications" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+                  <ui:RetryScope DisplayName="Retry - Open notifications" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Open notifications" sap2010:WorkflowViewState.IdRef="Sequence_1">
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open notifications" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3225ae7-8ea2-4784-90d1-556ba5ed861c" Version="V5">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open notifications" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e77a42be-3aa3-456f-a4fe-528dacd0b0d6" Version="V5">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable ContentHash="AdCE5QouI0CCwwnM0AmYhQ" DesignTimeRectangle="1810, 125, 24, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_UISatr:0:cil1' tag='A' /&gt;" Guid="4a5169f3-207b-4f30-beae-5118f8e4f600" InformativeScreenshot="51513bf5e4c8a0f04830a1d876ecfd4d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/vOEFENAFg0mNn2si305GOw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                             </uix:NClick.Target>
@@ -108,7 +108,7 @@
                       <ActivityFunc x:TypeArguments="x:Boolean" />
                     </ui:RetryScope.Condition>
                   </ui:RetryScope>
-                  <uix:NCheckState CheckVisibility="True" DisplayName="Is the approval notification there" Exists="[found]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d3225ae7-8ea2-4784-90d1-556ba5ed861c" Timeout="15" Version="V5">
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Is the approval notification there" Exists="[found]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e77a42be-3aa3-456f-a4fe-528dacd0b0d6" Timeout="15" Version="V5">
                     <uix:NCheckState.Target>
                       <uix:TargetAnchorable ContentHash="M5TtOOhQ6UaADPd19Fd_zA" DesignTimeRectangle="1605, 248, 92, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='pt1:_UISatr:*:cb2' tag='BUTTON' aaname='Approve*{0}*' /&gt;&quot;, invoiceNumber)]" Guid="1e46118c-cf04-4452-9c0e-59d5d1e566b3" InformativeScreenshot="08631494ab4317ee1d1740c1f79c25fc.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/wdPKW5VDxU6Z7Oyl56ZqsQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NCheckState.Target>
@@ -116,11 +116,11 @@
                   <If Condition="[Not found]" DisplayName="Not yet" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
                       <Sequence DisplayName="Not yet - then" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Close notifications" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:02">
+                        <ui:RetryScope DisplayName="Retry - Close notifications" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                           <ui:RetryScope.ActivityBody>
                             <ActivityAction>
                               <Sequence DisplayName="Close notifications" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Close notifications" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3225ae7-8ea2-4784-90d1-556ba5ed861c" Version="V5">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Close notifications" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e77a42be-3aa3-456f-a4fe-528dacd0b0d6" Version="V5">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable ContentHash="AdCE5QouI0CCwwnM0AmYhQ" DesignTimeRectangle="1810, 125, 24, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*_UISatr:0:cil1' tag='A' /&gt;" Guid="4a5169f3-207b-4f30-beae-5118f8e4f600" InformativeScreenshot="51513bf5e4c8a0f04830a1d876ecfd4d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/vOEFENAFg0mNn2si305GOw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                                   </uix:NClick.Target>
@@ -153,11 +153,11 @@
                   </Sequence>
                 </If.Then>
               </If>
-              <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Click Approve" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:02">
+              <ui:RetryScope DisplayName="Retry - Click Approve" sap2010:WorkflowViewState.IdRef="RetryScope_3" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Click Approve" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Approve" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d3225ae7-8ea2-4784-90d1-556ba5ed861c" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Approve" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e77a42be-3aa3-456f-a4fe-528dacd0b0d6" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="M5TtOOhQ6UaADPd19Fd_zA" DesignTimeRectangle="1605, 248, 92, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='pt1:_UISatr:*:cb2' tag='BUTTON' aaname='Approve*{0}*' /&gt;&quot;, invoiceNumber)]" Guid="1e46118c-cf04-4452-9c0e-59d5d1e566b3" InformativeScreenshot="08631494ab4317ee1d1740c1f79c25fc.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/wdPKW5VDxU6Z7Oyl56ZqsQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -188,7 +188,7 @@
               <While DisplayName="Wait for the notification to clear" sap2010:WorkflowViewState.IdRef="While_2" Condition="[stillThere AndAlso tries &lt; 10]">
                 <Sequence DisplayName="Wait for the notification to clear - body" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <Delay DisplayName="Let the approval post" Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                  <uix:NCheckState CheckVisibility="True" DisplayName="Is the notification still pending" Exists="[stillThere]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="d3225ae7-8ea2-4784-90d1-556ba5ed861c" Timeout="2" Version="V5">
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Is the notification still pending" Exists="[stillThere]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="e77a42be-3aa3-456f-a4fe-528dacd0b0d6" Timeout="2" Version="V5">
                     <uix:NCheckState.Target>
                       <uix:TargetAnchorable ContentHash="M5TtOOhQ6UaADPd19Fd_zA" DesignTimeRectangle="1605, 248, 92, 32" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='pt1:_UISatr:*:cb2' tag='BUTTON' aaname='Approve*{0}*' /&gt;&quot;, invoiceNumber)]" Guid="1e46118c-cf04-4452-9c0e-59d5d1e566b3" InformativeScreenshot="08631494ab4317ee1d1740c1f79c25fc.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/wdPKW5VDxU6Z7Oyl56ZqsQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NCheckState.Target>

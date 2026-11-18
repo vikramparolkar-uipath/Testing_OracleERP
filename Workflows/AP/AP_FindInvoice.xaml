@@ -70,7 +70,7 @@
           <InArgument x:TypeArguments="x:String">[in_InvoiceNumber.Trim]</InArgument>
         </Assign.Value>
       </Assign>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="addde125-3632-470c-a1a1-7665be48cefe" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="544cebe7-9de7-4692-a126-b4239cade185" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -79,11 +79,11 @@
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <TryCatch DisplayName="Try Type invoice number" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                 <TryCatch.Try>
-                  <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Type invoice number" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+                  <ui:RetryScope DisplayName="Retry - Type invoice number" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Type invoice number" sap2010:WorkflowViewState.IdRef="Sequence_1">
-                          <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="addde125-3632-470c-a1a1-7665be48cefe" Text="[(invoiceNumber)]" Version="V5">
+                          <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="DebuggerApi" ScopeIdentifier="544cebe7-9de7-4692-a126-b4239cade185" Text="[(invoiceNumber)]" Timeout="8" Version="V5">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable ContentHash="-bymAYb4E02j2P1DDczWvw" DesignTimeRectangle="406, 351, 218, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:q1:value10::content' tag='INPUT' /&gt;" Guid="f945adde-845e-408a-9faa-6094b17cb58f" InformativeScreenshot="bb0f998da18bb2d375b8990380e923a8.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/rgjLZxf3AE-2c1J5NzEwmQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                             </uix:NTypeInto.Target>
@@ -102,7 +102,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="typeErr" />
                       </ActivityAction.Argument>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice number (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="addde125-3632-470c-a1a1-7665be48cefe" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (invoiceNumber)]" Version="V5">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type invoice number (hardware fallback)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="544cebe7-9de7-4692-a126-b4239cade185" Text="[&quot;[d(ctrl)]a[u(ctrl)][k(del)]&quot; &amp; (invoiceNumber)]" Version="V5">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable ContentHash="-bymAYb4E02j2P1DDczWvw" DesignTimeRectangle="406, 351, 218, 28" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:q1:value10::content' tag='INPUT' /&gt;" Guid="f945adde-845e-408a-9faa-6094b17cb58f" InformativeScreenshot="bb0f998da18bb2d375b8990380e923a8.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/rgjLZxf3AE-2c1J5NzEwmQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NTypeInto.Target>
@@ -111,11 +111,11 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Click Search" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:02">
+              <ui:RetryScope DisplayName="Retry - Click Search" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Click Search" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="addde125-3632-470c-a1a1-7665be48cefe" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="544cebe7-9de7-4692-a126-b4239cade185" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="HQapgNr4UEKSeKzhSP61PQ" DesignTimeRectangle="1744, 502, 54, 28" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:q1::search' tag='BUTTON' /&gt;" Guid="abfb480c-a8a9-4218-a3c3-1c98e3af7bdf" InformativeScreenshot="496cfed4d216a7c3b76df62730cd9e56.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/nDsoBxgH70qVtHMNuL_FXg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -127,7 +127,7 @@
                   <ActivityFunc x:TypeArguments="x:Boolean" />
                 </ui:RetryScope.Condition>
               </ui:RetryScope>
-              <uix:NCheckState CheckVisibility="True" DisplayName="Wait for the invoice in results" Exists="[found]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="addde125-3632-470c-a1a1-7665be48cefe" Timeout="30" Version="V5">
+              <uix:NCheckState CheckVisibility="True" DisplayName="Wait for the invoice in results" Exists="[found]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="544cebe7-9de7-4692-a126-b4239cade185" Timeout="30" Version="V5">
                 <uix:NCheckState.Target>
                   <uix:TargetAnchorable ContentHash="vlYL7DPqskKEDKZtzlO13g" DesignTimeRectangle="57, 405, 148, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='*:ap1:at1:_ATp:ta1:*:cl1' tag='A' aaname='{0}' /&gt;&quot;, invoiceNumber)]" Guid="e9bdaf75-eb26-4d14-801f-a6b86df66dcd" InformativeScreenshot="1c44567a011730ede2fad849027b6abd.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/ypyFhNo950KOuFmyu2alAw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NCheckState.Target>
@@ -139,7 +139,7 @@
                   </Sequence>
                 </If.Then>
               </If>
-              <uix:NGetText DisplayName="Read result row" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="addde125-3632-470c-a1a1-7665be48cefe" TextString="[out_RowText]" Version="V5">
+              <uix:NGetText DisplayName="Read result row" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="544cebe7-9de7-4692-a126-b4239cade185" TextString="[out_RowText]" Version="V5">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable ContentHash="QaMe0N-K8kaoJ_LM7hTKLA" DesignTimeRectangle="27, 396, 1882, 33" ElementType="TableRow" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:at1:_ATp:ta1::db' tag='DIV' /&gt;&lt;webctrl _afrrk='0' tag='TR' /&gt;" Guid="009697af-df3d-4ad3-8641-5b1628ee9680" InformativeScreenshot="74a7a753c590688f9b6f00889d420c52.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/K0PHXRXVJUu5VHiqSao7Hg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NGetText.Target>
@@ -180,11 +180,11 @@
               <If Condition="[in_OpenInvoice]" DisplayName="Open invoice" sap2010:WorkflowViewState.IdRef="If_3">
                 <If.Then>
                   <Sequence DisplayName="Open invoice - then" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                    <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Open invoice" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:02">
+                    <ui:RetryScope DisplayName="Retry - Open invoice" sap2010:WorkflowViewState.IdRef="RetryScope_3" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                       <ui:RetryScope.ActivityBody>
                         <ActivityAction>
                           <Sequence DisplayName="Open invoice" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open invoice" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="addde125-3632-470c-a1a1-7665be48cefe" Version="V5">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open invoice" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="544cebe7-9de7-4692-a126-b4239cade185" Version="V5">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable ContentHash="vlYL7DPqskKEDKZtzlO13g" DesignTimeRectangle="57, 405, 148, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='*:ap1:at1:_ATp:ta1:*:cl1' tag='A' aaname='{0}' /&gt;&quot;, invoiceNumber)]" Guid="e9bdaf75-eb26-4d14-801f-a6b86df66dcd" InformativeScreenshot="1c44567a011730ede2fad849027b6abd.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/ypyFhNo950KOuFmyu2alAw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                               </uix:NClick.Target>
@@ -196,7 +196,7 @@
                         <ActivityFunc x:TypeArguments="x:Boolean" />
                       </ui:RetryScope.Condition>
                     </ui:RetryScope>
-                    <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Invoice Details" Exists="[opened]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="addde125-3632-470c-a1a1-7665be48cefe" Timeout="45" Version="V5">
+                    <uix:NCheckState CheckVisibility="True" DisplayName="Wait for Invoice Details" Exists="[opened]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="544cebe7-9de7-4692-a126-b4239cade185" Timeout="45" Version="V5">
                       <uix:NCheckState.Target>
                         <uix:TargetAnchorable ContentHash="6IgCom-wlEKDUkUt33VnEw" DesignTimeRectangle="1493, 257, 100, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:r7:1:cl1' tag='A' /&gt;" Guid="18451f1f-b4e3-447f-90f8-a90ac9d6f8d0" InformativeScreenshot="2e1bdb034d2898bea8d7f46820c71271.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/gbuwgA4vIEavhf8lnYGhaQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                       </uix:NCheckState.Target>

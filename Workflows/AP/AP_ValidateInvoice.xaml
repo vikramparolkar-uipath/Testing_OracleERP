@@ -61,18 +61,18 @@
         <Variable x:TypeArguments="x:String" Name="taxText" />
         <Variable x:TypeArguments="x:String" Name="totalText" />
       </Sequence.Variables>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="abc92788-7b17-4e34-be3f-494561dc8c17" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Oracle Fusion Payables (Edge)" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="14d1a651-8f10-4874-9a05-018402069558" UserDataFolderMode="[If(System.IO.File.Exists(System.IO.Path.Combine(System.IO.Path.GetTempPath(), &quot;OracleTestEdge.useprofile&quot;)), UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.DefaultFolder, UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.Automatic)]" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_11">
-              <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Open Invoice Actions" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:02">
+              <ui:RetryScope DisplayName="Retry - Open Invoice Actions" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Open Invoice Actions" sap2010:WorkflowViewState.IdRef="Sequence_1">
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Invoice Actions" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Invoice Actions" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="1FGFgbK2xUiXQXLNBuOR8A" DesignTimeRectangle="1415, 153, 88, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='A' aaname='Invoice Actions' /&gt;" Guid="b576c03b-40d9-454b-b06b-20069da3be0f" InformativeScreenshot="6219b494c3a215f072e2bb766869bcf7.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/XfsJJmO8xk-Xwa0_ASw3QQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -84,11 +84,11 @@
                   <ActivityFunc x:TypeArguments="x:Boolean" />
                 </ui:RetryScope.Condition>
               </ui:RetryScope>
-              <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Click Validate" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:02">
+              <ui:RetryScope DisplayName="Retry - Click Validate" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Click Validate" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Validate" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Validate" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="fPsSY9-0uE6qL674_LburQ" DesignTimeRectangle="1416, 243, 318, 30" ElementType="TableRow" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:cm1' tag='TR' /&gt;" Guid="b9dbfb2a-e4df-42e9-9cf5-9d1719348ba6" InformativeScreenshot="8542e8a80ee2eb8278d2d7c59a988090.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/JYbeuL5JsUafL6XP5qDaXg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -108,20 +108,56 @@
                   <Variable x:TypeArguments="x:String" Name="dlgTitle" />
                   <Variable x:TypeArguments="x:String" Name="dlgText" />
                 </Sequence.Variables>
-                <uix:NCheckState CheckVisibility="True" DisplayName="Check for possible-duplicate warning" Exists="[dupPresent]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" Timeout="8" Version="V5">
-                  <uix:NCheckState.Target>
-                    <uix:TargetAnchorable ContentHash="xMXeRoWoFkira2EKXGVL5A" DesignTimeRectangle="1185, 598, 69, 28" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:cb38' tag='BUTTON' aaname='Continue' /&gt;" Guid="fb6d200a-ffd0-4694-a213-05aed847e741" InformativeScreenshot="203f9a54397c9cb61b7171d2f22ad2cb.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/e--i3pCeJ0e47K-C9CAaPw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-                  </uix:NCheckState.Target>
-                </uix:NCheckState>
+                <Assign DisplayName="Reset duplicate flag" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[dupPresent]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Reset banner flag" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[bannerPresent]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Reset dialog flag" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[dlgPresent]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Parallel DisplayName="Check for Oracle popups (in parallel)" sap2010:WorkflowViewState.IdRef="Parallel_1" CompletionCondition="[dupPresent OrElse bannerPresent OrElse dlgPresent]">
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Check for possible-duplicate warning" Exists="[dupPresent]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" Timeout="8" Version="V5">
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable ContentHash="xMXeRoWoFkira2EKXGVL5A" DesignTimeRectangle="1185, 598, 69, 28" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:cb38' tag='BUTTON' aaname='Continue' /&gt;" Guid="fb6d200a-ffd0-4694-a213-05aed847e741" InformativeScreenshot="203f9a54397c9cb61b7171d2f22ad2cb.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/e--i3pCeJ0e47K-C9CAaPw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Check for an Oracle error banner" Exists="[bannerPresent]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" Timeout="8" Version="V5">
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable ContentHash="3Bsk9SebW0SPtWuSPIEc0A" DesignTimeRectangle="270, 161, 792, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='text-normal-3 Apps3XLargeFontSize' tag='SPAN' /&gt;" Guid="9082e7ff-dd66-43cf-8448-a04c191b457a" InformativeScreenshot="f626b378c82e3891dbe797611568cb2d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/lodVP9SduU6-1Tq3_CHixA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <uix:NCheckState CheckVisibility="True" DisplayName="Check for Oracle message dialog" Exists="[dlgPresent]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" Timeout="8" Version="V5">
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable ContentHash="cJGF3KbWDkmXvrA8exVo0Q" DesignTimeRectangle="810, 285, 317, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*::msgDlg::_ttxt' tag='DIV' /&gt;" Guid="5e64c111-33ce-409e-a807-f905f3b4e77f" InformativeScreenshot="f311ebd2dd144d8d70372e9847b59d05.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/C6TCMWvtEkOvN6BkdzWPLw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Parallel>
                 <If Condition="[dupPresent]" DisplayName="Duplicate warning" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
                     <Sequence DisplayName="Duplicate warning - then" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <ui:LogMessage DisplayName="Log duplicate warning" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Possible-duplicate warning shown; continuing as in the manual run.&quot;]" />
-                      <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry - Continue past duplicate warning" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:02">
+                      <ui:RetryScope DisplayName="Retry - Continue past duplicate warning" sap2010:WorkflowViewState.IdRef="RetryScope_3" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Warn" RetryInterval="00:00:02">
                         <ui:RetryScope.ActivityBody>
                           <ActivityAction>
                             <Sequence DisplayName="Continue past duplicate warning" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Continue past duplicate warning" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" Version="V5">
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Continue past duplicate warning" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" Version="V5">
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable ContentHash="xMXeRoWoFkira2EKXGVL5A" DesignTimeRectangle="1185, 598, 69, 28" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:cb38' tag='BUTTON' aaname='Continue' /&gt;" Guid="fb6d200a-ffd0-4694-a213-05aed847e741" InformativeScreenshot="203f9a54397c9cb61b7171d2f22ad2cb.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/e--i3pCeJ0e47K-C9CAaPw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                                 </uix:NClick.Target>
@@ -136,15 +172,10 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <uix:NCheckState CheckVisibility="True" DisplayName="Check for an Oracle error banner" Exists="[bannerPresent]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" Timeout="2" Version="V5">
-                  <uix:NCheckState.Target>
-                    <uix:TargetAnchorable ContentHash="3Bsk9SebW0SPtWuSPIEc0A" DesignTimeRectangle="270, 161, 792, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='text-normal-3 Apps3XLargeFontSize' tag='SPAN' /&gt;" Guid="9082e7ff-dd66-43cf-8448-a04c191b457a" InformativeScreenshot="f626b378c82e3891dbe797611568cb2d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/lodVP9SduU6-1Tq3_CHixA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-                  </uix:NCheckState.Target>
-                </uix:NCheckState>
                 <If Condition="[bannerPresent]" DisplayName="Banner shown" sap2010:WorkflowViewState.IdRef="If_3">
                   <If.Then>
                     <Sequence DisplayName="Banner shown - then" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                      <uix:NGetText DisplayName="Read banner" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" TextString="[dlgText]" Version="V5">
+                      <uix:NGetText DisplayName="Read banner" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" TextString="[dlgText]" Version="V5">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable ContentHash="3Bsk9SebW0SPtWuSPIEc0A" DesignTimeRectangle="270, 161, 792, 23" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='text-normal-3 Apps3XLargeFontSize' tag='SPAN' /&gt;" Guid="9082e7ff-dd66-43cf-8448-a04c191b457a" InformativeScreenshot="f626b378c82e3891dbe797611568cb2d.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/lodVP9SduU6-1Tq3_CHixA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NGetText.Target>
@@ -159,20 +190,15 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <uix:NCheckState CheckVisibility="True" DisplayName="Check for Oracle message dialog" Exists="[dlgPresent]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" Timeout="3" Version="V5">
-                  <uix:NCheckState.Target>
-                    <uix:TargetAnchorable ContentHash="cJGF3KbWDkmXvrA8exVo0Q" DesignTimeRectangle="810, 285, 317, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*::msgDlg::_ttxt' tag='DIV' /&gt;" Guid="5e64c111-33ce-409e-a807-f905f3b4e77f" InformativeScreenshot="f311ebd2dd144d8d70372e9847b59d05.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/C6TCMWvtEkOvN6BkdzWPLw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-                  </uix:NCheckState.Target>
-                </uix:NCheckState>
                 <If Condition="[dlgPresent]" DisplayName="Dialog shown" sap2010:WorkflowViewState.IdRef="If_5">
                   <If.Then>
                     <Sequence DisplayName="Dialog shown - then" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                      <uix:NGetText DisplayName="Read dialog title" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" TextString="[dlgTitle]" Version="V5">
+                      <uix:NGetText DisplayName="Read dialog title" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" TextString="[dlgTitle]" Version="V5">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable ContentHash="cJGF3KbWDkmXvrA8exVo0Q" DesignTimeRectangle="810, 285, 317, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*::msgDlg::_ttxt' tag='DIV' /&gt;" Guid="5e64c111-33ce-409e-a807-f905f3b4e77f" InformativeScreenshot="f311ebd2dd144d8d70372e9847b59d05.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/C6TCMWvtEkOvN6BkdzWPLw" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NGetText.Target>
                       </uix:NGetText>
-                      <Assign DisplayName="Assign dlgText" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign DisplayName="Assign dlgText" sap2010:WorkflowViewState.IdRef="Assign_5">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[dlgText]</OutArgument>
                         </Assign.To>
@@ -180,12 +206,12 @@
                           <InArgument x:TypeArguments="x:String">[""]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <uix:NGetText ContinueOnError="True" DisplayName="Read dialog text (if present)" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" TextString="[dlgText]" Timeout="5" Version="V5">
+                      <uix:NGetText ContinueOnError="True" DisplayName="Read dialog text (if present)" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" TextString="[dlgText]" Timeout="5" Version="V5">
                         <uix:NGetText.Target>
                           <uix:TargetAnchorable ContentHash="rW6ZEjBcQUqR39YyKnmUFw" DesignTimeRectangle="783, 327, 360, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='*::msgDlg::_cnt' tag='SPAN' /&gt;" Guid="20b1202e-8cee-4a3c-ad1f-b34d3e141236" InformativeScreenshot="4f9d86a74c81bfd304fbd36d134be05c.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/PnrI172CF0qt_ra58dXmVA" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NGetText.Target>
                       </uix:NGetText>
-                      <uix:NClick ActivateBefore="False" ClickType="Single" ContinueOnError="True" DisplayName="Acknowledge dialog" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" Timeout="10" Version="V5">
+                      <uix:NClick ActivateBefore="False" ClickType="Single" ContinueOnError="True" DisplayName="Acknowledge dialog" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" Timeout="10" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="-wDUQ80TFUm26LZfyglMPQ" DesignTimeRectangle="1107, 358, 35, 28" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*::msgDlg::cancel' tag='BUTTON' /&gt;" Guid="06ff37b6-59ce-4faa-ad1a-fab27cfeea09" InformativeScreenshot="2abdfa6b0bbe7f2845f0f96f47222217.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/vC0IdWLFvkOqhj4AtnwpSQ" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -202,7 +228,7 @@
                   </If.Then>
                 </If>
               </Sequence>
-              <Assign DisplayName="Assign tries" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign DisplayName="Assign tries" sap2010:WorkflowViewState.IdRef="Assign_6">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[tries]</OutArgument>
                 </Assign.To>
@@ -210,7 +236,7 @@
                   <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Assign out_Status" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign DisplayName="Assign out_Status" sap2010:WorkflowViewState.IdRef="Assign_7">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                 </Assign.To>
@@ -221,7 +247,7 @@
               <While DisplayName="Poll until a final validation status" sap2010:WorkflowViewState.IdRef="While_1" Condition="[Not (out_Status.Contains(&quot;Validated&quot;) OrElse out_Status.Contains(&quot;Needs revalidation&quot;) OrElse out_Status.Contains(&quot;Canceled&quot;) OrElse out_Status.Contains(&quot;Unpaid&quot;) OrElse out_Status.Contains(&quot;Paid&quot;)) AndAlso tries &lt; 40]">
                 <Sequence DisplayName="Poll until a final validation status - body" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <Delay DisplayName="Wait for validation" Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                  <uix:NGetText DisplayName="Read validation status" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" TextString="[out_Status]" Version="V5">
+                  <uix:NGetText DisplayName="Read validation status" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" TextString="[out_Status]" Version="V5">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable ContentHash="hLoFefrpkkOJuqq9e8wo4A" DesignTimeRectangle="1327, 158, 70, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:cl3' tag='A' /&gt;" Guid="e14c2b1d-019f-463c-8034-c16501ac4281" InformativeScreenshot="50369e42b5807355f6dea11f5f6b00ea.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/OHbk2qgSukOdFeJcNPLk3g" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                     </uix:NGetText.Target>
@@ -236,7 +262,7 @@
                   </Assign>
                 </Sequence>
               </While>
-              <Assign DisplayName="Normalize status text" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign DisplayName="Normalize status text" sap2010:WorkflowViewState.IdRef="Assign_8">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
                 </Assign.To>
@@ -244,22 +270,22 @@
                   <InArgument x:TypeArguments="x:String">[out_Status.Replace(Convert.ToChar(160), Convert.ToChar(32)).Trim]</InArgument>
                 </Assign.Value>
               </Assign>
-              <uix:NGetText DisplayName="Read Items total" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" TextString="[itemsText]" Version="V5">
+              <uix:NGetText DisplayName="Read Items total" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" TextString="[itemsText]" Version="V5">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable ContentHash="yOInI2C1qkSfp4aUIn_hZQ" DesignTimeRectangle="34, 862, 288, 28" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:p105' tag='DIV' /&gt;" Guid="6dcbcce8-d8b0-4df8-94ab-07edac0cb73f" InformativeScreenshot="edfec3e2968eb197a0cadeefb93eb03e.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Df94P6-hhUKB9vy9JUci6Q" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NGetText.Target>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Read Tax total" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" TextString="[taxText]" Version="V5">
+              <uix:NGetText DisplayName="Read Tax total" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" TextString="[taxText]" Version="V5">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable ContentHash="-9KsSDmks0if8XWC887GAQ" DesignTimeRectangle="967, 862, 258, 64" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:p108' tag='DIV' /&gt;" Guid="b54a0354-a501-498b-9601-1eb4d89613e3" InformativeScreenshot="3e973294025cb61f7cd4a6e47137d3c1.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/0trulIBepkOetkbeKjLrhg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NGetText.Target>
               </uix:NGetText>
-              <uix:NGetText DisplayName="Read Total and Due" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="abc92788-7b17-4e34-be3f-494561dc8c17" TextString="[totalText]" Version="V5">
+              <uix:NGetText DisplayName="Read Total and Due" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="14d1a651-8f10-4874-9a05-018402069558" TextString="[totalText]" Version="V5">
                 <uix:NGetText.Target>
                   <uix:TargetAnchorable ContentHash="O14Iwgoci0y8ZyHpqi4d9Q" DesignTimeRectangle="1570, 862, 333, 66" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='*:ap1:p103' tag='DIV' /&gt;" Guid="0082ab3c-8926-4e07-9a72-80a9330e9f94" InformativeScreenshot="bf630e6a8577aab00bfcbb09068ace4b.jpg" Reference="8LVFhcqBDUWVgtwLn_b78g/Nmangf_iVUWl3xoXmcN2lg" ScopeSelectorArgument="&lt;html app='msedge.exe' url='https://*.oraclepdemos.com/fscmUI*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NGetText.Target>
               </uix:NGetText>
-              <Assign DisplayName="Parse Items" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign DisplayName="Parse Items" sap2010:WorkflowViewState.IdRef="Assign_9">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Decimal">[out_Items]</OutArgument>
                 </Assign.To>
@@ -267,7 +293,7 @@
                   <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(Regex.Match(itemsText.Replace(",", ""), "Items\s*(-?[0-9]+(\.[0-9]+)?)").Groups(1).Value, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Parse Tax" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign DisplayName="Parse Tax" sap2010:WorkflowViewState.IdRef="Assign_10">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Decimal">[out_Tax]</OutArgument>
                 </Assign.To>
@@ -275,7 +301,7 @@
                   <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(Regex.Match(taxText.Replace(",", ""), "Tax\s*(-?[0-9]+(\.[0-9]+)?)").Groups(1).Value, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Parse Total" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign DisplayName="Parse Total" sap2010:WorkflowViewState.IdRef="Assign_11">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Decimal">[out_Total]</OutArgument>
                 </Assign.To>
@@ -283,7 +309,7 @@
                   <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(Regex.Match(totalText.Replace(",", ""), "Total\s*(-?[0-9]+(\.[0-9]+)?)").Groups(1).Value, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Parse Due" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign DisplayName="Parse Due" sap2010:WorkflowViewState.IdRef="Assign_12">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Decimal">[out_Due]</OutArgument>
                 </Assign.To>
